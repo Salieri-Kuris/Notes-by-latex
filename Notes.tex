@@ -19,7 +19,7 @@
 \def\R{\mathbb{R}}
 \def\de{definition}
 \def\th{theorem}
-
+\def\gm{$ \gamma $矩阵 }
 \newcommand{\fp}[2]{\frac{\partial#1}{\partial#2}}
 \begin{document}
 	\maketitle
@@ -53,8 +53,84 @@
     \section{Multipartite Entanglement}
 	\chapter{量子场论}
     \section{同一粒子的不同表示}
-	\section{Dirac,Weyl and majorana fermions}\cite[]{pal2011dirac}
-	
+	\section{Dirac,Weyl and Majorana fermions}\cite{pal2011dirac}
+	简单来讲，Dirac fermion是Dirac方程的一般解，Majorana fermion是Dirac方程的“实”解，Weyl fermion是无质量Dirac方程的解。\\
+	\subsection{Dirac方程及其解}
+	Dirac方程定义为：
+	\begin{equation}
+		\left(i \gamma^\mu \partial_\mu-m\right) \Psi=0\label{de}
+	\end{equation}
+	它可以看作具有如下哈密顿量的薛定谔方程：
+	\begin{equation}
+		H=\gamma^0\left(\gamma^i p^i+m\right)
+	\end{equation}
+	$\gamma$ 矩阵定义为：
+	\begin{equation}
+		\begin{aligned}
+			& {\left[\gamma^\mu, \gamma^\nu\right]_{+}=2 g^{\mu \nu},} \\
+			& \gamma_0 \gamma_\mu \gamma_0=\gamma_\mu^{\dagger}
+			\end{aligned}
+	\end{equation}
+	可以看到，当$ \gamma $矩阵为纯虚时，Dirac方程为实方程，有实解。我们可以找到一组\gm 满足这样的条件，这个表象称为Majorana表象。
+	\begin{equation}
+		\begin{array}{ll}
+			\widetilde{\gamma}^0=\left[\begin{array}{cc}
+			0 & \sigma^2 \\
+			\sigma^2 & 0
+			\end{array}\right], \quad \widetilde{\gamma}^1=\left[\begin{array}{cc}
+			i \sigma^1 & 0 \\
+			0 & i \sigma^1
+			\end{array}\right], \\
+			\tilde{\gamma}^2=\left[\begin{array}{cc}
+			0 & \sigma^2 \\
+			-\sigma^2 & 0
+			\end{array}\right], \quad \tilde{\gamma}^3=\left[\begin{array}{cc}
+			i \sigma^3 & 0 \\
+			0 & i \sigma^3
+			\end{array}\right],
+			\end{array}
+	\end{equation}
+	其中$ \sigma^i $为Pauli矩阵。在此表象下写出Dirac方程，我们有实解：
+	\begin{equation}
+		\widetilde{\psi}=\tilde{\psi}^{\star}\label{rc}
+	\end{equation} 
+	此解即代表Majorana fermion。\gm 不同表示之间通过幺正变换相联系：
+	\begin{equation}
+		\gamma^\mu=U \tilde{\gamma}^\mu U^{\dagger}
+	\end{equation}
+	此时解$ \tilde{\Psi} $与Majorana表象下的解也通过一个幺正矩阵相联系：
+	\begin{equation}
+		\Psi=U \tilde{\Psi}
+	\end{equation} 
+	实解条件\eqref{rc}此时为
+	\begin{equation}
+		\psi=U U^{\top} \psi^{\star}
+	\end{equation}
+	我们一般不直接使用幺正矩阵$ U $，而是转而定义如下矩阵：
+	\begin{equation}
+		U U^{\top}=\gamma_0 C
+	\end{equation} 
+	由此定义协变共轭（协变性将在稍后证明）：
+	\begin{equation}
+		\hat{\Psi} \equiv \gamma_0 C \Psi^{\star}
+	\end{equation}
+	此时实解条件\eqref{rc}可以写为：
+	\begin{equation}
+		\hat{\psi}=\psi\label{grc}
+	\end{equation}
+	\subsection{Fourier展开}
+	一个Majorana fermion解在一般的表象下的Fourier展开为：
+	\begin{equation}
+		\psi(x)=\sum_s \int_p\left(a_s(p) u_s(p) e^{-i p \cdot x}+a_s^{\dagger}(p) v_s(p) e^{+i p \cdot x}\right)
+	\end{equation}
+	v和u互为协变共轭$ v_s(p)=\gamma_0 C u_s^{\star}(p) $
+	\subsection{矩阵C的一些性质}
+	除了通过找到实解对应的Majorana表象外，我们还可以通过研究 C矩阵本身的性质来定义一组C矩阵，再由此找到不依赖于表象的“实解”条件。\\
+	简单观察可以发现，C矩阵满足如下性质：
+	\begin{equation}
+		C^{-1} \gamma_\mu C=-\left(U \tilde{\gamma}_\mu U^{\dagger}\right)^{\top}=-\gamma_\mu^{\top}
+	\end{equation} 
+	事实上，对于任何表象的\gm 我们总可以找到满足上式的C矩阵，此式可以直接称为C矩阵的定义，由此我们有一般情况的实解条件\eqref{grc}
     \section{Pology}
 	\section{Noether定理与local对称性}
     \section{规范场的量子化:QED,非阿贝尔,与凝聚态中的电磁场路径积分}

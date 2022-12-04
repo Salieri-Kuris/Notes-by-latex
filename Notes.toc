@@ -1,0 +1,14 @@
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}凝聚态场论、量子多体}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}电、声子有效相互作用}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}量子信息}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Multipartite Entanglement}{2}{section.2.1}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}量子场论}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}同一粒子的不同表示}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Dirac,Weyl and Majorana fermions}{3}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dirac方程及其解}{3}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Fourier展开}{5}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}矩阵C的一些性质}{5}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Pology}{5}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Noether定理与local对称性}{5}{section.3.4}%
+\contentsline {section}{\numberline {3.5}规范场的量子化:QED,非阿贝尔,与凝聚态中的电磁场路径积分}{5}{section.3.5}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}张量网络}{6}{chapter.4}%
