@@ -12,6 +12,8 @@
 \newtheorem{corollary}[theorem]{推论}
 \newtheorem{example}[theorem]{例}
 \newtheorem{proposition}[theorem]{命题}
+\setcounter{tocdepth}{1}%目录显示到第一级，section
+\setcounter{secnumdepth}{2}%编号到第二级，subsection
 \def\mt{\mathscr{T}}
 \def\ms{\mathscr{S}}
 \def\mf{\mathscr{F}}
@@ -112,7 +114,7 @@
 	\end{equation} 
 	由此定义协变共轭（协变性将在稍后证明）：
 	\begin{equation}
-		\hat{\Psi} \equiv \gamma_0 C \Psi^{\star}
+		\hat{\Psi} \equiv \gamma_0 C \Psi^{\star}\label{ccg}
 	\end{equation}
 	此时实解条件\eqref{rc}可以写为：
 	\begin{equation}
@@ -131,7 +133,59 @@
 		C^{-1} \gamma_\mu C=-\left(U \tilde{\gamma}_\mu U^{\dagger}\right)^{\top}=-\gamma_\mu^{\top}
 	\end{equation} 
 	事实上，对于任何表象的\gm 我们总可以找到满足上式的C矩阵，此式可以直接称为C矩阵的定义，由此我们有一般情况的实解条件\eqref{grc}
-    \section{Pology}
+    同时，很容易验证C矩阵在任意表象下都是完全反对称矩阵。
+	\subsection{实条件的洛伦兹不变性}
+	此节将阐述为什么称\eqref{ccg}为协变共轭，我们取Lorentz变换的生成元为$ \sigma^{\mu\nu}=\frac{i}{2}[\gamma_\mu,\gamma_\nu]  $，注意，这并非Pauli矩阵。一个fermion场的变换为：
+	\begin{equation}
+		\Psi^{\prime}\left(x^{\prime}\right)=\exp \left(-\frac{i}{4} \omega^{\mu \nu} \sigma_{\mu \nu}\right) \Psi(x)
+	\end{equation}
+	对上式取复共轭并左乘$ \gamma_0C $，注意到\gm 的性质，可以推出：
+	\begin{equation}
+		\widehat{\Psi}^{\prime}\left(x^{\prime}\right)=\exp \left(-\frac{i}{4} \omega^{\mu \nu} \sigma_{\mu \nu}\right) \widehat{\Psi}(x)
+	\end{equation} 
+	由此可以看出，协变共轭场于原场具有相同的洛伦兹变换规则，所以实解条件是洛伦兹不变的。
+	\subsection{左与右}
+	在处理费米场时，我们通常会遇到两个和左右有关的概念，螺旋度（helicity）和手性（chirality），两者通常并不相同，但在某些情况下又有关联，本节将阐述这种关联。
+	\paragraph*{螺旋度}
+	满足Dirac方程的费米子额度螺旋度定义为：
+	\begin{equation}
+		h_p=\frac{\boldsymbol{\Sigma} \cdot \boldsymbol{p}}{\mathrm{p}}
+	\end{equation}
+	$ \boldsymbol{\Sigma} $为自旋矩阵。很显然，$ h_p $的本征值为$ \pm $  1，分别对应“右手”和“左手”。可以验证  $ h_p $与哈密顿量对易，也就是说它是一个守恒量，并且其点乘结构也保证了旋转不变形，但可以验证对于有质量粒子，螺旋度在推动下是改变的。
+	一个简单的论证是考虑螺旋度的物理意义：自旋在动量方向上的投影，考虑在粒子速度方向上一运动更快的参考系，此时动量反号，但自旋投影在该boost下不改变，因此螺旋度改变。
+	上面的论述依赖于速度更快的参考系，这对无质量粒子是不可能的，因此这暗示无质量粒子的螺旋度是一个真正的洛伦兹不变量。
+	\paragraph*{手性}
+	可以额外定义一个矩阵$ \gamma_5 $，它满足：
+	\begin{equation}
+		\left[\gamma_5, \gamma_\mu\right]_{+}=0 \quad \forall \mu
+	\end{equation} 
+	一个显然的解是：
+	\begin{equation}
+		\gamma_5=i \gamma^0 \gamma^1 \gamma^2 \gamma^3
+	\end{equation}
+	给上式乘上额外的相因子也是满足定义的，上述的选择保证了$ \gamma_5 $有如下性质：
+	\begin{equation}
+		\gamma_5^{\dagger}=\gamma_5, \quad\left(\gamma_5\right)^2=1
+	\end{equation} 
+	后者保证了如下定义的两个矩阵确实是投影算符：
+	\begin{equation}
+		L=\frac{1}{2}\left(1-\gamma_5\right), \quad R=\frac{1}{2}\left(1+\gamma_5\right)
+	\end{equation}
+	两者的本征空间里的矢量分别称为“左手”的和“右手”的。每个Dirac旋量也总可以拆分成两者之和。可以验证，$ \gamma_5 $与洛伦兹变换的生成元对易，但与哈密顿量不对易，这是由于质量相含一个\gm ,因此和$ \gamma_5 $反对易。
+	\subsection{Wyle fermion}
+	如前文所述，质量项同时阻碍了螺旋度和手性成为性质良好的物理量，因此我们考虑无质量费米子。由于$ \gamma_5 $的存在以及Schur引理，
+	一般的Dirac方程解并非Lorentz群的不可约表示，而手性解是可约的，称为Wyle fermion。一个一般的费米子是可约表示$ \frac{1}{2}\oplus\frac{1}{2} $,
+	即一个左手Wyle一个右手Wyle。上述说法对螺旋度同样适用，因为无质量时两者相同。
+	\subsection{从Wyle费米子到Majorana 与Dirac费米子}
+	Majorana fermion是含有质量的，因此必须包含左右手两部分，考虑到实条件，这必须是一个Wyle场与它的协变共轭：
+	\begin{equation}
+		\psi(x)=\chi(x)+\widehat{\chi}(x)
+	\end{equation}
+	而Dirac fermion的区别就是没有实解条件，因此两个左手、右手场之间独立：
+	\begin{equation}
+		\Psi(x)=\chi_1(x)+\widehat{\chi}_2(x)
+	\end{equation}
+	\section{Pology}
 	\section{Noether定理与local对称性}
     \section{规范场的量子化:QED,非阿贝尔,与凝聚态中的电磁场路径积分}
 	\chapter{张量网络}
