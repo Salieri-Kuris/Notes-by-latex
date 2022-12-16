@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  13 DEC 2022 21:41
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  16 DEC 2022 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,7 +549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
 ]
 LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 84.
+(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 88.
  [2]
 第二章
 [3
@@ -557,40 +557,58 @@ LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <12> not avail
 ]
 第三章
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
  []
 
 [4
 
-] [5] [6] [7] [8] [9]
-Missing character: There is no 人 (U+4EBA) in font [lmroman8-regular]:mapping=tex-text;!
-[10]
+] [5] [6] [7] [8]
+Missing character: There is no 人 (U+4EBA) in font [lmroman7-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--282
+
+ []
+
+[9]
 File: analog.png Graphic file (type bmp)
 <analog.png>
- [11] [12]
+ [10] [11]
 File: 3DR.png Graphic file (type bmp)
 <3DR.png>
- [13] [14] [15] [16] [17]
-第四章
-(./Notes.bbl [18
+ [12] [13] [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 522--525
 
-]) [19
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 556--561
+
+ []
+
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+Missing character: There is no 、 (U+3001) in font [lmroman12-regular]:mapping=tex-text;!
+[19] [20]
+第四章
+(./Notes.bbl [21
+
+]) [22
 
 ] (./Notes.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: AED6DF3D04082C6D09C8A28DF8316868;2055.
+(rerunfilecheck)             Checksum: B8BEE429B401118F69C62F78191A2BCA;2330.
  ) 
 Here is how much of TeX's memory you used:
- 15843 strings out of 476179
- 350180 string characters out of 5809544
- 663479 words of memory out of 5000000
- 36331 multiletter control sequences out of 15000+600000
- 485276 words of font info for 116 fonts, out of 8000000 for 9000
+ 15889 strings out of 476179
+ 352121 string characters out of 5809544
+ 666765 words of memory out of 5000000
+ 36366 multiletter control sequences out of 15000+600000
+ 487041 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,12n,97p,418b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Notes.pdf (22 pages).
+Output written on Notes.pdf (25 pages).

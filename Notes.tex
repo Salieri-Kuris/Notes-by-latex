@@ -5,7 +5,7 @@
 \title{{\Huge{\textbf{那些我曾经懂过的问题}}}\\}
 \author{Salieri}
 \date{\today}
-\linespread{1.5}
+\linespread{1.2}
 \newtheorem{theorem}{定理}[section]
 \newtheorem{definition}[theorem]{定义}
 \newtheorem{lemma}[theorem]{引理}
@@ -52,6 +52,10 @@
 	\setcounter{page}{1}
 	\pagenumbering{arabic}
 	\chapter{凝聚态场论、量子多体}
+	\section{二次量子化中的一些细节}
+	\subsection{一次算符与二次算符的关系}
+	\subsection{波函数规范变换与产生算符对应的变换}
+	ref:AltlandP573
 	\section{平均场近似，高斯近似，鞍点近似，Product State}
     \section{电、声子有效相互作用}
 	\section{Goldstone定理(经典)}
@@ -218,6 +222,7 @@
 	\section{Pology}
 	\section{Noether定理与local对称性}
     \section{规范场的量子化:QED,非阿贝尔,与凝聚态中的电磁场路径积分}
+
 	\section{外场与有效作用量}
 	\subsection{来自热力学的类比}
 	考虑一个磁性系统，配分函数以及Helmholtz自由能为：
@@ -265,14 +270,15 @@
 		\phi_{\mathrm{cl}}(x)=\langle\Omega|\phi(x)| \Omega\rangle_J
 		\label{defofcf}
 	\end{equation}
-	由此定义\gf 的QFT类比,即$ E(J) $的Legendre变换：\\
-	(note:在Weinberg等教材中，此处的Legendre变换定义略有不同，并没有取场在源J的真空期望值作为Legendre变换中和J共轭的量
+	由此定义\gf 的QFT类比,即$ E(J) $的Legendre变换
+	\footnote{在Weinberg等教材中，此处的Legendre变换定义略有不同，并没有取场在源J的真空期望值作为Legendre变换中和J共轭的量
 	，而是定义$ J_{\phi 人} $为产生期望值为$ \phi^r $的流，再定义Legendre变换：
 	\begin{equation}
 		\Gamma[\phi] \equiv-\int \mathrm{d}^4 x \phi^r(x) J_{\phi r}(x)+W\left[J_\phi\right]
 		\label{defofw}
 	\end{equation}  
-	后文在计算有效作用量时主要采用了这个定义)
+	后文在计算有效作用量时主要采用了这个定义}
+	\\
 	\begin{equation}
 		\Gamma\left[\phi_{\mathrm{cl}}\right] \equiv-E[J]-\int d^4 y J(y) \phi_{\mathrm{cl}}(y)
 		\label{defofea}
@@ -476,6 +482,174 @@
 		\chi^n(y) \rightarrow \chi^n(y)+\epsilon\left\langle F^n(y)\right\rangle_{J_\chi}
 	\end{equation} 
 	下不变，这样的对称性调教被称为Slavnov-Taylor恒等式。若我们出发的无限小变换时线性变换那两者时相同的。
+	\section{量子Goldstone定理}
+	QFT中的Goldstone定理证明与经典场类似，只不过势能换成有效势。为说明这一点，需要引入一些关于有效作用量的结论.
+	\subsection{寻找真空}
+	我们知道，量子有效作用量在场的真空期望值处取极值：
+	\begin{equation}
+		\left(\frac{\delta \Gamma[\phi]}{\delta \phi(x)}\right)_{\phi=\langle\Omega|\phi| \Omega\rangle}=0
+	\end{equation}
+	为找出真空态$ |\Psi> $，它需要使得哈密顿量期望值最小，并且对场的期望值给出上述极值条件的解，还要满足归一性，利用Lagrange乘数法
+	求解这个约束极值问题，可以转化为最小化以下的量：
+	\begin{equation}
+		\langle\Psi|H| \Psi\rangle-A\langle\Psi \mid \Psi\rangle-\int d^3 x B(\mathbf{x})\langle\Psi|\phi(\mathbf{x})| \Psi\rangle
+	\end{equation} 
+	对量子态变分取极值，给出条件：
+	\begin{equation}
+		H|\Psi\rangle=A|\Psi\rangle+\int d^3 x B(\mathbf{x}) \phi(\mathbf{x})|\Psi\rangle
+	\end{equation}
+	\begin{equation}
+		\left(H-\int d^3 x J(\mathbf{x}) \phi(\mathbf{x})\right)\left|\Psi_J\right\rangle=E[J]\left|\Psi_J\right\rangle
+	\end{equation}
+	原则上A、B的值也需要求极值得出，最终结果以泛函的关系依赖于场的期望值$ \phi_0{x0} $，但可以通过一种取巧的方式找到A、B。\\
+	考虑含流哈密顿量的基态本征方程：
+	\begin{equation}
+		\left(H-\int d^3 x J(\mathbf{x}) \phi(\mathbf{x})\right)\left|\Psi_J\right\rangle=E[J]\left|\Psi_J\right\rangle
+	\end{equation}
+	若取$ B=J_0:=J_{\phi_0}, A=E\left[J_{\phi_0}\right] $，则$ \left|\Psi_J\right\rangle $ 满足约束条件且能量取极值。\\
+	为得到有效作用量与能量的关系，考虑这样一个过程：$ -\infty\to +\infty $过程中，逐渐光滑地打开源，并维持恒定的$ J(\vec{x}) $时间T，最后再光滑地撤去源。\\
+	真空-真空振幅会积累一个相因子：
+	\begin{equation}
+		\langle\Omega, \infty \mid \Omega,-\infty\rangle_J=\exp (-i E[J] T)
+	\end{equation}
+	于是有关系：$ W[J]=-E[J] T $。回到没有外源的原本理论，它的真空态由下列方程给出：
+	\begin{equation}
+		\begin{aligned}
+			H\left|\Psi_{J_0}\right\rangle&=\left(E[J_0]+\int d^3 x J_0(\mathbf{x}) \phi_0(\mathbf{x})\right)\left|\Psi_{J_0}\right\rangle\\
+			&=\frac{1}{T}\left(-W\left[J_0\right]+\int d^4 x J_0(x) \phi_0(x)\right)\left|\Psi_{J_0}\right\rangle\\
+			&=-\frac{\Gamma\left[\phi_0\right]}{T}\left|\Psi_{J_0}\right\rangle
+		\end{aligned}
+	\end{equation}
+	也就是说，对于期望值为$ \phi_0 $的场构型的态，它的能量与该场构型对应的量子作用量只相差一个负系数。满足极值条件的场构型
+	中，是的量子作用量最大值的就对应能量的最低点，即真空态。 \\
+
+	我们总希望真空仍就具有Poincare群的对称性，因此场的期待值是一个常数，从而量子作用量的展开中含导数项的都为零，只剩下了
+	$ V_{eff} $称为有效势$ \Gamma\left[\phi_0\right]=-V T V_{\mathrm{eff}}\left(\phi_0\right) $，此时寻求真空
+	就变成了寻求有效势的极值，而在最低阶近似下有效势就是拉氏量中的经典势。
+	\subsection{量子Goldstone定理的证明}  
+	\paragraph*{Proof\: 1}
+	第一个证明与之前经典的情况几乎完全一致，只需补充几个小细节。我们假设作用量以及测度再一个连续
+	对称变化下都不变，它的代表，无限小变换时线性的：
+	\begin{equation}
+		\phi_n(x) \rightarrow \phi_n(x)+\mathrm{i} \epsilon \sum_m t_{n m} \phi_m(x)
+	\end{equation}
+	由之前的论证，作用量线性的对称性在量子作用量中仍然保持，因此有关系：
+	\begin{equation*}
+		\sum_{n, m} \int \frac{\delta \Gamma[\phi]}{\delta \phi_n(x)} t_{n m} \phi_m(x) \mathrm{d}^4 x=0
+	\end{equation*}
+	再考虑平移不变理论，作用量的形式为$ \Gamma[\phi]=-\mathscr{V} V(\phi) $，不变条件可以改写为：
+	\begin{equation*}
+		\sum_{n, m} \frac{\partial V(\phi)}{\partial \phi_n} t_{n m} \phi_m=0
+	\end{equation*}
+	再次对场球道，并且利用极值条件，给出关系：
+	\begin{equation*}
+		\left.\sum_{n, m} \frac{\partial^2 V(\phi)}{\partial \phi_n \partial \phi_{\ell}}\right|_{\phi=\bar{\phi}} t_{n m} \bar{\phi}_m=0
+	\end{equation*}
+	在经典的情况中，势能二阶导矩阵的本征值直接被认为是质量。有效势的二阶导如有效作用量节
+	所述，是单粒子不可约两点图之和，直接与动量空间的完全传播子的导数联系：
+	\begin{equation*}
+		\frac{\partial^2 V(\phi)}{\partial \phi_n \partial \phi_{\ell}}=\Delta_{n \ell}^{-1}(0)
+	\end{equation*}
+	因此方程改写为：
+	\begin{equation*}
+		\sum_{n, m} \Delta_{n \ell}^{-1}(0) t_{n m} \bar{\phi}_m=0
+	\end{equation*}
+	当对称性破缺时，$ \sum_m t_{n m} \bar{\phi}_m $不为零，此时它是$ \Delta_{n \ell}^{-1}(0) $
+	本征值为零的本征矢，若对角化，$ \phi_{Gm}=U_{nm}\phi_{m} $，$U_{mn}$为使得矩阵对角化的变换
+	，n取为零本征值对应的下标。这意味着$ \Delta_{n \ell}^{-1}(q) $在$ q^2=0 $处有一极点，
+	因此无质量。\\
+
+	为看出Goldstone粒子属于洛伦兹群的哪个表示，我们先假设场$ \phi_\alpha $对应
+	表示D，于是有$ \phi_\alpha^{\prime}=D_{\alpha \beta}(\Lambda) \phi_\beta $。Goldstone子
+	与原本场的线性关系可能让人误以为他们对应相同的表示，但U在Lorentz变化下并不平庸，为看出这一点，
+	传播子的倒数按照$ D^{-1}\otimes D^{-1} $变换 ，对角化后的矩阵为Lorentz标量矩阵，因此变换矩阵
+	按照$ D^{-1} $变换，刚好抵消的原本场的变换，因此Goldstone粒子是零自旋玻色子。
+	\paragraph*{Proof\: 2}
+	任何连续对称性都给出一个守恒流$ J^{\mu} $，以及相应的守恒荷Q，并且这个Q诱导对应的对称变换：
+	\begin{equation*}
+		Q=\int \mathrm{d}^3 x J^0(\mathbf{x}, 0)
+	\end{equation*} 
+	\begin{equation*}
+		\left[Q, \phi_n(x)\right]=-\sum_m t_{n m} \phi_m(x)
+	\end{equation*}
+	上述算符关系不受自发对称性破缺的影响。现在考察流和场的对易子的真空期望值，并对中间态求和，有：
+	\begin{equation}
+		\left\langle\left[J^\lambda(y), \phi_n(x)\right]\right\rangle_{\mathrm{VAC}}=(2 \pi)^{-3} \int \mathrm{d}^4 p\left[\rho_n^\lambda(p) \mathrm{e}^{\mathrm{i} p \cdot(y-x)}-\tilde{\rho}_n^\lambda(p) \mathrm{e}^{\mathrm{i} p \cdot(x-y)}\right]
+	\end{equation}
+	其中利用平移不变形，以及插入完备关系定义了：
+	\begin{equation}
+		\begin{aligned}
+			& (2 \pi)^{-3} \mathrm{i} \rho_n^\lambda(p)=\sum_N\left\langle\operatorname{VAC}\left|J^\lambda(0)\right| N\right\rangle\left\langle N\left|\phi_n(0)\right| \mathrm{VAC}\right\rangle \delta^4\left(p-p_N\right), \\
+			& (2 \pi)^{-3} \mathrm{i} \tilde{\rho}_n^\lambda(p)=\sum_N\left\langle\operatorname{VAC}\left|\phi_n(0)\right| N\right\rangle\left\langle N\left|J^\lambda(0)\right| \operatorname{VAC}\right\rangle \delta^4\left(p-p_N\right) .
+			\end{aligned}
+	\end{equation}
+	对N的求和表示对所有离散的指标求和以及对连续指标的积分。由于$ \rho $是动量四矢的函数，且自身
+	有一个Lorentz矢量指标，因此正比于$ p^\mu $，而插入完备集中的态能量总是正定的，因此也正比
+	于能量的阶梯函数，即：
+	\begin{equation}
+		\begin{aligned}
+			& \rho_n^\lambda(p)=p^\lambda \rho_n\left(-p^2\right) \theta\left(p^0\right) \\
+			& \tilde{\rho}_n^\lambda(p)=p^\lambda \tilde{\rho}_n\left(-p^2\right) \theta\left(p^0\right)
+			\end{aligned}
+	\end{equation}  
+	真空期望可以改写为：
+	\begin{equation}
+		\begin{aligned}
+			\left\langle\left[J^\lambda(y), \phi_n(x)\right]\right\rangle_{\mathrm{VAC}}= & \frac{\partial}{\partial y_\lambda} \int \mathrm{d} \mu^2\left[\rho_n\left(\mu^2\right) \Delta_{+}\left(y-x ; \mu^2\right)\right. \\
+			& \left.+\tilde{\rho}_n\left(\mu^2\right) \Delta_{+}\left(x-y ; \mu^2\right)\right]
+			\end{aligned}
+	\end{equation}
+	其中：$  \Delta_{+}\left(z ; \mu^2\right)=(2 \pi)^{-3} \int \mathrm{d}^4 p \theta\left(p^0\right) \delta\left(p^2+\mu^2\right) \mathrm{e}^{\mathrm{i} p \cdot z}$。\\
+	
+	当$ z^2>0 $时，Lorentz不变形要求$ \Delta_{+}\left(z ; \mu^2\right) $仅能依赖于$ z^2、\mu^2 $。
+	因此$ \Delta_{+}\left(z ; \mu^2\right) $关于$ (x-y) $在类空时是偶函数，此时：
+	\begin{equation}
+		\left\langle\left[J^\lambda(y), \phi_n(x)\right]\right\rangle_{\mathrm{VAC}}=\frac{\partial}{\partial y_\lambda} \int \mathrm{d} \mu^2\left[\rho_n\left(\mu^2\right)+\tilde{\rho}_n\left(\mu^2\right)\right] \Delta_{+}\left(y-x ; \mu^2\right)
+	\end{equation}    
+	由因果关系，类空对易子必为零给出条件：
+	\begin{equation}
+		\rho_n\left(\mu^2\right)=-\tilde{\rho}_n\left(\mu^2\right)
+	\end{equation}
+	而对于一般的x,y，代入上式给出：
+	\begin{equation}
+		\left\langle\left[J^\lambda(y), \phi_n(x)\right]\right\rangle_{\mathrm{VAC}}=\frac{\partial}{\partial y_\lambda} \int \mathrm{d} \mu^2 \rho_n\left(\mu^2\right)\left[\Delta_{+}\left(y-x ; \mu^2\right)-\Delta_{+}\left(x-y ; \mu^2\right)\right]
+	\end{equation}
+	为利用流守恒条件，两边同时再对$ Y^\lambda $求导，利用性质：
+	\begin{equation*}
+		\left(\square_y-\mu^2\right) \Delta_{+}\left(y-x ; \mu^2\right)=0
+	\end{equation*} 
+	于是，对于任意的x和y，有：
+	\begin{equation}
+		0=\int \mathrm{d} \mu^2 \mu^2 \rho_n\left(\mu^2\right)\left[\Delta_{+}\left(y-x ; \mu^2\right)-\Delta_{+}\left(x-y ; \mu^2\right)\right]
+	\end{equation}
+	只能有：
+	\begin{equation}
+		\mu^2 \rho_n\left(\mu^2\right)=0
+	\end{equation}
+	此方程的解要么为$ rho_n\left(\mu^2\right)=0 $，要么为$ rho_n\left(\mu^2\right)\propto\delta(\mu^2) $。
+	我们将看到，对于对称破缺情况，只能为后者。
+	令$ \lambda=0,x^0=y^0=0 $，则有：
+	\begin{equation}
+		\begin{aligned}
+			\left\langle\left[J^0(\mathbf{y}, t), \phi_n(\mathbf{x}, t)\right]\right\rangle_{\text {VAC }}= & 2 \mathrm{i}(2 \pi)^{-3} \int \mathrm{d} \mu^2 \rho_n\left(\mu^2\right) \\
+			& \times \int \mathrm{d}^4 p \sqrt{\mathbf{p}^2+\mu^2} \mathrm{e}^{\mathrm{i} \mathbf{p} \cdot(\mathbf{y}-\mathbf{x})} \theta(p_0)\delta\left(p^2+\mu^2\right) \\
+			= & \mathrm{i} \delta^3(\mathbf{y}-\mathbf{x}) \int \mathrm{d} \mu^2 \rho_n\left(\mu^2\right) .
+			\end{aligned}
+	\end{equation} 
+	其中用到了公式：$ \int_{-\infty}^{+\infty} d k^0 \delta\left(k^2+m^2\right) \theta\left(k^0\right)=\frac{1}{2 \omega} $ 。
+	对y空间积分，利用荷Q生成了这个对称变换，给出：
+	\begin{equation}
+		-\sum_m t_{n m}\left\langle\phi_m\right\rangle_{\mathrm{VAC}}=\mathrm{i} \int \mathrm{d} \mu^2 \rho_n\left(\mu^2\right)
+	\end{equation}
+	仅当
+	\begin{equation}
+		\rho_n\left(\mu^2\right)=\mathrm{i} \delta\left(\mu^2\right) \sum_m t_{n m}\left\langle\phi_m(0)\right\rangle_{\mathrm{VAC}}
+	\end{equation}
+	可以看出，对称破缺时，$ \rho_n\left(\mu^2\right) $不能为零，但正比于$ \delta\left(\mu^2\right) $的项职能出现在无质量粒子
+	的理论中，而且必须是单粒子态，因为多粒子态会给出连续的贡献。态$  \phi_n(0)|\mathrm{VAC}\rangle$是旋转
+	不变的\footnote{这似乎依赖$ \phi $是标量场 }，因此呢只有螺旋度为零的态对$ \left\langle N\left|\phi_n(0)\right| \text { VAC }\right\rangle $
+	有贡献，同时只有内禀宇称以及内部量子数同$ J_0 $相同的态N对$ \left\langle V A C\left|J^0\right| N\right\rangle $有贡献，
+	因此呢Goldstone粒子是一个自旋为零的无质量粒子，且与$ J_0 $有相同的宇称以及内部量子数。     
 	\chapter{张量网络}
 	\bibliographystyle{IEEEtran}
 	\bibliography{Ref}
