@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: Notes.aux
+The top-level auxiliary file: note-re.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -15,7 +15,7 @@ Database file #1: Ref.bib
 Done.
 You've used 1 entry,
             4087 wiz_defined-function locations,
-            829 strings with 7422 characters,
+            829 strings with 7426 characters,
 and the built_in function-call counts, 961 in all, are:
 = -- 77
 > -- 12

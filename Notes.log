@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  16 DEC 2022 12:08
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  15 MAR 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -46,8 +46,8 @@ LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 File: ctexopts.cfg 2021/12/12 v2.5.8 Option configuration file (CTEX)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count191
 \c@chapter=\count192
@@ -418,11 +418,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks29
 \@floatcapt=\box57
 )
-
-Package ctex Warning: Package `ctex' can not be loaded with `ctexbook'.
-
 \c@theorem=\count315
-(./Notes.aux)
+ (./Notes.aux)
 \openout1 = `Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -537,78 +534,365 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--40
 
  []
 
-[1] (./Notes.toc)
+[1] (./Notes.toc [1
+
+])
 \tf@toc=\write4
 \openout4 = `Notes.toc'.
 
- [1
-
-]
+LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <10> not available
+(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 51.
+ [2]
 第一章
 [1
 
 ]
-LaTeX Font Info:    Font shape `TU/SongtiSCLight(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SongtiSCLight(0)/m/it' tried instead on input line 88.
- [2]
 第二章
-[3
+[2
 
 ]
 第三章
+[3
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+]
+Overfull \hbox (1.2725pt too wide) in paragraph at lines 105--109
+\TU/SongtiSCLight(0)/m/n/10 其 中 引 入 了 记 号：| $\OML/cmm/m/it/10 F \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 ch\OT1/cmr/m/n/10 /2\OML/cmm/m/it/10 ^^Ye\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 X[]H; A[] \OT1/cmr/m/n/10 = [][] = (2\OML/cmm/m/it/10 ^^YeH\OT1/cmr/m/n/10 /\OML/cmm/m/it/10 ch\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 X[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--109
 
  []
 
-[4
 
-] [5] [6] [7] [8]
-Missing character: There is no 人 (U+4EBA) in font [lmroman7-regular]:mapping=tex-text;!
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--282
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
+
+ []
+
+[5]
+File: biaoji.png Graphic file (type bmp)
+<biaoji.png>
+
+Overfull \hbox (61.838pt too wide) in paragraph at lines 168--169
+ [][] 
+ []
+
+File: DaysonEq.png Graphic file (type bmp)
+<DaysonEq.png>
+
+Overfull \hbox (54.55725pt too wide) detected at line 188
+[][][][]
+ []
+
+[6]
+Overfull \hbox (18.03113pt too wide) detected at line 196
+[][][][]
+ []
+
+
+Overfull \hbox (35.7437pt too wide) detected at line 209
+[][][] [][] \OMS/cmsy/m/n/10 ^^Q \OML/cmm/m/it/10 ^^N[][][] \OMS/cmsy/m/n/10 ^^Q [] [] G[] ^^X \OML/cmm/m/it/10 ^^N[][] [] d[][][] [] d[][] [] [] [] d[][]\OMS/cmsy/m/n/10 G[]
+ []
+
+
+Overfull \hbox (22.05067pt too wide) detected at line 219
+[][][][]
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
+
+ []
+
+File: selfenergy.png Graphic file (type bmp)
+<selfenergy.png>
+
+Overfull \hbox (49.1902pt too wide) in paragraph at lines 238--239
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--247
+
+ []
+
+[8]
+Overfull \hbox (25.1834pt too wide) detected at line 260
+[][][][]
  []
 
 [9]
-File: analog.png Graphic file (type bmp)
-<analog.png>
- [10] [11]
-File: 3DR.png Graphic file (type bmp)
-<3DR.png>
- [12] [13] [14] [15] [16]
-Underfull \hbox (badness 10000) in paragraph at lines 522--525
+File: FBASE.png Graphic file (type bmp)
+<FBASE.png>
+
+Overfull \hbox (26.00255pt too wide) in paragraph at lines 281--282
+ [][] 
+ []
+
+File: tmatrix.png Graphic file (type bmp)
+<tmatrix.png>
+
+Overfull \hbox (74.4858pt too wide) in paragraph at lines 287--288
+ [][] 
+ []
+
+[10] [11] [12] [13] [14]
+Overfull \hbox (1.17854pt too wide) in paragraph at lines 420--423
+\TU/SongtiSCLight(0)/m/n/10 这 样，|  利 用 高 斯 积 分 公 式：| $[] \OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = [[] []][]\OML/cmm/m/it/10 e[]$
+ []
+
+[15]
+Overfull \hbox (15.67606pt too wide) in paragraph at lines 487--490
+\TU/SongtiSCLight(0)/m/n/10 在 临 界 点 附 近，|  我 们 关 心 短 波 矢 的 模 式，|  此 时 耦 合 系 数 可 展 开 为：| $\OML/cmm/m/it/10 J[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 J [] \OT1/cmr/m/n/10 +
+ []
+
+
+Overfull \hbox (14.70021pt too wide) in paragraph at lines 487--490
+\OMS/cmsy/m/n/10 O [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 T[] [] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 O []$\TU/SongtiSCLight(0)/m/n/10 ，|  二 次 项 的 系 数 为：| $\OML/cmm/m/it/10 ^^LJ[] [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 a[] [] \OT1/cmr/m/n/10 +
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 556--561
+Underfull \hbox (badness 10000) in paragraph at lines 540--543
+
+ []
+
+File: KondoSE.png Graphic file (type bmp)
+<KondoSE.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--572
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 601--603
+File: ExactGFofCE.png Graphic file (type bmp)
+<ExactGFofCE.png>
+
+Overfull \hbox (27.2125pt too wide) in paragraph at lines 576--577
+ [][] 
+ []
+
+[19]
+Overfull \hbox (15.55452pt too wide) in paragraph at lines 604--606
+\TU/SongtiSCLight(0)/m/n/10 可 以 通 过 引 入 总 粒 子 数 以 及 磁 化 强 度 两 个 量 来 改 写 方 程，|  其 中 $\OML/cmm/m/it/10 n[] \OT1/cmr/m/n/10 = [][] [] \OML/cmm/m/it/10 ; M \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--624
 
  []
 
-Missing character: There is no 、 (U+3001) in font [lmroman12-regular]:mapping=tex-text;!
-[19] [20]
-第四章
-(./Notes.bbl [21
+[20]
+Overfull \hbox (11.16522pt too wide) in paragraph at lines 659--662
+\TU/SongtiSCLight(0)/m/n/10 任 何 泛 函 都 可 以 仿 照 普 通 函 数 的 泰 勒 级 数 做 展 开，|  若 保 留 到 一 阶 项 有 关 系：| $\OML/cmm/m/it/10 G [] \OMS/cmsy/m/n/10 '
+ []
 
-]) [22
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
+
+ []
+
+[21]
+Overfull \hbox (0.64189pt too wide) detected at line 681
+[][]\OML/cmm/m/it/10 C[] [] \OMS/cmsy/m/n/10 ^^Q ^^@ [] ^^Q ^^@ []
+ []
+
+
+Overfull \hbox (11.12424pt too wide) detected at line 724
+[][][] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 Z[] [] \OML/cmm/m/it/10 X[]X[] []
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 748--751
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 774--778
+
+ []
+
+
+Overfull \hbox (30.69484pt too wide) detected at line 792
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 792--794
+
+ []
+
+[24]
+Overfull \hbox (33.42831pt too wide) detected at line 841
+[][][][]
+ []
+
+[25]
+Overfull \hbox (32.9424pt too wide) in paragraph at lines 854--856
+\TU/SongtiSCLight(0)/m/n/10 比 对[]，|  立 刻 得 知，|  此 处 定 义 的 量 正 是 谱 函 数：| $\OML/cmm/m/it/10 ^^_[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 !\OT1/cmr/m/n/10 )$\TU/SongtiSCLight(0)/m/n/10 ，|  而 比 对[]与[]立
+ []
+
+File: EXPS.png Graphic file (type bmp)
+<EXPS.png>
+[26]
+Overfull \hbox (42.39468pt too wide) detected at line 892
+[][][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--904
+
+ []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 916--919
+
+ []
+
+[28] [29]
+第四章
+[30
+
+]
+第五章
+
+LaTeX Warning: Citation `pal2011dirac' on page 31 undefined on input line 968.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 968--970
+
+ []
+
+[31
+
+] [32]
+Missing character: There is no ^^F (U+0006) in font [lmromandemi10-regular]:mapping=tex-text;!
+Missing character: There is no ^^F (U+0006) in font [lmromandemi10-regular]:mapping=tex-text;!
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1129--1131
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1158--1160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1173--1176
+
+ []
+
+[35]
+File: spectral density.png Graphic file (type bmp)
+<spectral density.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1201
+
+ []
+
+
+Overfull \hbox (0.90747pt too wide) detected at line 1208
+[][][][]
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1215--1220
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1228--1232
+
+ []
+
+[37]
+Overfull \hbox (1.22546pt too wide) detected at line 1300
+[][][] [][] [][]
+ []
+
+[38]
+Overfull \hbox (2.08249pt too wide) detected at line 1308
+[][][]
+ []
+
+[39]
+Missing character: There is no 人 (U+4EBA) in font [lmroman6-regular]:mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1371
+
+ []
+
+File: analog.png Graphic file (type bmp)
+<analog.png>
+[40] [41]
+File: 3DR.png Graphic file (type bmp)
+<3DR.png>
+ [42] [43] [44] [45]
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1615
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 1620--1622
+
+ []
+
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+[47]
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1673
+
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 1713--1715
+
+ []
+
+Missing character: There is no 、 (U+3001) in font [lmroman10-regular]:mapping=tex-text;!
+[49] [50]
+第六章
+No file Notes.bbl.
+[51
 
 ] (./Notes.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Notes.out' has not changed.
-(rerunfilecheck)             Checksum: B8BEE429B401118F69C62F78191A2BCA;2330.
+(rerunfilecheck)             Checksum: B2C3291F88B4268218AF22BD023AD140;4452.
  ) 
 Here is how much of TeX's memory you used:
- 15889 strings out of 476179
- 352121 string characters out of 5809544
- 666765 words of memory out of 5000000
- 36366 multiletter control sequences out of 15000+600000
- 487041 words of font info for 128 fonts, out of 8000000 for 9000
+ 16094 strings out of 476179
+ 361714 string characters out of 5809544
+ 674097 words of memory out of 5000000
+ 36564 multiletter control sequences out of 15000+600000
+ 484411 words of font info for 118 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 89i,12n,97p,418b,354s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,15n,97p,567b,418s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Notes.pdf (25 pages).
+Output written on Notes.pdf (55 pages).

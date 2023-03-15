@@ -1,0 +1,101 @@
+\documentclass[12pt, a4paper, oneside]{ctexbook}
+\usepackage{amsmath, amsthm, amssymb, bm, graphicx, hyperref, mathrsfs, float}
+
+
+\title{{\Huge{\textbf{凝聚态物理中的拓扑物态}}}\\}
+\author{江文涛 191840114}
+\date{\today}
+\linespread{1.2}
+
+\setcounter{tocdepth}{1}%目录显示到第一级，section
+\setcounter{secnumdepth}{2}%编号到第二级，subsection
+
+\newcommand{\fp}[2]{\frac{\partial#1}{\partial#2}}
+\begin{document}
+	\maketitle
+	
+	\pagenumbering{roman}
+	\setcounter{page}{1}
+	\newpage
+	\pagenumbering{Roman}
+	\setcounter{page}{1}
+	\tableofcontents
+	\newpage
+	\setcounter{page}{1}
+	\pagenumbering{arabic}
+
+    \chapter{Berry相位}
+    \section{离散情况}
+    干涉条纹的产生来自$ P=|\Psi_1+\Psi_2|^2=\Psi_1^2+\Psi_2^2+\Psi_1^*\Psi_2+\Psi_1\Psi_2^* $。\\
+
+    相对相位是有物理意义的。$ \gamma_{12}=-arg<\Psi_1|\Psi_2> $ 
+	\subsection*{离散Berry相位的定义}
+	对于N个Hilbert空间中的态，将它们排序为一个圈，定义下面的一个量：
+	\begin{equation}
+		\gamma_L=-\arg e^{-i\left(\gamma_{12}+\gamma_{23}+\ldots+\gamma_{N1}\right)}=-\arg \left(\left\langle\Psi_1 \mid \Psi_2\right\rangle\left\langle\Psi_2 \mid \Psi_3\right\rangle \ldots\left\langle\Psi_N \mid \Psi_1\right\rangle\right)
+	\end{equation}
+	它可以改写为如下形式：
+	\begin{equation}
+		\gamma_L=-\arg \operatorname{Tr}\left(\left|\Psi_1\right\rangle\left\langle\Psi_1|| \Psi_2\right\rangle\left\langle\Psi_2|\ldots| \Psi_N\right\rangle\left\langle\Psi_N\right|\right)
+	\end{equation}
+	作为一组规范不变投影算符的乘积，它显然也是规范不变的。
+    \subsubsection*{Berry通量}
+	考虑一个二维格点，将每个点都对应一个态，定义如下一个Berry相：
+	\begin{equation}
+		\begin{aligned}
+			\gamma_L=-\arg \exp \left[-i\left(\sum_{n=1}^{N-1} \gamma_{(n, 1),(n+1,1)}\right.\right. & +\sum_{m=1}^{M-1} \gamma_{(N, m),(N, m+1)} \\
+			& \left.\left.+\sum_{n=1}^{N-1} \gamma_{(n+1, M),(n, M)}+\sum_{m=1}^{M-1} \gamma_{(1, m+1),(1, m)}\right)\right]
+			\end{aligned}
+	\end{equation}
+	直接计算涉及很多依赖规范的量，下面引入一种方法使得计算可以拆解为规范不变量的和。对于每个“小圈”，定义它边界对应的Berry相位：
+	\begin{equation}
+		\begin{aligned}
+			F_{n m}&=-\arg \exp \left[-i\left(\gamma_{(n, m),(n+1, m)}+\right.\right.  \gamma_{(n+1, m),(n+1, m+1)} \\
+			& \left.\left.+\gamma_{(n+1, m+1),(n, m+1)}+\gamma_{(n, m+1),(n, m)}\right)\right]\\
+			& =\gamma_{(n, m),(n+1, m)}+\gamma_{(n+1, m),(n+1, m+1)}+\gamma_{(n+1, m+1),(n, m+1)}+\gamma_{(n, m+1),(n, m)}+2\pi n_{nm}
+			\end{aligned}
+	\end{equation}
+	称为Berry通量。将所有的Berry通量相乘，每个内部的边都被计算了方向相反的两次，因此互为复共轭，最终只剩下边界的相，所以这个量和之前定义的Berry相相等。
+	\begin{equation}
+		\exp \left[-i \sum_{n=1}^{N-1} \sum_{m=1}^{M-1} F_{n m}\right]=e^{-i \gamma_L}
+		\label{eq}
+	\end{equation}
+	这让人联想到Stokes定理，但在这里Berry通量的求和与Berry相本身并不相等，而是可以相差$ 2\pi n $。
+	\subsection*{Chern数}
+	对于上边定义的格点参数空间取周期边界条件，\eqref{eq}变为$ \prod_{m=1}^M \prod_{n=1}^N e^{-i F_{n m}}=1 $ ，Chern数的定义为：
+	\begin{equation}
+		Q=\frac{1}{2 \pi} \sum_{n m} F_{n m}
+	\end{equation}
+	它显然是一个整数。
+	\section{连续情况}
+	现在用D维参数空间中的矢量标记Hilbert空间中的态矢：$ |\Psi(\mathbf{R})\rangle $。在参数空间中取一定向曲线：$ \mathscr{C}:[0,1) \rightarrow \mathscr{P}, \quad t \mapsto \mathbf{R}(t) $，
+	曲线上相邻的两点映射到的态矢之间的相对相位为：\\
+	\begin{equation}
+		e^{-i \Delta \gamma}=\frac{\langle\Psi(\mathbf{R}) \mid \Psi(\mathbf{R}+d \mathbf{R})\rangle}{|\langle\Psi(\mathbf{R}) \mid \Psi(\mathbf{R}+d \mathbf{R})\rangle|} ; \quad \Delta \gamma=i\left\langle\Psi(\mathbf{R})\left|\nabla_{\mathbf{R}}\right| \Psi(\mathbf{R})\right\rangle \cdot d \mathbf{R},
+	\end{equation}
+
+	上式右边中乘上$ d\vec{R} $的量为Berry联络：
+	\begin{equation}
+		\mathbf{A}(\mathbf{R})=i\left\langle\Psi(\mathbf{R}) \mid \nabla_{\mathbf{R}} \Psi(\mathbf{R})\right\rangle=-\operatorname{Im}\left\langle\Psi(\mathbf{R}) \mid \nabla_{\mathbf{R}} \Psi(\mathbf{R})\right\rangle
+	\end{equation} 
+	其中有定义：$ \left\langle\Phi \mid \nabla_{\mathbf{R}} \Psi(\mathbf{R})\right\rangle=\nabla_{\mathbf{R}}\langle\Phi \mid \Psi(\mathbf{R})\rangle $。\footnote{此内积纯虚，$ \nabla_{\mathbf{R}}\langle\Psi(\mathbf{R}) \mid \Psi(\mathbf{R})\rangle=\left\langle\Psi(\mathbf{R})|\nabla_{\mathbf{R}} \Psi(\mathbf{R})\right\rangle+(\left\langle\Psi(\mathbf{R})|\nabla_{\mathbf{R}} \Psi(\mathbf{R})\right\rangle)^*=0 $ }
+	波函数的Local规范变换使得Berry联络如下变换：
+	\begin{equation}
+		|\Psi(\mathbf{R})\rangle \rightarrow e^{i \alpha(\mathbf{R})}|\Psi(\mathbf{R})\rangle: \quad \mathbf{A}(\mathbf{R}) \rightarrow \mathbf{A}(\mathbf{R})-\nabla_{\mathbf{R}} \alpha(\mathbf{R})
+	\end{equation} 
+	对于参数空间的一条闭曲线，沿着这条曲线的Berry相位为：
+	\begin{equation}
+		\gamma(\mathscr{C})=-\operatorname{argexp}\left[-i \oint_{\mathscr{C}} \mathbf{A} \cdot d \mathbf{R}\right]
+	\end{equation}
+	仿照Stokes定理，定义Berry曲率：
+	\begin{equation}
+		B=\left(\partial_x A_y-\partial_y A_x\right)
+	\end{equation}
+	此时线积分可改写为面积分：
+	\begin{equation}
+		\oint_{\partial \mathscr{F}} \mathbf{A} \cdot d \mathbf{R}=\int_{\mathscr{F}}\left(\partial_x A_y-\partial_y A_x\right) d x d y=\int_{\mathscr{F}} B d x d y
+	\end{equation}
+	如果规范的选取是连续的，对于闭合曲面上述积分为零，但若规范存在不连续的奇点
+	\bibliographystyle{IEEEtran}
+	\bibliography{Ref}
+\end{document}
