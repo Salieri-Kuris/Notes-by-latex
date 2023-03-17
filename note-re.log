@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  16 MAR 2023 22:14
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  17 MAR 2023 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -901,50 +901,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 903--905
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 913--917
+Underfull \hbox (badness 10000) in paragraph at lines 927--931
 
  []
 
 [21]
-Overfull \hbox (5.9658pt too wide) in paragraph at lines 952--955
+Overfull \hbox (5.9658pt too wide) in paragraph at lines 966--969
 \TU/SongtiSCLight(0)/m/n/10 任 何 泛 函 都 可 以 仿 照 普 通 函 数 的 泰 勒 级 数 做 展 开，|  若 保 留 到 一 阶 项 有 关 系：| $\OML/zplm/m/it/10 G [] \OMS/zplm/m/n/10 ' \OML/zplm/m/it/10 G\OT1/zplm/m/n/10 [\OT1/ppl/m/n/10 0\OT1/zplm/m/n/10 ] + [][] \OML/zplm/m/it/10 F[] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 968--969
+Underfull \hbox (badness 10000) in paragraph at lines 982--983
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1044
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1059--1060
+Underfull \hbox (badness 10000) in paragraph at lines 1055--1058
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1067--1071
+Underfull \hbox (badness 10000) in paragraph at lines 1073--1074
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1085--1087
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1085
 
  []
 
-[24]
+
+Underfull \hbox (badness 10000) in paragraph at lines 1099--1101
+
+ []
+
+[24] [25]
 File: EXPS.png Graphic file (type bmp)
 <EXPS.png>
- [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
+ [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1210--1211
 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 1209--1212
+
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1226
 
  []
 
@@ -955,48 +955,48 @@ Chapter 4.
 ]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1261--1263
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1277
 
  []
 
 [30
 
 ] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1422--1424
+Underfull \hbox (badness 10000) in paragraph at lines 1436--1438
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1451--1453
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1466--1469
+Underfull \hbox (badness 10000) in paragraph at lines 1480--1483
 
  []
 
 File: spectral density.png Graphic file (type bmp)
 <spectral density.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1494
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1508
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1508--1513
+Underfull \hbox (badness 10000) in paragraph at lines 1522--1527
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1521--1525
+Underfull \hbox (badness 10000) in paragraph at lines 1535--1539
 
  []
 
 [35] [36] [37]
 Missing character: There is no 人 ("4EBA) in font pplr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1654--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1668--1678
 
  []
 
@@ -1009,23 +1009,23 @@ File: 3DR.png Graphic file (type bmp)
 Underfull \vbox (badness 1371) has occurred while \output is active []
 
  [41] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1905--1908
+Underfull \hbox (badness 10000) in paragraph at lines 1919--1922
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1913--1915
+Underfull \hbox (badness 10000) in paragraph at lines 1927--1929
 
  []
 
 Missing character: There is no ， ("FF0C) in font pplr7t!
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1961--1966
+Underfull \hbox (badness 10000) in paragraph at lines 1975--1980
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2006--2008
+Underfull \hbox (badness 10000) in paragraph at lines 2020--2022
 
  []
 
@@ -1045,10 +1045,10 @@ Package rerunfilecheck Info: File `note-re.out' has not changed.
 (rerunfilecheck)             Checksum: 77678EA4820CB293A2CFC33F6B5AF2FC;8683.
  ) 
 Here is how much of TeX's memory you used:
- 18540 strings out of 476179
- 391920 string characters out of 5809544
+ 18529 strings out of 476179
+ 391240 string characters out of 5809544
  739878 words of memory out of 5000000
- 38946 multiletter control sequences out of 15000+600000
+ 38935 multiletter control sequences out of 15000+600000
  542131 words of font info for 152 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,18n,97p,569b,550s stack positions out of 10000i,1000n,20000p,200000b,200000s

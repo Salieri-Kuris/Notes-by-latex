@@ -96,6 +96,16 @@
 		\oint_{\partial \mathscr{F}} \mathbf{A} \cdot d \mathbf{R}=\int_{\mathscr{F}}\left(\partial_x A_y-\partial_y A_x\right) d x d y=\int_{\mathscr{F}} B d x d y
 	\end{equation}
 	如果规范的选取是连续的，对于闭合曲面上述积分为零，但若规范存在不连续的奇点，则会出现非零的Chern数。
+	考虑这样一个二能级哈密顿量：$ \hat{H}(\mathbf{d})=d_x \hat{\sigma}_x+d_y \hat{\sigma}_y+d_z \hat{\sigma}_z=\mathbf{d} \cdot \hat{\sigma} $，$ \vec{d} $是挖去球心的球上一点。
+	很容易看出，上述哈密顿量的平方正比于单位矩阵，其本征值也很容易得到。利用球坐标将$ \vec{d} $参数化，很容易得到本征矢：
+	\begin{equation}
+		\left|+_{\mathbf{d}}\right\rangle=e^{i \alpha(\theta, \varphi)}\left(\begin{array}{c}
+			e^{-i \varphi / 2} \cos \theta / 2 \\
+			e^{i \varphi / 2} \sin \theta / 2
+			\end{array}\right)
+	\end{equation}   
+	对应负本征值的本征矢相应地为：$ \left|-_{\mathbf{d}}\right\rangle=e^{i \beta(\mathbf{d})}\left|+_{-\mathbf{d}}\right\rangle $\\
+	选择$ \alpha,\beta $就是选择不同的规范，然而，无论如何选取规范，都不能在全局上性质良好。  
 	\bibliographystyle{IEEEtran}
 	\bibliography{Ref}
 \end{document}
