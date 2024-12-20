@@ -96,6 +96,7 @@
 		\oint_{\partial \mathscr{F}} \mathbf{A} \cdot d \mathbf{R}=\int_{\mathscr{F}}\left(\partial_x A_y-\partial_y A_x\right) d x d y=\int_{\mathscr{F}} B d x d y
 	\end{equation}
 	如果规范的选取是连续的，对于闭合曲面上述积分为零，但若规范存在不连续的奇点，则会出现非零的Chern数。
+	\section{二能级体系为例}
 	考虑这样一个二能级哈密顿量：$ \hat{H}(\mathbf{d})=d_x \hat{\sigma}_x+d_y \hat{\sigma}_y+d_z \hat{\sigma}_z=\mathbf{d} \cdot \hat{\sigma} $，$ \vec{d} $是挖去球心的球上一点。
 	很容易看出，上述哈密顿量的平方正比于单位矩阵，其本征值也很容易得到。利用球坐标将$ \vec{d} $参数化，很容易得到本征矢：
 	\begin{equation}
@@ -106,6 +107,307 @@
 	\end{equation}   
 	对应负本征值的本征矢相应地为：$ \left|-_{\mathbf{d}}\right\rangle=e^{i \beta(\mathbf{d})}\left|+_{-\mathbf{d}}\right\rangle $\\
 	选择$ \alpha,\beta $就是选择不同的规范，然而，无论如何选取规范，都不能在全局上性质良好。  
+	Dirac模型：$ \hat{H}(\mathbf{d})=d_x \hat{\sigma}_x+d_y \hat{\sigma}_y+M \hat{\sigma}_z $
+	，$ E_\pm=\pm\sqrt{k^2+M^2} $  
+	\subsubsection{能带反转}
+	对于两能级体系，考虑$ \Gamma $点 $ m>0,m<0 $附近的能带变化，发现当能隙关闭时，高低能量态对应的轨道发生变换。
+	\subsubsection{算个陈数}
+	在前面利用Stokes定理，似乎陈数都是零，但这建立在被积函数光滑的条件下，当无法选取一个全局光滑的规范时，
+	上述论证不成立，此时就隐含着陈数不为零的可能。对于二能级系统，一个常用的规范变换是$ \alpha(R)=\phi $，
+	将参数空间分为两个规范的部分，最终的Berry曲率的积分转化为线积分时，由于规范的不光滑性，最终剩下一个$ \nabla\phi $的线积分，
+	给出1的陈数。
+	\subsubsection{从含时薛定谔方程导出Berry相}
+	考虑这样一个含参数的哈密顿量$ H\left(x^a ; \lambda^i\right) $，$ x^a $是动力学自由度，哈密顿量通过依赖于参数$ \lambda $而依赖于时间。考虑这个哈密顿量的基态,假设为非简并的$ |\psi> $，它也依赖于参数$ \lambda $,$ |\psi(\lambda(t))> $。由于绝热定理，当参数改变的足够缓慢且哈密顿的能级之间未发生交错时，$ H(0) $对应第n个本征值的态将也演化到$ H(\lambda(t)) $的第n个本征值对应的本征态。\\
+
+	可以看到，当改变参数使得非简并的态之间发生了能级简并时，给出Berry曲率的奇异性。上式只包含了两两之间的能量差，所以一个两能级物理体系就能体现很多问题的核心。这里通过考虑一两能级体系来看看在能量简并点到底发生了什么：对于$ E(\mathbf{R})_+\geq E(\mathbf{R})_- $，在能级简并点$ E(\mathbf{R^*})_+=E(\mathbf{R^*})_- $，将哈密顿量在简并点附近展开为：$H(\mathbf{R}) \approx H\left(\mathbf{R}^*\right)+\left(\mathbf{R}-\mathbf{R}^*\right) \cdot \boldsymbol{\nabla} H\left(\mathbf{R}^*\right)$，这给出Berry曲率：
+\begin{equation}
+	\mathbf{V}_{+}((\mathbf{R}))=\operatorname{lm} \frac{\left\langle+(\mathbf{R})\left|\left(\nabla H\left(\mathbf{R}^*\right)\right)\right|-(\mathbf{R})\right\rangle \times\left\langle-(\mathbf{R})\left|\left(\nabla H\left(\mathbf{R}^*\right)\right)\right|+(\mathbf{R})\right\rangle}{\left(E_{+}(\mathbf{R})-E_{-}(\mathbf{R})\right)^2} .
+\end{equation} 
+由于叉乘的反对易性，很容易看出两个能级的Berry曲率刚好为相反数。具体而言，考虑这样一个二能级哈密顿量：$ \hat{H}(\mathbf{d})=d_x \hat{\sigma}_x+d_y \hat{\sigma}_y+d_z \hat{\sigma}_z=\mathbf{d} \cdot \hat{\sigma} $，$\mathbf{d}$。\\
+
+很容易看出，上述哈密顿量的平方正比于单位矩阵，其本征值也很容易得到。利用球坐标将$ \vec{d} $参数化，很容易得到本征矢：
+\begin{equation}
+	\left|+_{\mathbf{d}}\right\rangle=e^{i \alpha(\theta, \varphi)}\left(\begin{array}{c}
+		e^{-i \varphi / 2} \cos \theta / 2 \\
+		e^{i \varphi / 2} \sin \theta / 2
+		\end{array}\right)
+\end{equation}   
+对应负本征值的本征矢相应地为：$ \left|-_{\mathbf{d}}\right\rangle=e^{i \beta(\mathbf{d})}\left|+_{-\mathbf{d}}\right\rangle $\\
+不难算出，Berry曲率在此问题中为：$ \mathbf{V}_{+}(\mathbf{R})=\frac{\mathbf{R}}{2 R^3} $，具有位于原点处磁单极子的形式，而哈密顿量在参数空间的原点处简并，因此每有一个参数空间的简并点都给出该处的一个磁单极子形式的Berry曲率。 
+\chapter{SSH模型}
+SSH模型描述了一维双原子链中电子的跃迁，忽略电子间的相互作用与自旋，假设平移不变性，单粒子哈密顿量为：
+\begin{equation}
+	\hat{H}=v \sum_{m=1}^N(|m, B\rangle\langle m, A|+\text { h.c. })+w \sum_{m=1}^{N-1}(|m+1, A\rangle\langle m, B|+\text { h.c. })
+\end{equation}
+为方便起见，总是选取$ v,w $为实数，复数的$ v,w $总是可以对态做规范变换回到实数。\\
+
+每个元胞中含有两个子格点，因为忽略了其他的内禀自由度，如自旋、轨道，此Hilbert空间可以等价于N个二能级系统，因此哈密顿量可以改写为：
+\begin{equation}
+	\hat{H}=v \sum_{m=1}^N|m\rangle\langle m| \otimes \hat{\sigma}_x+w \sum_{m=1}^{N-1}\left(|m+1\rangle\langle m| \otimes \frac{\hat{\sigma}_x+i \hat{\sigma}_y}{2}+\text { h.c. }\right)
+\end{equation}
+考虑周期边界条件，体哈密顿量可以写为：
+\begin{equation}
+	\hat{H}_{\text {bulk }}=\sum_{m=1}^N(v|m, B\rangle\langle m, A|+w|(\bmod N)+1, A\rangle\langle m, B|)+\text { h.c.. }
+\end{equation} 
+希望求解哈密顿量的本征值问题，本征方程为：
+\begin{equation}
+	\hat{H}_{\mathrm{bulk}}\left|\Psi_n(k)\right\rangle=E_n(k)\left|\Psi_n(k)\right\rangle
+\end{equation}
+其中$ n \in\{1, \ldots, 2 N\} $\footnote{这里是单粒子哈密顿量，不同格点之间的Hilbert空间为直积而非张量积关系，因此总维度是2N而不是$ 2^N $ }。为求解这个方程，对解做拟设，首先写出离散形式中对应的平面波：
+\begin{equation}
+	|k\rangle=\frac{1}{\sqrt{N}} \sum_{m=1}^N e^{i m k}|m\rangle, \quad \text { for } k \in\left\{\delta_k, 2 \delta_k, \ldots, N \delta_k\right\} \quad \text { with } \delta_k=\frac{2 \pi}{N}
+\end{equation} 
+k的取值为第一Brillouin区。由于哈密顿量具有$ internal\otimes sites $的形式，拟设解的形式为格点自由度与内禀自由度的张量积：$ \left|\Psi_n(k)\right\rangle=|k\rangle \otimes\left|u_n(k)\right\rangle ; \quad\left|u_n(k)\right\rangle=a_n(k)|A\rangle+b_n(k)|B\rangle $。其中$ \left|u_n(k)\right\rangle \in \mathscr{H}_{\text {internal }} $是动量空间中的体哈密顿量的本征态，定义为：
+\begin{equation}
+	\begin{aligned}
+		\hat{H}(k) & =\left\langle k\left|\hat{H}_{\text {bulk }}\right| k\right\rangle=\sum_{\alpha, \beta \in\{A, B\}}\left\langle k, \alpha\left|H_{\text {bulk }}\right| k, \beta\right\rangle \cdot|\alpha\rangle\langle\beta| ; \\
+		\hat{H}(k)\left|u_n(k)\right\rangle & =E_n(k)\left|u_n(k)\right\rangle .
+		\end{aligned}
+\end{equation} 
+这个形式的解看起来和Bloch定理很像，但在此是离散情况，并且还有内禀自由度
+\section{Peierls相变}
+一维完美的格点是不稳定的，总会发生二聚化形成绝缘体，这称为Peierls相变。对于晶格间距为a的一维格点，紧束缚模型给出能带：
+\begin{equation}
+	\varepsilon_1(k)=-t\left[e^{i k a}+e^{-i k a}\right]=-2 t \cos (k a)
+\end{equation}
+假设发生二聚化，跃迁系数可以近似为：$ t^{\prime}(a \pm 2 b) \approx t \pm 2 b * \frac{\mathrm{d} t}{\mathrm{~d} a}=t \pm b * q_0=t \mp \Delta $，此时紧束缚模型给出两条能带：
+\begin{equation}
+	\begin{aligned}
+		& H_2= {\left[\begin{array}{cc}
+		0 & (t+\Delta)+(t-\Delta) \cdot e^{-i 2 k a} \\
+		(t+\Delta)+(t-\Delta) \cdot e^{i 2 k a}
+		\end{array}\right] } \\
+		&= {\left[\begin{array}{cc}
+		0 & 2 e^{-i k a}[t \cos (k a)+i \Delta \sin (k a)] \\
+		2 e^{i k a}[t \cos (k a)-i \Delta \sin (k a)]
+		\end{array}\right] } \\
+		& \Rightarrow \quad \varepsilon_2(k)= \pm 2 \sqrt{t^2 \cos ^2(k a)+\Delta^2 \sin ^2(k a)}
+		\end{aligned}
+\end{equation} 
+此时能带具有能隙。再考虑二聚化使得院子之间的能量发生的变换，一维声子的色散关系为：
+\begin{equation}
+	\omega=\sqrt{\frac{4 K}{M}}\left|\sin \frac{q a}{2}\right|
+\end{equation}
+二聚化相当于一个波矢为$ \frac{\pi}{a} $，振幅为b的格波，对应的能量为：
+\begin{equation}
+	\begin{aligned}
+		\Delta E_{\ell} & =N \cdot \frac{1}{2} M \omega_{q=\frac{\pi}{a}}^2 b^2 \\
+		& =N \cdot 2 K b^2
+		\end{aligned}
+\end{equation} 
+由于能隙打开使得电子的能量改变量为：
+\begin{equation}
+	\begin{aligned}
+		\Delta E_e & =\frac{N a}{2 \pi} \int_{-\pi / 2 a}^{\pi / 2 a}\left[\varepsilon_2(k)-\varepsilon_1(k)\right] \mathrm{d} k \\
+		& =-2 t \frac{N a}{2 \pi} \int_{-\pi / 2 a}^{\pi / 2 a}\left[\sqrt{\cos ^2(k a)+\frac{\Delta^2}{t^2} \sin ^2(k a)}-\cos (k a)\right] \mathrm{d} k \\
+		& =-2 t \frac{N}{\pi} \int_0^{\pi / 2}\left[\sqrt{\cos ^2(\theta)+\frac{\Delta^2}{t^2} \sin ^2(\theta)}-\cos (\theta)\right] \mathrm{d} \theta \\
+		& =-2 t \frac{N}{\pi} \int_0^{\pi / 2}\left[\sqrt{\cos ^2(\theta)+\frac{\Delta^2}{t^2} \sin ^2(\theta)}-\cos (\theta)\right] \mathrm{d} \theta \\
+		& =-2 t \frac{N}{\pi}\left[\int_0^{\pi / 2} \sqrt{1-(1-\lambda) \sin ^2(\theta)} \mathrm{d} \theta-1\right]
+		\end{aligned}
+\end{equation}
+此积分杜对于$ \lambda $很小时可以近似给出：$ E(1-\lambda)=1+\lambda\left[a_1-\frac{1}{4} \ln (\lambda)\right]+\mathcal{O}\left(\lambda^2\right), \quad a_1=0.463 $，总能量的改变为声子与电子两部分的和：  
+\begin{equation}
+	\begin{aligned}
+		&\begin{aligned}
+		\Delta E_t & =\Delta E_{\ell}+\Delta E_e \\
+		& =N \lambda[\alpha+\beta \ln \lambda]
+		\end{aligned}\\
+		&\alpha=\frac{2 K t^2}{q_0^2}-\frac{a_1 t}{\pi}, \quad \beta=\frac{t}{\pi}
+		\end{aligned}
+\end{equation}
+稳定的构型对应的b由能量极值给出：$ \frac{\mathrm{d} \Delta E_t}{\mathrm{~d} \lambda}=0 $，则有：
+\begin{equation}
+	\begin{aligned}
+		& \ln \lambda=-\frac{\alpha+\beta}{\beta} \\
+		& \Delta E_t=N \beta \exp \left(-\frac{\alpha+\beta}{\beta}\right)
+		\end{aligned}
+\end{equation} 
+可以看出只要$ \beta>0 $，对任意的$ \alpha,\beta $二聚化总是使得能量下降。  
+\section{边界态}
+当考虑热力学极限时，本征态出现两种行为：局域与非局域，分别称为边界态与体态。当取完全二聚化的极限时，两种态的区别是非常明显的，我们将这个极限为做过渡。\\
+
+v=1, w=0的情况称为平凡的，此时本征态局域在二聚体内：
+\begin{equation}
+	v=1, w=0: \quad \hat{H}(|m, A\rangle \pm|m, B\rangle)= \pm(|m, A\rangle \pm|m, B\rangle)
+\end{equation}
+v=0, w=1的情况称为拓扑的，此时本征态局域在两个二聚体间：
+\begin{equation}
+	v=0, w=1: \quad \hat{H}(|m, B\rangle \pm|m+1, A\rangle)= \pm(|m, B\rangle \pm|m+1, A\rangle)
+\end{equation}
+很显然，此时哈密顿量不涉及边界上的两个态，因此出现两个零能态：
+\begin{equation}
+	v=0, w=1: \quad \hat{H}|1, A\rangle=\hat{H}|N, B\rangle=0
+\end{equation}
+\section{手征对称性}
+一个哈密顿量是手征对称的，如果它满足下列条件：
+\begin{equation}
+	\hat{\Gamma} \hat{H} \hat{\Gamma}^{\dagger}=-\hat{H}
+\end{equation}
+其中$ \hat{\Gamma}  $是一个满足一些要求的幺正算符：
+\begin{enumerate}
+	\item 幺正且厄米：$ \hat{\Gamma}^{\dagger} \hat{\Gamma}=\hat{\Gamma}^2=1 $ 
+	\item $ \hat{\Gamma} $在子格点上局域，即在不同元胞间没有矩阵元。
+	\item Robus。固体物理中的哈密顿量总是依赖于一系列参数$ \xi \in \Xi $，它们对应的哈密顿量总是具有如下对称性：
+\end{enumerate} 
+\begin{equation}
+	\forall \underline{\xi} \in \Xi: \quad \hat{\Gamma} \hat{H}(\underline{\xi}) \hat{\Gamma}=-\hat{H}
+\end{equation}
+可以定义两个正交投影算符：
+\begin{equation}
+	\hat{P}_A=\frac{1}{2}(\mathbb{I}+\hat{\Gamma}) ; \quad \hat{P}_B=\frac{1}{2}(\mathbb{I}-\hat{\Gamma}),
+\end{equation}
+哈密顿量可写为：
+\begin{equation}
+	\hat{P_A} \hat{H} \hat{P}_A=P_B \hat{H} \hat{P}_B=0 ; \quad \hat{H}=\hat{P_A} \hat{H} \hat{P}_B+\hat{P_B} \hat{H} \hat{P}_A
+\end{equation}
+具有手征对称性的哈密顿量，每个能量为E的本征态，总有一个手征伴：
+\begin{equation}
+	\hat{H}\left|\psi_n\right\rangle=E_n\left|\psi_n\right\rangle \quad \Longrightarrow \hat{H} \hat{\Gamma}\left|\psi_n\right\rangle=-\hat{\Gamma} \hat{H}\left|\psi_n\right\rangle=-\hat{\Gamma} E_n\left|\psi_n\right\rangle=-E_n \hat{\Gamma}\left|\psi_n\right\rangle
+\end{equation}
+这暗示了零能态的特殊。对于非零能态，由于不同本征值的本征态之间的正交性，显然有：
+\begin{equation}
+	\text { If } E_n \neq 0: \quad 0=\left\langle\psi_n|\hat{\Gamma}| \psi_n\right\rangle=\left\langle\psi_n\left|P_A\right| \psi_n\right\rangle-\left\langle\psi_n\left|P_B\right| \psi_n\right\rangle \text {. }
+\end{equation}
+零能态总是能选取为只在一个子格点上波函数非零，因为
+\begin{equation}
+	\text { If } \hat{H}\left|\psi_n\right\rangle=0: \quad \hat{H} \hat{P}_{A / B}\left|\psi_n\right\rangle=\hat{H}\left(\left|\psi_n\right\rangle \pm \hat{\Gamma}\left|\psi_n\right\rangle\right)=0
+\end{equation}
+SSH模型的手征对称性是显然的，选取：
+\begin{equation}
+	\hat{P}_A=\sum_{m=1}^N|m, A\rangle\left\langle n, A\left|; \quad \quad \hat{P}_B=\sum_{m=1}^N\right| m, B\right\rangle\langle n, B| .
+\end{equation}
+那么有$ \hat{\Sigma}_z=\hat{P}_A-\hat{P}_B $，可以验证
+\begin{equation}
+	\hat{P}_A \hat{H} \hat{P}_A=\hat{P}_B \hat{H} \hat{P}_B=0 ; \quad \Longrightarrow \quad \hat{\Sigma}_z \hat{H} \hat{\Sigma}_z=-\hat{H}
+\end{equation} 
+SSH模型的winding number可以定义为下述积分：
+\begin{equation}
+	\nu=\frac{1}{2 \pi} \int\left(\tilde{\mathbf{d}}(k) \times \frac{d}{d k} \tilde{\mathbf{d}}(k)\right)_z d k
+\end{equation}
+\section{SSH模型的边界态数}
+定义哈密顿量的绝热演化，要求满足下列条件：
+\begin{enumerate}
+	\item 参数连续变化
+	\item 重要的对称性保持不变
+	\item 体能隙不关闭
+\end{enumerate}
+两个哈密顿量是绝热等价的若它们可以通过一个绝热演化关联起来。SSH模型中有两个拓扑不变量：winding number，$ N_a-N_b $，两者通过体边对应关系起来。
+\section{边界态的严格求解}
+考虑如下哈密顿量：
+\begin{equation}
+	\hat{H}=\sum_{m=1}^N\left(v_m|m, B\rangle\langle m, A|+\text { h.c. }\right)+\sum_{m=1}^{N-1}\left(w_m|m+1, A\rangle\langle m, B|+\text { h.c. }\right)
+\end{equation} 
+假设它存在零能态，现在求解零能波函数，本征方程为：
+\begin{equation}
+	\hat{H} \sum_{m=1}^N\left(a_m|m, A\rangle+b_m|m, B\rangle\right)=0 .
+\end{equation}
+这给出体和边的两组共2N个方程：
+\begin{equation}
+	m=1, \ldots, N-1: \quad v_m a_m+w_m a_{m+1}=0 ; \quad w_m b_m+v_{m+1} b_{m+1}=0
+\end{equation}
+\begin{equation}
+	v_N a_N=0 ; \quad v_1 b_1=0
+\end{equation}
+第一组方程可以简单求解为：
+\begin{equation}
+	\begin{array}{ll}
+		m=2, \ldots, N: & a_m=\prod_{j=1}^{m-1} \frac{-v_j}{w_j} a_1 ; \\
+		m=1, \ldots, N-1: & b_m=\frac{-v_N}{w_m} \prod_{j=m+1}^{N-1} \frac{-v_j}{w_j} b_N .
+		\end{array}
+\end{equation}
+而第二组方程给出：
+\begin{equation}
+	b_1=a_N=0
+\end{equation}
+这给出零能本征方程给出的本征波函数为零，因此不存在严格的零能态。但在热力学极限下，取$ N\to\infty $，且平均上来看$ v>w $ 有近似的零能态解，此时定义体平均：
+\begin{equation}
+	\overline{\log |v|}=\frac{1}{N-1} \sum_{m=1}^{N-1} \log \left|v_m\right| ; \quad \overline{\log |w|}=\frac{1}{N-1} \sum_{m=1}^{N-1} \log \left|w_m\right|
+\end{equation} 
+此时递推关系给出：
+\begin{equation}
+	\left|a_N\right|=\left|a_1\right| e^{-(N-1) / \xi} ; \quad\left|b_1\right|=\left|b_N\right| e^{-(N-1) / \xi} \frac{\left|v_N\right|}{\left|v_1\right|}
+\end{equation}
+\chapter{极化与Berry相}
+此章以Rice-Mele模型为例子，从现代极化理论的角度讲解能带绝缘体的极化。Rice-Mele模型是SSH模型再加上交错的onsite能量，哈密顿量为
+\begin{equation}
+	\begin{aligned}
+		\hat{H}=v \sum_{m=1}^N(|m, B\rangle\langle m, A|+\text { h.c. })+ & w \sum_{m=1}^{N-1}(|m+1, A\rangle\langle m, B|+\text { h.c. }) \\
+		& +u \sum_{m=1}^N(|m, A\rangle\langle m, A|-| m, B\rangle\langle m, B|),
+		\end{aligned}
+\end{equation}
+\section{Rice-Mele模型总的Wannier态}
+能带哈密顿量的体本征态总是非定域的，在连续情况这可以从Bloch定理理解，Bloch态
+\begin{equation}
+	|\Psi(k)\rangle=|k\rangle \otimes|u(k)\rangle
+\end{equation}
+张成了占据子空间
+\begin{equation}
+	\hat{P}=\sum_{k \in B Z}|\Psi(k)\rangle\langle\Psi(k)|
+\end{equation}
+它具有规范自由度
+\begin{equation}
+	|u(k)\rangle \rightarrow e^{i \alpha(k)}|u(k)\rangle ; \quad \quad|\Psi(k)\rangle \rightarrow e^{i \alpha(k)}|\Psi(k)\rangle
+\end{equation}
+定义Wannier函数$ |w(j)\rangle \in \mathscr{H}_{\text {external }} \otimes \mathscr{H}_{\text {internal }} $，它具有正交性，也张成了占据子空间，晶格的平移对称性，且局域。可以证明Wannier态是Bloch态的傅立叶变换：
+\begin{equation}
+	|\Psi(k)\rangle=e^{-i \alpha(k)} \frac{1}{\sqrt{N}} \sum_{j=1}^N e^{i k j}|w(j)\rangle
+\end{equation} 
+等式右方是平移算符本征值为$ e^{-i k} $的本征态，和$ k^{\prime} \neq k $的Bloch态正交，同时又处于占据本征子空间，因此只能是$ |\Psi(k)\rangle $。Wannier函数由逆变换给出
+\begin{equation}
+	|w(j)\rangle=\frac{1}{\sqrt{N}} \sum_{k=\delta_k}^{N \delta_k} e^{-i j k} e^{i \alpha(k)}|\Psi(k)\rangle
+\end{equation}  
+Wannier函数的中心就是Berry相，
+\begin{equation}
+	\begin{aligned}
+		& \hat{x}|w(0)\rangle=\frac{1}{2 \pi} \int_{-\pi}^\pi d k \sum_m m e^{i k m}|m\rangle \otimes|u(k)\rangle \\
+		&=-\frac{i}{2 \pi}\left[\sum_m e^{i k m}|m\rangle \otimes|u(k)\rangle\right]_{-\pi}^\pi+\frac{i}{2 \pi} \int_{-\pi}^\pi d k \sum_m e^{i k m}|m\rangle \otimes\left|\partial_k u(k)\right\rangle \\
+		&=\frac{i}{2 \pi} \int_{-\pi}^\pi d k \sum_m e^{i k m}|m\rangle \otimes\left|\partial_k u(k)\right\rangle .
+		\end{aligned}
+\end{equation}
+Wannier心在模去倒格子的意义上规范不变。
+\begin{equation}
+	\langle w(j)|\hat{x}| w(j)\rangle=\frac{i}{2 \pi} \int_{-\pi}^\pi d k\left\langle u(k) \mid \partial_k u(k)\right\rangle+j
+\end{equation}
+其中对m的求和给出$ \delta_{k,k^\prime} $，极化率按照定义可以看出由第一项即Berry相给出，因此极化率的定义总是模去一个整数 
+\section{反演对称与极化}
+对于格点系统的宇称算符可以定义为
+\begin{equation}
+	\begin{aligned}
+		\hat{\Pi}|k\rangle \otimes|u\rangle & =|-k\rangle \otimes \hat{\pi}|u\rangle \\
+		\hat{\pi}^2 & =\hat{\pi}^{\dagger} \hat{\pi}=\mathbb{I}_{\text {internal }}
+		\end{aligned}
+\end{equation}
+它对体动量空间的哈密顿量作用为
+\begin{equation}
+	\left\langle k\left|\hat{\Pi}\hat{H}_{\text {bulk }}\hat{\Pi}^{-1}\right| k\right\rangle =\hat{\pi}\left\langle-k\left| \hat{H}_{\text {bulk }} \right|-k\right\rangle\hat{\pi}^\dagger=\hat{\pi} \hat{H}(-k) \hat{\pi}^{\dagger}
+\end{equation}
+具有宇称对称性即要求存在一个在内禀Hilbert空间内的一个幺正、厄米算符，满足
+\begin{equation}
+	\hat{\pi} \hat{H}(-k) \hat{\pi}=\hat{H}(k)
+\end{equation}
+只考虑一条能带的情况
+\begin{equation}
+	\begin{aligned}
+		\hat{H}(k)|u(k)\rangle=E(k)|u(k)\rangle \quad \Longrightarrow \hat{H}(-k) \hat{\pi}|u(k)\rangle=E(k) \hat{\pi}|u(k)\rangle ; \\
+		\Longrightarrow|u(-k)\rangle=e^{i \phi(k)} \hat{\pi}|u(k)\rangle .
+		\end{aligned}
+\end{equation}
+对于$k=0,k=\pi $的空间反演对称点，我们说它具有确定的宇称
+\begin{equation}
+	\begin{aligned}
+		|u(0)\rangle & =p_0|u(0)\rangle ; & |u(\pi)\rangle & =p_\pi|u(\pi)\rangle, \\
+		\text { with } \quad p_0 & = \pm 1 ; & p_\pi & = \pm 1 .
+		\end{aligned}
+\end{equation}
+\chapter{Adiabatic charge pumping, Rice-Mele Model}
+考虑SSH模型中增加onsite能量，并且哈密顿量中的参数依赖于同一参数t
+\begin{equation}
+	\begin{array}{r}
+		\hat{H}(t)=v(t) \sum_{m=1}^N(|m, B\rangle\langle m, A|+\text { h.c. })+w(t) \sum_{m=1}^{N-1}(|m+1, A\rangle\langle m, B|+\text { h.c. }) \\
+		+u(t) \sum_{m=1}^N(|m, A\rangle\langle m, A|-| m, B\rangle\langle m, B|)
+		\end{array}
+\end{equation}
+
 	\bibliographystyle{IEEEtran}
 	\bibliography{Ref}
 \end{document}
