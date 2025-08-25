@@ -124,6 +124,26 @@
 \mainmatter
 
 \chapter{杂项}
+\section{开放系统的不同表示}
+对于开放系统，最一般的线性\footnote{当初始系统与外界有纠缠，此时开放系统的演化无法用线性算符表示}演化是CPTP映射，它将一个密度矩阵映射为密度矩阵，并且如果还有环境，也保持结果仍为密度矩阵，因此是完全正定的、保持trace的\footnote{当存在测量且知道结果，则是CP映射}。对于CPTP映射，有如下等价的描述方法：
+\begin{itemize}
+  \item Kraus算符表示：线性映射是CPTP的，当且仅当可以写为如下形式\\
+  \begin{equation}
+    \mathcal{E}(\rho)=\sum_{\alpha=1}^D K_\alpha \rho K_\alpha^{\dagger}
+  \end{equation}
+  其中Kraus算子$ \left\{K_\alpha: \alpha=1, \ldots, D\right\}, K_\alpha \in L(\mathcal{X}, \mathcal{Y}) $满足完备性关系$ \sum_{\alpha=0}^D K_\alpha^{\dagger} K_\alpha=1_{\mathcal{X}} . $。最大的算子个数为$ \mathcal{L}(\mathcal{X}, \mathcal{Y}) $的维数。线性映射的Kraus算子表示并不唯一，存在幺正变换的自由度，可以选取一个特定的规范，是的Kraus算子满足正交关系$ \operatorname{Tr}\left[K_\alpha^{\dagger} K_\beta\right]=\lambda_\alpha \delta_{\alpha \beta} $，这称为规范Kraus表示。    
+  \item 系统-环境描述：开放系统的演化总可以看做一个更大的孤立系统的演化，再去掉环境部分，这由Stinespring扩张定理保证：一个的d维Hilbter空间的线性映射是CPTP的，当且仅当可以找到一个$ d^2 $维ancilla空间的纯态，以及一个作用在系统及ancilla上的幺正算符，使得映射为： 
+  \begin{equation}
+    \mathcal{E}(\rho_S)=\operatorname{tr}_A\left\{U_{S A}\left(\rho_S \otimes|\phi\rangle\left\langle\left.\phi\right|_A\right) U_{S A}^{\dagger}\right\}\right.
+  \end{equation} 
+  \item Choi-Jamiołkowski表示：对于$ \mathcal{X} $上的算符，可以在$ \mathcal{X}\otimes\mathcal{X} $上取一个最大纠缠态$ \left|\Phi^{+}\right\rangle=\sum_{i=1}^{d_1}|i\rangle_1 \otimes|i\rangle_{1^{\prime}} $，定义量子信道的Choi表示为
+  \begin{equation}
+    J(\mathcal{E})=\left(\mathcal{E} \otimes \mathcal{I}_{1^{\prime}}\right)\left(\left|\Phi^{+}\right\rangle\left\langle\left.\Phi^{+}\right|_{1,1^{\prime}}\right)\right.
+  \end{equation}   
+  此时量子信道的作用可以表示为$ \mathcal{E}_J(\rho)=\operatorname{Tr}_1\left[\left(I_2 \otimes \rho^T\right) J\right] $ 
+\end{itemize}
+\section{开放系统的Lindblad方程}
+\href{https://zhuanlan.zhihu.com/p/374537100}{开放系统的Lindblad方程}
 \section{Ginzburg–Landau Theory}
 \section{用Chiral symmetry求解一堆pauli矩阵的能谱}
 对于并非所有项都是gamma matrix的哈密顿量，无法直接平方求解，此时若存在chiral symmetry，可以简化求解，举一例子：
@@ -484,6 +504,35 @@ cite interacting electron and Quantum magnetism
 \section{含时薛定谔方程的一些结论}
 见Berry Phases in Electronic Structure Theory Electric Polarization sec 2.3
 \subsection{凝聚态:Coleman 17.72}
+\section{自旋轨道耦合}
+\subsection{从狄拉克方程}
+自旋轨道耦合来自狄拉克方程的非相对论极限，狄拉克哈密顿量为：
+\begin{equation}
+  \begin{gathered}
+    \hat{H}=c \hat{\boldsymbol{\alpha}} \cdot \hat{\mathbf{p}}+\hat{\boldsymbol{\beta}} m c^2, \\
+    \hat{\boldsymbol{\alpha}}=\hat{\tau}_x \otimes \hat{\boldsymbol{\sigma}}, \hat{\boldsymbol{\beta}}=\hat{\tau}_z \otimes \hat{1},
+    \end{gathered}
+\end{equation}
+与电磁场耦合以后，展开最低阶的项为：
+\begin{equation}
+  \hat{H}_{\mathrm{e}}=\underbrace{\frac{1}{2 m}(\hat{\mathbf{p}}+e \mathbf{A})^2-e \Phi}_{\text {Schrodinger equation }}+\underbrace{\frac{e \hbar}{2 m} \hat{\boldsymbol{\sigma}} \cdot \mathbf{B}}_{\text {Zeeman term }}-\underbrace{i \frac{e \hbar}{4 m^2 c^2} \hat{\mathbf{E}} \cdot \hat{\mathbf{p}}}_{\text {Darwin term }}+\underbrace{\frac{e \hbar}{4 m^2 c^2} \hat{\boldsymbol{\sigma}} \cdot(\mathbf{E} \times \hat{\mathbf{p}})}_{\text {Spin-orbit coupling }}
+\end{equation}
+当存在中心势时，电场可写为$ \mathbf{E}=-\partial_r \Phi \hat{\mathbf{r}} / r $，此时soc项可改写为$ \hat{H}_{\mathrm{soc}}=\xi \hat{\mathbf{L}} \cdot \hat{\boldsymbol{\sigma}} $
+\subsection{在固体物理中的具体形式}
+在固体物理中上述中心势来自于离子势场，一般的处理是在gamma点做展开，当晶格存在inversion时，soc的贡献总是k的偶次项，因此经常忽略。当inversion破缺时，soc可以有k的奇次项，如下述的Dresselhaus项：
+\begin{equation}
+  \hat{H}_{\mathrm{D}_3}=\beta_3\left(\left(k_x^2-k_y^2\right) k_z \hat{J}_z+\left(k_z^2-k_x^2\right) k_y \hat{J}_y+\left(k_y^2-k_z^2\right) k_x \hat{J}_x\right)
+\end{equation}
+当对z方向施加应力，有关系$ \left\langle k_z^2\right\rangle>\left\langle k_x^2\right\rangle=\left\langle k_y^2\right\rangle $，因此有近似
+\begin{equation}
+  \hat{H}_{\mathrm{D}_1}^{001} \approx-\beta_1\left(k_x \hat{J}_x-k_y \hat{J}_y\right),
+\end{equation}
+这个关于k的一阶项哈密顿量嘟很多低能物理有贡献。\\
+当inversion破缺时，离子势可取$ \nabla \Phi \approx-E \hat{z} $，即相当于有z方向的电场，此时得到Rashba项：
+\begin{equation}
+  \hat{H}_{\mathrm{R}}=\frac{\alpha_{\mathrm{R}}}{\hbar} \hat{\boldsymbol{\sigma}} \cdot(\hat{\mathbf{p}} \times \mathbf{z})
+\end{equation} 
+ 
 \section{ten-fold way}
 \subsection{Topological invariants}
 \subsubsection*{chern number}
@@ -560,8 +609,7 @@ $ \left|n^\alpha\right\rangle $是N个与动量无关的独立正交矢量，可
   W_{2 n+1}=\exp \left\{\pi i \nu_{2 n+1}[q]\right\}= \pm 1
 \end{equation}  
 即对于由chiral 对称性的哈密顿量，$ W_{2 n+1} $的取值为$ \mathbb{Z}_2 $  
-\subsection{From Clifford algebra extension -- minimal Dirac Hamiltonian}
-\href{https://zhuanlan.zhihu.com/p/33923555}{拓扑周期表的导出}
+   
 \subsection{From K theory -- homotopy view}
 同样考虑一个Dirac Hamiltonian：
 \begin{equation}
@@ -590,14 +638,592 @@ $ \left|n^\alpha\right\rangle $是N个与动量无关的独立正交矢量，可
   \pi\left(\overline{\mathrm{T}}^d, R_q\right)=\pi_0\left(R_{q-d}\right) \oplus \underset{s=0}{\stackrel{d-1}{\oplus}}\binom{d}{s} \pi_0\left(R_{q-s}\right)
 \end{equation}
 符号bar表示考虑对称性限制  
-\subsection{Surface Classification }
+\subsection{From minimal Dirac Hamiltonian}
+本节中对于gamma matrix的选取都为满足对称性非平庸表示的最小维度。
+\subsubsection{Bulk Clifford algebra extension}
+\href{https://zhuanlan.zhihu.com/p/33923555}{拓扑周期表的导出}\\
+为什么总共考虑两个质量项？论证如下
+
+\begin{enumerate}
+  \item 拓扑体态要发生相变总能tune一个参数得到，记为$ m_0 $，记$ m_0 $取正负的拓扑不等价态为+，-。
+  \item 如果存在另外一个质量项$ m_1 $，那么可以选择一条参数路径$ (m_0,m_1) = (1,0)\to(1,1)\to(-1,1)\to(-1,1) $使得体能隙不关闭但是连接了两个“拓扑不等价态”，因此说明trivial。
+\end{enumerate}
+\subsubsection{Surface Classification }
 也可以通过对于表面gapless哈密顿量的稳定性来分析拓扑。首先，写下d-1维的gapless Dirac哈密顿量
 \begin{equation}
   H_{\text {surf }}(\mathrm{k})=\sum_{j=1}^{d-1} k_j \gamma_j, \quad\left\{\gamma_i, \gamma_j\right\}=2 \delta_{i j} \mathbb{1}
 \end{equation}
-如果能加入与上面所有gamma矩阵反对易、且不违背对称性的的质量项$ m \gamma_0 $，则不存在拓扑，若不存在这种项，那就存在拓扑。拓扑具体是$ \mathbb{Z} $还是$ \mathbb{Z}_2 $，需要考虑系统的copy，即考虑哈密顿量$ H_{\text {surf }} \otimes \mathbb{1}_N $，若对任意N，该哈密顿量总是不能被gap，则拓扑是$\mathbb{Z}  $，若只对N为奇数不能被gap，则是$ \mathbb{Z}_2 $。\\
+如果能加入与上面所有gamma矩阵反对易、且不违背对称性的的质量项$ m \gamma_0 $，则不存在拓扑，若不存在这种项，那就存在拓扑。拓扑具体是$ \mathbb{Z} $还是$ \mathbb{Z}_2 $，需要考虑系统的copy，即考虑哈密顿量$ H_{\text {surf }} \otimes \mathbb{1}_N $，若对任意N，该哈密顿量总是不能被gap，则拓扑是$\mathbb{Z}$，若只对N为奇数不能被gap，则是$ \mathbb{Z}_2 $。也可以对哈密顿量中的项一般地和Pauli矩阵张量积来扩张，只需要有一种扩张以后依然nontrivial说明不变量是$ \mathbb{Z} $。\\
 这两节的论述看似依赖于哈密顿量可以写为Dirac形式，但实际上只需要哈密顿量在占据态和非占据态之间是gap的就行，详情见Classification of topological quantum matter with symmetries， scetion Defect K-theory。
-\subsection{Bulk-boundary correspondence， index theorem}     
+\subsubsection{Including Crystal Symmetry}
+\subsubsection{Classify gapless state}
+
+\subsection{Bulk-boundary correspondence， index theorem} 
+\section{从体哈密顿量到边界哈密顿量}
+考察一个bulk的dirac Hamiltonian（$ k\cot p $哈密顿量）
+\begin{equation}
+  \mathcal{H}_{\boldsymbol{k}}=M \gamma_z+\boldsymbol{k} \cdot \boldsymbol{\sigma} \gamma_x
+\end{equation}
+这里$ \gamma $代表orbital自由度，$ \sigma $是自旋自由度。 在一方向取开边界条件，让M在这个方向上是空间依赖的，即$ M(0)=0,M(\lambda)=sign(\lambda) $，令$ \hat{\boldsymbol{n}} $为表面的法向量，可以将动量分解为$ \boldsymbol{k}=\boldsymbol{k}_{\|}+k_{\perp} \hat{\boldsymbol{n}} $，$ \boldsymbol{k}_{\|} $依然是好量子数，$ k_{\perp} \rightarrow-i \partial_\lambda $，哈密顿量变为
+\begin{equation}
+  \mathcal{H}_{\boldsymbol{k}_{\|}, \lambda}=M(\lambda) \gamma_z+\boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x-i \hat{\boldsymbol{n}} \cdot \boldsymbol{\sigma} \gamma_x \partial_\lambda
+\end{equation}
+我们希望找到在边界上指数衰减的本征态解，做拟设
+\begin{equation*}
+  \Psi\left(\boldsymbol{k}_{\|}, \lambda\right)=e^{-\int_0^\lambda d \lambda^{\prime} M\left(\lambda^{\prime}\right)} \boldsymbol{\psi}\left(\boldsymbol{k}_{\|}\right)
+\end{equation*}
+代入拟设，方程变为
+\begin{equation}
+  \mathcal{H}_{\boldsymbol{k}_{\|}, \lambda} \Psi\left(\boldsymbol{k}_{\|, \lambda}\right)=[\boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x+M(\lambda) \gamma_z\left(1-\hat{\boldsymbol{n}} \cdot \boldsymbol{\sigma} \gamma_y\right)] \Psi\left(\boldsymbol{k}_{\|, \lambda}\right),
+\end{equation}
+解为
+\begin{equation*}
+  \left\{\begin{array}{l}
+    \left(1-\hat{\boldsymbol{n}} \cdot \boldsymbol{\sigma} \gamma_y\right) \psi\left(\boldsymbol{k}_{\|}\right)=0 \\
+    \boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x \psi\left(\boldsymbol{k}_{\|}\right)=E_{\boldsymbol{k}_{\|}} \psi\left(\boldsymbol{k}_{\|}\right) .
+    \end{array}\right.
+\end{equation*}
+第一个条件说明$ \psi\left(\boldsymbol{k}_{\|}\right) $是投影算符$ P_{+} \equiv \frac{1}{2}\left(1+\hat{\boldsymbol{n}} \cdot \boldsymbol{\sigma} \gamma_y\right) $的本征态，并且这个投影算符满足$ \left[P_{+}, \boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x\right]=0 $，因此对于本征能量的计算可以等价于对算符$ \boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x $局限在投影算符子空间的本征问题，可以通过一个基变换$ V=\exp \left[i(\pi / 4) \hat{\boldsymbol{n}} \cdot \boldsymbol{\sigma} \gamma_x\right] $使得表面哈密顿量有更简单的形式\footnote{从这里可以看出2N条能带的体哈密顿量给出N条边界上的能带，这可以从最简单的1d泡利矩阵那里看出，边界态的解有两个，但归一化只能选取一个}
+\begin{equation}
+  \begin{aligned}
+    V P_{+} V^{\dagger} & =\frac{1}{2}\left(1-\gamma_z\right) \\
+    V\left(\boldsymbol{k}_{\|} \cdot \boldsymbol{\sigma} \gamma_x\right) V^{\dagger} & =(\boldsymbol{k} \times \hat{\boldsymbol{n}}) \cdot \boldsymbol{\sigma},
+    \end{aligned}
+\end{equation}      
+\section{有关Particle-Hole对称性的一些细节}
+BdG哈密顿量可以用下面的Nambu Spinor写出
+\begin{equation}
+  \hat{\Upsilon}=\left(\begin{array}{c}
+    \hat{\psi}_1 \\
+    \vdots \\
+    \hat{\psi}_N \\
+    \hat{\psi}_1^{\dagger} \\
+    \vdots \\
+    \hat{\psi}_N^{\dagger}
+    \end{array}\right), \quad \hat{\Upsilon}^{\dagger}=\left(\hat{\psi}_1^{\dagger}, \cdots, \hat{\psi}_N^{\dagger}, \hat{\psi}_1, \cdots, \hat{\psi}_N\right),
+\end{equation}
+它们满足正则反对易关系$ \left\{\hat{\Upsilon}_A, \hat{\Upsilon}_B^{\dagger}\right\}=\delta_{A B}(A, B=1, \ldots, 2 N) $，并且并非独立，通过下列关系关联
+\begin{equation}
+  \left(\tau_1 \hat{\Upsilon}\right)^T=\hat{\Upsilon}^{\dagger}, \quad\left(\hat{\Upsilon}^{\dagger} \tau_1\right)^T=\hat{\Upsilon}
+\end{equation}
+这个关系会限制单粒子哈密顿量的形式，对于一个BdG哈密顿量，它可以写为
+\begin{equation*}
+  \hat{H}=\frac{1}{2} \hat{\Upsilon}_A^{\dagger} H^{A B} \hat{\Upsilon}_B=\frac{1}{2} \hat{\Upsilon}^{\dagger} H \hat{\Upsilon} .
+\end{equation*} 
+\begin{align*}
+  \hat{H} &= \frac{1}{2} \hat{\Upsilon}^{\dagger} H \hat{\Upsilon} = \frac{1}{2}(\Psi_1^{\dagger}H_{11}\Psi_1+\Psi_1^{\dagger}H_{12}\Psi_2+\Psi_2^{\dagger}H_{21}\Psi_1+\cdots) \\
+  &= (1 / 2)\left(\tau_1 \hat{\Upsilon}\right)^T H\left(\hat{\Upsilon}^{\dagger} \tau_1\right)^T = \frac{1}{2}(\Psi_1(\tau_1^T H \tau_1^T)_{11}\Psi_1^{\dagger}+\Psi_1(\tau_1^T H \tau_1^T)_{12}\Psi_2^{\dagger}+\Psi_2(\tau_1^T H \tau_1^T)_{21}\Psi_1^{\dagger}+\cdots)
+\end{align*}
+因为费米子的反对易关系，上述等式成立对H施加了限制$ \tau_1 H^T \tau_1=-H $，可以看到，这里的particle-hole只反转了产生湮灭算符，并没有反转诸如自旋的指标。\footnote{实际上PH对称性限制k空间矩阵为$ H_k=\left(\begin{array}{cc}
+  A_k & B_k \\
+  -B_{-k}^* & -A_{-k}^*
+  \end{array}\right) $，厄米性限制$ A_k=A_k^{\dagger}, B_k=-B_{-k}^T $，其中$ B_k=-B_{-k}^T $常说是来自于费米统计，这可以从它的平均场定义得到，但在定义PH对称性对于一次量子化哈密顿量的限制的时候，因为考虑的二次量子化哈密顿量是费米子，因此PH变换后有个负号。   }\\
+当系统具有z轴的$ U(1) $自旋对称性时，诸如$ \psi^{\dagger}_{i,\uparrow}\psi_{j,\downarrow}, \psi^{\dagger}_{i,\uparrow}\psi^{\dagger}_{j,\uparrow}$项不存在，此时一个一般的ferimion bilinear哈密顿量可以写为
+\begin{equation}
+  \hat{H}=\hat{\Psi}_A^{\dagger} H^{A B} \hat{\Psi}_B
+\end{equation}
+基为
+\begin{equation*}
+  \hat{\Psi}^{\dagger}=\left(\begin{array}{cc}
+    \hat{\psi}_{I \uparrow}^{\dagger} & \hat{\psi}_{I \downarrow}
+    \end{array}\right), \quad \hat{\Psi}=\binom{\hat{\psi}_{I \uparrow}}{\hat{\psi}_{I \downarrow}^{\dagger}}
+\end{equation*}   
+此时的$ \hat{\Psi}^{\dagger},\hat{\psi} $不再有任何关系，因此H是一个没有限制的2N*2N矩阵。因此这时对于哈密顿量H的分类是class A\footnote{当讨论一个spinless的BdG哈密顿量时，paring项实际上破坏了自旋守恒，因此Spinless BdG哈密顿量实际属于Class D，这与Time reversal刚好相反，在time reversal中考虑spinless的体系相当于考虑自旋守恒体系，}。并且我们还可以做替换$ \hat{\psi}_{\downarrow}^{\dagger} \leftrightarrow \hat{\psi}_{\downarrow} $，回到一个粒子数守恒的哈密顿量，因此可以说这里的Sz自旋对称性提供了一个effective的charge U(1)对称性。\\
+考察此时的time reversal：
+\begin{equation}
+  \hat{\mathscr{T}} \hat{\Psi} \hat{\mathscr{T}}^{-1}=\binom{\hat{\psi}_{\downarrow}}{-\hat{\psi}_{\uparrow}^{\dagger}}=i \rho_2\left(\hat{\Psi}^{\dagger}\right)^T=: \hat{\Psi}^c
+\end{equation}
+如果我们做替换$ \hat{\psi}_{\uparrow}^{\dagger} \leftrightarrow \hat{\psi}_{\uparrow} $回到粒子数守恒的体系，此时这个“time reversal”的作用
+\begin{equation*}
+  \hat{\mathscr{T}} \binom{\hat{\psi}_{\downarrow}}{-\hat{\psi}_{\uparrow}} \hat{\mathscr{T}}^{-1}=\binom{\hat{\psi}^{\dagger}_{\downarrow}}{-\hat{\psi}_{\uparrow}^{\dagger}}
+\end{equation*}
+看起来是一个chiral symmetry的作用，因此具有Sz守恒以及Time reversal的BdG系统等价有一个Chiral symmetry，属于class AIII。
+
+\begin{tcolorbox}
+  对于Sz守恒的BdG体系，分类为class A。若再具有time reversal，那么它同构于一个具有chiral symmetry的粒子数守恒体系，分类为class AIII。
+\end{tcolorbox}
+现在考虑具有SU(2)自旋对称性的，一个自旋算符$ \hat{\mathscr{U}}_n^\phi $作用在spin doublet$\left(\hat{\psi}_{\uparrow}, \hat{\psi}_{\downarrow}\right)^T $ 上
+\begin{equation*}
+  \binom{\hat{\psi}_{\uparrow}}{\hat{\psi}_{\downarrow}} \rightarrow \hat{\mathscr{U}}_{\boldsymbol{n}}^\phi\binom{\hat{\psi}_{\uparrow}}{\hat{\psi}_{\downarrow}} \hat{\mathscr{U}}_{\boldsymbol{n}}^{-\phi}=e^{-i \frac{\phi}{2} \boldsymbol{\sigma} \cdot \boldsymbol{n}}\binom{\hat{\psi}_{\uparrow}}{\hat{\psi}_{\downarrow}}
+\end{equation*}
+如果选取的是x或者y轴
+\begin{equation*}
+  \begin{aligned}
+    & \hat{\mathscr{U}}_{S_x}^\phi \hat{\Psi} \hat{\mathscr{U}}_{S_x}^{-\phi}=\cos (\phi / 2) \hat{\Psi}-i \sin (\phi / 2) \hat{\Psi}^c, \\
+    & \hat{\mathscr{U}}_{S_y}^\phi \hat{\Psi} \hat{\mathscr{U}}_{S_y}^{-\phi}=\cos (\phi / 2) \hat{\Psi}-\sin (\phi / 2) \hat{\Psi}^c,
+    \end{aligned}
+\end{equation*}
+可以看到这些rotation将$ \hat{\Psi} $连续地变化到$ \hat{\Psi}^c $，如果我们将这个系统解释为费米子守恒的系统，那么这些$\pi$rotation可以等效为一个charge-conjugation$ \hat{\mathscr{C}} \hat{Q}_{\mathscr{C}}-1=-\hat{Q} $，并且平方为负一，这些 $\pi$rotation对于单粒子哈密顿量的限制为\footnote{\begin{equation*}
+  \hat{H}=\hat{\Psi}^{\dagger} H \hat{\Psi}\to\hat{\Psi}^T(-i\rho_2)H(i\rho_2)\hat{\Psi}^*=-\hat{\Psi}^{\dagger} \rho_2H^T\rho_2 \hat{\Psi}
+\end{equation*} }
+\begin{equation*}
+  \rho_2 H^T \rho_2=-H
+\end{equation*}
+这些哈密顿量属于class C。而且实际上对于fermion bilinear哈密顿量，$\pi$rotation可以直接得到完整的$ SU(2) $对称性。
+\begin{tcolorbox}
+  对于SU(2)守恒的BdG体系，同构于一个具有$ \hat{\mathscr{C}}^2=-1 $的粒子数守恒系统，属于class C，此时的$\pi$rotation给出了对BdG哈密顿量的限制$ \rho_2 H^T \rho_2=-H $  。若再具有time reversal，那么哈密顿量限制$ \rho_2 H^T \rho_2=-H, \quad H^*=H $ 为，分类为class AIII。
+\end{tcolorbox}
+自旋与$ \hat{\mathscr{C}}^2 ,\hat{\mathscr{T}}^2$的各种奇妙作用，可参考Majorana Fermions and Topology in Superconductors Table II 
+\section{关于拓扑超导的一些细节}
+\subsection{Inversion odd拓扑超导可以直接从normal state得到}
+\subsection{p+ip超导在disk geometry上的边界态}
+哈密顿量中的p+ip项对应$ -\left(\partial_x+i \partial_y\right) $，极坐标下为$ \hat{P}-e^{i \theta}\left(\frac{\partial}{\partial r}+\frac{i}{r} \frac{\partial}{\partial \theta}\right) $，这个算符会改变角动量，作用在极坐标laplace算符的本征函数，Bessel函数上的作用为
+\begin{equation*}
+  \hat{P}^{\dagger} e^{i l \theta} J_l(k r)=k e^{i(l-1) \theta} J_{l-1}(k r)
+\end{equation*}
+而laplace算符的作用为
+\begin{equation*}
+  -\nabla^2 J_l(k r) e^{i l \theta}=k^{\underline{2}} J_l(k r) e^{i l \theta}
+\end{equation*}
+因此BdG哈密顿的本征方程的解可以拟设为
+\begin{equation*}
+  \psi=\left[\begin{array}{l}
+    a J_{l+1}(k r) e^{i(l+1) \theta} \\
+    b J_l(k r) e^{i l \theta}
+    \end{array}\right]
+\end{equation*}
+本征方程给出
+\begin{equation*}
+  \left[\begin{array}{ll}
+    \epsilon(k) & \left(k / k_f\right) \Delta \\
+    \left(k / k_f\right) \Delta & -\epsilon(k)
+    \end{array}\right]\left[\begin{array}{l}
+    a \\
+    b
+    \end{array}\right]=E\left[\begin{array}{l}
+    a \\
+    b
+    \end{array}\right]
+\end{equation*}
+这种求解略显麻烦，详细可在\href{https://journals.aps.org/prb/pdf/10.1103/PhysRevB.69.184511}{Edge modes, edge currents, and gauge invariance in p x+ip y superfluids and superconductors}中找到，此处用一种更简单的方法求解，首先考虑费米动量很小，忽略二次动量项
+\begin{equation}
+  \begin{aligned}
+    H_{\text {edge }} & =\int d^2 \mathbf{r}\left\{-\mu(r) \psi^{\dagger} \psi\right. \\
+    & \left.+\left[\frac{\Delta}{2} e^{i \phi} e^{i \theta} \psi\left(\partial_r+\frac{i \partial_\theta}{r}\right) \psi+H . c .\right]\right\}
+    \end{aligned}
+\end{equation}
+算符$ \hat{P} $改变角动量完全是因为因子$ e^{i\theta} $，这使得方程求解略显复杂，但这个因子可以通过对于波函数的规范变换消掉：$ \psi=e^{-i \theta / 2} \psi^{\prime} $，注意在这个规范变化下波函数原本的周期边界条件变为反周期边界条件。在此规范下，哈密顿量为
+\begin{equation}
+  \begin{aligned}
+    H_{\text {edge }} & =\frac{1}{2} \int d^2 \mathbf{r} \Psi^{\prime \dagger}(\mathbf{r}) \mathcal{H}(\mathbf{r}) \Psi^{\prime}(\mathbf{r}) \\
+    \mathcal{H}(\mathbf{r}) & =\left(\begin{array}{cc}
+    -\mu(r) & \Delta e^{-i \phi}\left(-\partial_r+\frac{i \partial_\theta}{r}\right) \\
+    \Delta e^{i \phi}\left(\partial_r+\frac{i \partial_\theta}{r}\right) & \mu(r)
+    \end{array}\right)
+    \end{aligned}
+\end{equation}
+对于本征函数做拟设
+\begin{equation*}
+  \chi_n(\mathbf{r})=e^{i n \theta}\binom{e^{-i \phi / 2}[f(r)+i g(r)]}{e^{i \phi / 2}[f(r)-i g(r)]}
+\end{equation*}
+其中为保证反周期边界条件，n的取值为半整数。最终得到能谱$ E_{\text {out/in }}=\frac{\pm n \Delta}{R_{\text {out/in }}} $，in、out具体为方程的哪个解仍然由波函数的normalization决定。\\
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[scale=0.25]{Figures/disk_geometry.png}
+  \caption{Disk geometry and spectrum}
+\end{figure}
+当disk内有一个flux quantum$ \Phi=\frac{h c}{2 e} $时，配对函数的相位变为空间依赖的$ \Delta \rightarrow \Delta e^{-r \theta} $，此时边界条件变为周期边界条件，哈密顿量仍然相同，因此可以解出MZM。
+\subsection{拓扑超导的实际实现}
+Kitaev chain的p波超导要求spinless，而且是$ Z_2 $的，由于Nielsen-Ninomiya theorem定理，费米子总是有偶数个Dirac node，因此无法直接实现，p+ip的2d超导也因为相似的原因会出现两个MZM耦合为trivial的Dirac fermion，在考虑到p波超导十分稀少，上述拓扑超导并不实际。后来由于TI的出现，可以利用边界上的Dirac fermion绕过Nielsen-Ninomiya theorem定理，得到一个拓扑超导。   
+\subsubsection{Fu-Kane proposal----从Dirac费米子加近邻s波超导得到拓扑超导}
+考虑一个2DTI的边界态，
+\begin{equation*}
+  H_{2 \mathrm{DTI}}=\int d x \psi^{\dagger}\left(-i v \partial_x \sigma^z-\mu\right) \psi
+\end{equation*}
+通过近邻效应施加s波超导
+\begin{equation*}
+  \begin{aligned}
+    H & =H_{2 \mathrm{DTI}}+H_{\Delta} \\
+    H_{\Delta} & =\int d x \Delta\left(\psi_{\uparrow} \psi_{\downarrow}+H . c .\right)
+    \end{aligned}
+\end{equation*}
+如果加上一个破坏T的Zeeman场，哈密顿量变为
+\begin{equation*}
+  \begin{aligned}
+    H^{\prime} & =H_{2 \mathrm{DTI}}+H_Z+H_{\Delta} \\
+    H_Z & =-h \int d x \psi^{\dagger} \sigma^x \psi
+    \end{aligned}
+\end{equation*}
+在normal state的本征态下，哈密顿量具有p wave配对
+\begin{equation}
+  \begin{aligned}
+    H^{\prime} & =\int \frac{d k}{2 \pi}\left\{\epsilon_{+}(k) \psi_{+}^{\dagger}(k) \psi_{+}(k)+\epsilon_{-}(k) \psi_{-}^{\dagger}(k) \psi_{-}(k)\right. \\
+    & +\frac{\Delta_p(k)}{2}\left[\psi_{+}(-k) \psi_{+}(k)+\psi_{-}(-k) \psi_{-}(k)+H_c .\right] \\
+    & \left.+\Delta_s(k)\left[\psi_{-}(-k) \psi_{+}(k)+H . c .\right]\right\}
+    \end{aligned}
+\end{equation}
+\begin{equation*}
+  \Delta_p(k)=\frac{v k \Delta}{\sqrt{(v k)^2+h^2}}, \quad \Delta_s(k)=\frac{h \Delta}{\sqrt{(v k)^2+h^2}} .
+\end{equation*}
+对于$ h \gg \Delta $且$ \mu $位于上能带底部，有效哈密顿量和Ketaev chain一样
+\begin{equation*}
+  \begin{aligned}
+    H_{\mathrm{eff}} & =\int d x\left[\psi_{+}^{\dagger}\left(-\frac{\partial_x^2}{2 m_{\mathrm{eff}}}-\mu_{\mathrm{eff}}\right) \psi_{+}\right. \\
+    & \left.+\frac{\Delta_{\mathrm{eff}}}{2}\left(-\psi_{+} i \partial_x \psi_{+}+\text {H.c. }\right)\right],
+    \end{aligned}
+\end{equation*}
+2D p+ip超导也可以通过类似的方式得到，利用3D TI的表面态与s波超导近邻。对于表面态
+\begin{equation}
+  H_{3 \mathrm{DTI}}=\int d^2 \mathbf{r} \psi^{\dagger}\left[-i v\left(\partial_x \sigma^y-\partial_y \sigma^x\right)-\mu\right] \psi
+\end{equation}
+加入s wave配对以后，在normal state的本征态下哈密顿量表现出p wave配对
+\begin{equation}
+  \begin{aligned}
+    H & =\sum_{s= \pm} \int \frac{d^2 \mathbf{k}}{(2 \pi)^2}\left\{\epsilon_s(\mathbf{k}) \psi_s^{\dagger}(\mathbf{k}) \psi_s(\mathbf{k})\right. \\
+    & \left.+\left[\frac{\Delta}{2}\left(\frac{k_x+i k_y}{|\mathbf{k}|}\right) \psi_s(\mathbf{k}) \psi_s(-\mathbf{k})+H . c .\right]\right\}
+    \end{aligned}
+\end{equation}
+这里的p wave配对可以这样理解：由于表面态的哈密顿量形式，动量空间的自旋和k是锁定的，加入s wave配对项即动量、自旋相反的电子配对，这在本征态的基下是能带内的配对，因此是p wave。
+\subsubsection{SOC+FM得到拓扑超导}
+对于一个一般的电子气，加入rashba SOC以后，哈密顿量为
+\begin{equation}
+  \begin{aligned}
+    H & =H_{2 \mathrm{DEG}}+H_Z+H_{\Delta} \\
+    H_{2 \mathrm{DEG}} & =\int d^2 \mathbf{r} \psi^{\dagger}\left[-\frac{\nabla^2}{2 m}-\mu-i \alpha\left(\partial_x \sigma^y-\partial_y \sigma^x\right)\right]\psi \\
+    H_Z & =-h \int d^2 \mathbf{r} \psi^{\dagger} \sigma^z \psi \\
+    H_{\Delta} & =\int d^2 \mathbf{r} \Delta\left(\psi_{\uparrow} \psi_{\downarrow}+H . c .\right),
+    \end{aligned}
+\end{equation}
+SOC会是的能带是spin winding的，但是二次的动能项使得总是会得到两个费米面，为此加入Zeeman项，当化学势在gap中时，只有一个费米面，相似的论证可以得到这等价于一个p+ip超导。\href{https://journals.aps.org/prb/pdf/10.1103/PhysRevB.81.125318}{secII.A给出了在normal state本征态中的论述}\href{https://arxiv.org/pdf/1601.02726}{sec4.2给出了一个直接的幺正变换到p波}
+\subsection{用代码写BdG时的注意事项}
+\begin{enumerate}
+  \item normal state在BdG中并不是直接所有hopping取负号，应该是取负号加复共轭
+  \item 配对项总是反对称的
+\end{enumerate}
+\section{$Z_2$ invariants in Time reversal system}
+\subsection{$Z_2$ as zeros of Pfaffian}
+现在考虑一个$T^2=-1$的系统，寻找他的拓扑不变量，由于涉及时间反演，我们考虑如下一个反对称矩阵
+\begin{equation}
+  \begin{aligned}
+    \left\langle u_i(\mathbf{k})\right| T\left|u_j(\mathbf{k})\right\rangle & =\left(u_i(\mathbf{k})\right)_m^{\star} U_{m n}\left(u_j(\mathbf{k})\right)_n^{\star}=-\left(u_j(\mathbf{k})\right)_n^{\star} U_{n m} K\left(u_i(\mathbf{k})\right)_m \\
+    & =-\left\langle u_j(\mathbf{k})\right| T\left|u_i(\mathbf{k})\right\rangle,
+    \end{aligned}
+\end{equation}   
+对于一个2*2矩阵，可以改写为
+\begin{equation*}
+  \left\langle u_i(\mathbf{k})\right| T\left|u_j(\mathbf{k})\right\rangle=\epsilon_{i j} P(\mathbf{k})
+\end{equation*}  
+其中$P(\mathbf{k})$是Pfaffian$P(\mathbf{k})=\operatorname{Pf}\left[\left\langle u_i(\mathbf{k})\right| T\left|u_j(\mathbf{k})\right\rangle\right] .$。
+在一个规范变换$\left|u_i^{\prime}(\mathbf{k})\right\rangle=R_{i j}(\mathbf{k})\left|u_j(\mathbf{k})\right\rangle$下，
+\begin{equation}
+  \begin{aligned}
+    P^{\prime}(\mathbf{k})=\operatorname{Pf}\left[\left\langle u_i^{\prime}(\mathbf{k})\right| T\left|u_j^{\prime}(\mathbf{k})\right\rangle\right] & =\operatorname{Pf}\left[R_{i m}^{\star}\left\langle u_m(\mathbf{k})\right| T\left|u_n(\mathbf{k})\right\rangle\left(R^{\star T}\right)_{n j}\right] \\
+    & =\operatorname{Det}\left[R^{\star}\right] P(\mathbf{k}),
+    \end{aligned}
+\end{equation}
+所以这个Pfaffian只有模是规范不变的。下面考虑BZ中由时间反演关联起来的的两组$\left|u_i(\mathbf{k})\right\rangle$张成的子空间，并考察Pfaffian在时间反演奇、偶下的性质。\\
+在TR-invariant点，$T\left|u_i(\mathbf{k})\right\rangle=M_{i j}\left|u_j(\mathbf{k})\right\rangle,$，M是反对称幺正矩阵，因此Pfaffian的模为1，这是TR偶空间的性质。\\
+对于TR奇空间，$T\left|u_i(\mathbf{k})\right\rangle$与$\left|u_i(\mathbf{k})\right\rangle$张成的空间正交，Pfaffian为0。接下来我们将证明只要在k处Pfaffian为零，-k处也为零，定义
+\begin{equation}
+  \left|u_j(-\mathbf{k})\right\rangle=B_{j i}(\mathbf{k}) T\left|u_i(\mathbf{k})\right\rangle,
+\end{equation}
+那么k与-k的Pfaffian的关系为
+\begin{equation}
+  P(-\mathbf{k})=P f\left[\left\langle u_i(-\mathbf{k})\right| T\left|u_j(-\mathbf{k})\right\rangle\right]=\operatorname{Det}\left[B^*(\mathbf{k})\right] P f\left[\left\langle u_{a_1}(\mathbf{k})\right| T\left|u_{a_2}(\mathbf{k})\right\rangle\right]^* .
+\end{equation}
+可以看出$|P(-\mathbf{k})|=0\to|P(\mathbf{k})|=0$，而且两者通过复共轭联系，因此零点对应的螺旋度$v=\frac{1}{2 \pi} \int_C d \mathbf{k} i \nabla \log (P(\mathbf{k}))$相反。\\
+我们需要说明Pfaffian的零点确实是$Z_2$拓扑不变量，argument如下：\\
+\begin{enumerate}
+  \item 考虑一半的BZ，单个零点由于携带螺旋度，无法在不破坏TR的情况下消失
+  \item k与-k的零点无法移动到TR不变点湮灭掉，因为该点Pfaffian为1
+  \item 偶数个零点总是可以相互间湮灭
+  \item 奇数个零点总可以湮灭为一个零点，通过关联一个零点的态与QSH态，可以得到边界态
+\end{enumerate}
+\subsection{TR极化}
+一维体系的电极化矢量可以定义为
+\begin{equation}
+  P=\frac{1}{2 \pi} \int d k_x A\left(k_x\right), \quad A\left(k_x\right)=i \sum_n\left\langle u_{n, k_x}\right| \nabla_{k_x}\left|u_{n, k_x}\right\rangle .
+\end{equation}
+它的定义式mod 1的。在一个绝热演化的过程中它的变化是规范不变的，1d的电极化绝热周期演化由陈数刻画，对于TR不变系统，陈数总是零。\\
+考虑有自旋的电子体系，在没有其他额外的简并情况下\footnote{这些简并总是可以在不破坏TR的情况下解除，因为有能隙存在总可以单独计算这一对Kramers}，时间反演将一对Kramers态关联起来，我们选取如下的一种表示
+\begin{equation*}
+  \left|u_{-k, a}^{\mathrm{I}}\right\rangle=e^{i \chi_{k, a}} T\left|u_{k, a}^{\mathrm{II}}\right\rangle
+\end{equation*}
+再次作用TR算符可以得到
+\begin{equation*}
+  \left|u_{-k, a}^{\mathrm{II}}\right\rangle=-e^{i \chi-k, a} T\left|u_{k, a}^{\mathrm{I}}\right\rangle .
+\end{equation*}
+对于Kramers对的一支计算电极化
+\begin{equation}
+  P^s=\frac{1}{2 \pi} \int_{-\pi}^\pi d k A^s(k), \quad A^s(k)=i \sum_a\left\langle u_{k, a}^s\right| \nabla_k\left|u_{k, a}^s\right\rangle
+\end{equation}
+上面对于Kramers态的选取以及定义的电极化看起来并非规范不变的，但可以证明最终可以写为规范不变的形式，关键是将$P^I$在BZ的积分拆分为两部分，并将其中一部分用TR与Kramers对的另一支联系起来，改写
+\begin{equation*}
+  P^{\mathrm{I}}=\frac{1}{2 \pi} \int_0^\pi\left(A^I(k)+A^I(-k)\right)
+\end{equation*}
+Kramers对的Berry connection关联为
+\begin{equation}
+  \begin{aligned}
+    A^{\mathrm{I}}(-k) & =-i \sum_a\left\langle u_{-k, a}^{\mathrm{I}}\right| \nabla_k\left|u_{-k a}^{\mathrm{I}}\right\rangle \\
+    & =-i \sum_a\left\langle T u_{k, a}^{\mathrm{II}}\right| \nabla_k\left|T u_{k a}^{\mathrm{II}}\right\rangle-i \sum_a i \nabla_k \chi_{k, \alpha}\left\langle T u_{k, a}^{\mathrm{II}} \mid T u_{k a}^{\mathrm{II}}\right\rangle \\
+    & =-i \sum_a\left\langle T u_{k, a}^{\mathrm{II}}\right| \nabla_k\left|T u_{k a}^{\mathrm{II}}\right\rangle+\sum_a \nabla_k \chi_{k, a}
+    \end{aligned}
+\end{equation}
+将TR算符显示写出，有
+\begin{equation*}
+  \begin{aligned}
+    \left\langle T u_{k, a}^{\mathrm{II}}\right| \nabla_k\left|T u_{k a}^{\mathrm{II}}\right\rangle & =\left(U_{m n} u_{k, a, n}^{\mathrm{II} *}\right)^* \nabla_k U_{m p} u_{k, a, p}^{\mathrm{II} *}=\left(U^{\dagger}\right)_{n m} U_{m p} u_{k, a, n}^{\mathrm{II}} \nabla_k u_{k, a, p}^{\mathrm{II} *} \\
+    & =u_{k, a, n}^{\mathrm{II}} \nabla_k u_{k, a, n}^{\mathrm{II} *}=-u_{k, a, n}^{\mathrm{II} *} \nabla_k u_{k, a, n}^{\mathrm{II}}=-\left\langle u_{k, a}^{\mathrm{II}}\right| \nabla_k\left|u_{k, a}^{\mathrm{II}}\right\rangle
+    \end{aligned}
+\end{equation*}
+最终
+\begin{equation*}
+  A^{\mathrm{I}}(-k)=i \sum_a\left\langle u_{k, a}^{\mathrm{II}}\right| \nabla_k\left|u_{k, a}^{\mathrm{II}}\right\rangle+\sum_a \nabla_k \chi_{k, a}=A^{\mathrm{II}}(k)+\sum_a \nabla_k \chi_{k, a} .
+\end{equation*}
+由此I的电极化可以写为
+\begin{equation*}
+  \begin{aligned}
+    P^{\mathrm{I}} & =\frac{1}{2 \pi}\left(\int_0^\pi\left(A^{\mathrm{I}}(k)+A^{\mathrm{II}}(k)\right)+\int_0^\pi \sum_a \nabla_k \chi_{k, a}\right) \\
+    & =\frac{1}{2 \pi}\left(\int_0^\pi A(k)+\sum_a\left(\chi_{\pi, a}-\chi_{0, a}\right)\right),
+    \end{aligned}
+\end{equation*}
+上面的最后一项可以通过引入sewing matrix简化，定义
+\begin{equation*}
+  B_{m n}(k)=\left\langle u_{-k, m}\right| T\left|u_{k, n}\right\rangle
+\end{equation*}
+B在每一点都是幺正\footnote{采用Einstein求和约定， \begin{equation*}
+  \begin{aligned}
+    B_{a \theta}^* B_{a \beta} & =\left[\left(u_{-k, \alpha}\right)_p\left(u_{-k, \alpha}\right)_m^*\right] U_{p r}^*\left(u_{k, \theta}\right)_r U_{m n}\left(u_{k, \beta}\right)_n^* \\
+    & =U_{p r}^*\left(u_{k, \theta}\right)_r U_{p n}\left(u_{k, \beta}\right)_n^*=\left(U^{\dagger}\right)_{r p} U_{p n}\left(u_{k, \theta}\right)_r\left(u_{k, \beta}\right)_n^* \\
+    & =\delta_{r n}\left(u_{k, \theta}\right)_r\left(u_{k, \beta}\right)_n^*=\delta_{\theta \beta} .
+    \end{aligned}
+\end{equation*}上面对于能带的求和是对所有能带，但由于没有额外简并，B是对于occ与unocc分块对角的，因此不影响结论}的，在之前选取的表示下，B可以写为
+\begin{equation}
+  B_{m n}^{\mathrm{II}, \mathrm{I}}(k)=\left\langle u_{-k, m}^{\mathrm{II}}\right| T\left|u_{k, n}^{\mathrm{I}}\right\rangle=-\delta_{m n} e^{-i \chi_{-k, n}}, \quad B_{m n}^{\mathrm{I}, \mathrm{II}}(k)=-B_{m n}^{\mathrm{II}, \mathrm{I}}(-k)
+\end{equation}
+因此B在不同Kramers对间是分块对角的，在一个Kramers对内是反对角的，当$k=0,\pi$时，是反对称的，定义TR电极化$P_T=P^{\mathrm{I}}-P^{\mathrm{II}}=2 P^{\mathrm{I}}-P$，有
+\begin{equation}
+  P_T=\frac{1}{2 \pi}\left(\int_0^\pi d k A(k)-\int_{-\pi}^0 d k A(k)+2 i \log \left[\frac{\operatorname{Pf}[B(\pi)]}{\operatorname{Pf}[B(0)]}\right]\right) .
+\end{equation}
+为了简化前面两项，以及证明上面的表达式不依赖于Kramers对的选取规范，我们做下述讨论:\\
+最一般地，TR会将k与-k的态关联起来
+\begin{equation*}
+  \left|u_{-k a}\right\rangle=\sum B_{a \beta}^*(k) T\left|u_{k, \beta}\right\rangle
+\end{equation*}
+non-abelian的berry potential的关联为
+\begin{equation}
+  \begin{aligned}
+    a_i^{a \beta}(-k)= & i\left\langle u_{-k, a}\right| \partial_{-k_i}\left|u_{-k, \beta}\right\rangle \\
+    = & -i \sum_{m \theta \gamma} B_{a \theta}(k) B_{\beta \gamma}^*(k)\left(u_{k \theta}\right)_n U_{m n}^* U_{m p} \partial_k\left(u_{k \gamma}\right)_p^* \\
+    & \left.+B_{a \theta}(k)\left(\partial_k B_{\beta \gamma}^*(k)\right)\left(u_{k \theta}\right)_n U_{n n}^* U_{m p}\left(u_{k \gamma}\right)_p^* \quad \text { (because } U_{m n}^* U_{m p}=\delta_{n p}\right) \\
+    = & -i \sum_{n, \gamma, \theta} B_{a \theta}(k) B_{\beta, \gamma}(k)^*\left(u_{k \theta}\right)_n \partial_k\left(u_{k \gamma}\right)_n^*-B_{a \theta}(k)\left(\partial_k B_{\beta, \gamma}(k)^*\right)\left(u_{k \theta}\right)_n\left(u_{k \gamma}\right)_n^* \\
+    = & B_{a \theta}(k)\left(-i\left(u_{k \theta}\right)_n \partial_k\left(u_{k \gamma}\right)_n^*\right) B_{\beta \gamma}^*-i B_{a \theta} \partial_k B_{\beta \theta}^*
+    \end{aligned}
+\end{equation}
+最终发现-k的berry potential是k处berry potential复共轭的规范变换
+\begin{equation*}
+  a_i(-k)=B(k) a_i^*(k) B^{\dagger}(k)-i B \partial_i B^{\dagger}
+\end{equation*}
+abelian berry potential就是non-abelian的trace，由于berry potential的对角项总是实数，因此可以直接关联abelian berry potential\footnote{从这个式子取旋度得到berry curvature，可以看出TR的存在总是使得$F(kx,ky)=-F(-kx,-ky)$，因此陈数为零}
+\begin{equation}
+  \begin{aligned}
+    A_i(-k) & =\operatorname{Tr}\left[a_i(-k)\right]=\operatorname{Tr}\left[B^{\dagger}(k) B(k) a_i^*(k)\right]-\operatorname{Tr}\left[i B \partial_i B^{\dagger}\right] \\
+    & =\operatorname{Tr}\left[a_i(k)\right]+i \operatorname{Tr}\left[B^{\dagger}(k) \partial_i B\right]=A_i(k)+i \operatorname{Tr}\left[B^{\dagger}(k) \partial_i B\right] .
+    \end{aligned}
+\end{equation}
+最终得到TR电极化的规范不变表达式
+\begin{equation}
+  \begin{aligned}
+    P_T & =\frac{1}{2 \pi}\left(\int_0^\pi d k A(k)-\int_{-\pi}^0 d k A(k)+2 i \log \left[\frac{\operatorname{Pf}[w(\pi)]}{\operatorname{Pf}[w(0)]}\right]\right) \\
+    & =\frac{1}{2 \pi i}\left(\int_0^\pi d k \operatorname{Tr}\left[B^{\dagger} \nabla_k B\right]-2 \log \left[\frac{\operatorname{Pf}[B(\pi)]}{\operatorname{Pf}[B(0)]}\right]\right)
+    \end{aligned}
+\end{equation}
+第一项还可以简化，将B写为一般的U(2N)矩阵$B=e^{i a} e^{i a_a x_a}$,其中$x_a$为SU(2N)的traceless generator，取导数有
+\begin{equation*}
+  \frac{\partial}{\partial a_b} e^{i a_a x_a}=\int_0^1 d s e^{i s a_a x_a}\left(i x_b\right) e^{i(1-s) a_c x_c}
+\end{equation*}
+因此可以简化为
+\begin{equation}
+  \operatorname{Tr}\left[U^{\dagger} \partial_k U\right]=i \partial_k a+\operatorname{Tr}\left[e^{-i a_m x_m} \partial_k e^{i i_a x_a}\right] .
+\end{equation}
+第二项为零
+\begin{equation*}
+  \begin{aligned}
+    \operatorname{Tr}\left[e^{-i a_m x_m} \partial_k e^{i a_a x_a}\right] & =\frac{\partial a_b}{\partial k} \operatorname{Tr}\left[e^{-i a_m x_m} \int_0^1 d s e^{i s a_a x_a}\left(i x_b\right) e^{i(1-s) a_c x_c}\right] \\
+    & =\frac{\partial a_b}{\partial k} \int_0^1 d s \operatorname{Tr}\left[e^{i(1-s) a_c x_c} e^{-i a_m x_m} e^{i s a_a x_a}\left(i x_b\right)\right]=\frac{\partial a_b}{\partial k} \int_0^1 d s \operatorname{Tr}\left[\left(i x_b\right)\right] .
+    \end{aligned}
+\end{equation*}
+利用$\operatorname{Det}[B]=\operatorname{Pf}[B]^2$，TR极化率为$P_T=\frac{1}{\pi i} \log \left[\frac{\sqrt{\operatorname{Det}[B(\pi)]}}{\operatorname{Pf}[B(\pi)]} \frac{\operatorname{Pf}[B(0)]}{\sqrt{\operatorname{Det}[B(0)]}}\right]$\\
+因此，1d系统的$Z_2$不变量完全由sewing matrix在$0,\pi$处的值决定。通过1d极化与陈数的联系，在这里类似地考虑TR极化与$Z_2$不变量的联系，考察一个周期、TR不变的参数（等效于y方向的动量）驱动的含时哈密顿量演化，
+由于wannier spectrum与边界态的色散拓扑等价\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.036601}{Model Characterization of Gapless Edge Modes of Topological Insulators Using Intermediate Brillouin-Zone Functions}，
+当在T=0与T=$\pi$的TR极化不同时，总会有gapless边界态，因此这时候的拓扑不变量为
+\begin{equation}
+  P_T(T / 2)-P_T(0)=P_T\left(k_y=\pi\right)-P_T\left(k_y=0\right)=\prod_{i=1}^4 \frac{\sqrt{\operatorname{Det}\left[B\left(\Lambda_i\right)\right]}}{\operatorname{Pf}\left[B\left(\Lambda_i\right)\right]},
+\end{equation}
+\subsection{Fu-Kane formula}
+当系统具有inversion时，可以简化拓扑不变量的计算。定义如下一个sewing Matrix
+\begin{equation}
+  \left|u_i(-\mathbf{k})\right\rangle=B_{i j}^*(\mathbf{k}) P\left|u_j(\mathbf{k})\right\rangle,
+\end{equation}
+在分量形式中$\left(u_{i,-\mathbf{k}}\right)_a=B_{i j}^*(\mathbf{k}) P_{a \beta}\left(u_{j, k}\right)_\beta$，有
+\begin{equation}
+  \left\langle u_{i,-\mathbf{k}}\right| P\left|u_{j, \mathbf{k}}\right\rangle=\left(u_{i,-\mathbf{k}}\right)_a^* P_{a \beta}\left(u_{i, \mathbf{k}}\right)_\beta=B_{i l}(\mathbf{k}) P_{a \theta}^*\left(u_{l, \mathbf{k}}\right)_\theta^* P_{a \beta}\left(u_{j, \mathbf{k}}\right)_\beta=B_{i j},
+\end{equation}
+在TRIM点，B取对角形式
+\begin{equation*}
+  B_{i j}\left(\frac{\mathbf{G}}{2}\right)=\left\langle u_{i, \mathbf{G} / 2}\right| P\left|u_{j, \mathbf{G} / 2}\right\rangle=\zeta_j\left(\frac{\mathbf{G}}{2}\right) \delta_{i j},
+\end{equation*}
+它的行列式就是反演本征值的乘积
+\begin{equation*}
+  \operatorname{Det}\left(B\left(\frac{\mathbf{G}}{2}\right)\right)=\prod_{j=1}^{N_1} \zeta_j\left(\frac{\mathbf{G}}{2}\right)
+\end{equation*}
+当同时存在TR与inversion时，定义另一个sewing matrix，
+\begin{equation*}
+  \left|u_m(\mathbf{k})\right\rangle=v_{m n}^*(\mathbf{k}) P T\left|u_n(\mathbf{k})\right\rangle
+\end{equation*}
+当对occ band中的一条能带做规范变换
+\begin{equation*}
+  \left|u_{n, \mathbf{k}}\right\rangle \rightarrow e^{i \theta_{\mathbf{k}}}\left|u_{n, \mathbf{k}}\right\rangle \text { for } n=1, \quad\left|u_{n, \mathbf{k}}\right\rangle \rightarrow\left|u_{n, \mathbf{k}}\right\rangle \quad \text { for } n \neq 1
+\end{equation*}
+v的Pfaffian的变换为
+\begin{equation*}
+  \operatorname{Pf} f v(\mathbf{k})] \rightarrow P f[v(\mathbf{k})] e^{-i \theta_{\mathbf{k}}}
+\end{equation*}
+由于chern number为零，总是可以选取一个规范变换cancel掉v的Pfaffian的相位，因此总可以使得v的Pfaffian取值为1。注意到sewing matrix之间的关系
+\begin{equation}
+  \begin{aligned}
+    w_{m n}\left(\frac{\mathbf{G}_i}{2}\right) & =\left\langle u_m\left(\frac{\mathbf{G}_i}{2}\right)\right| P P T\left|u_n\left(\frac{\mathbf{G}_i}{2}\right)\right\rangle \\
+    & =\zeta_m\left(\frac{\mathbf{G}_i}{2}\right)\left\langle u_m\left(\frac{\mathbf{G}_i}{2}\right)\right| P T\left|u_n\left(\frac{\mathbf{G}_i}{2}\right)\right\rangle=\zeta_m\left(\frac{\mathbf{G}_i}{2}\right) v_{m n}
+    \end{aligned}
+\end{equation}
+\begin{equation}
+  \operatorname{Pf}[w]^2=\operatorname{Det}[w]=\left(\prod_{n=1}^{2 N} \zeta_n\right) \operatorname{Det}[v]=\left(\prod_{n=1}^{2 N} \zeta_n\right)
+\end{equation}
+得到$Z_2$不变量的表达式就是所有TRIM点上Kramers对中的一个的inversion本征值的乘积。
+\subsection{$ Z_2 $ as obstruction }
+Chern数可以看做对在整个BZ上取连续规范的阻碍，$ Z_2 $不变量也可以类似地理解。加入我们能选取如下的TR连续的规范
+\begin{equation}
+  \begin{aligned}
+    \left|u_a^{\mathrm{I}}(-\mathbf{k},-t)\right\rangle & =T\left|u_a^{\mathrm{II}}(\mathbf{k}, t)\right\rangle, \\
+    \left|u_a^{\mathrm{II}}(-\mathbf{k},-t)\right\rangle & =-T\left|u_a^{\mathrm{I}}(\mathbf{k}, t)\right\rangle,
+    \end{aligned}
+\end{equation} 
+这意味着Kramers对总选取相同的规范，那么对应的sewing matrix为$ B=i \sigma_y $，对应的Pfaffian总为1，因此是trivial的，$ Z_2 $不变量可以理解为对于这种连续规范的阻碍。计算$ Z_2 $不变量的方法与chern数类似：在两块区域中分别选取连续规范，找到对应的规范变换。\\
+取BZ的一半为EBZ，$ \tau_{1 / 2} $表示这个区域，再将EBZ分为A、B两部分$ \tau_1,\tau_2 $，在A、B上分别选取连续规范，再交叠区域波函数的规范变换可以用一个$ U(2N) $矩阵表示
+\begin{equation}
+  \left|u_m(\mathbf{k}, t)\right\rangle_A=t_{m n}^{A B}\left|u_n(\mathbf{k}, t)\right\rangle_B
+\end{equation} 
+考察这个$ U(2N) $矩阵的$ U(1) $相位绕环路$ \partial \tau_1 $，也即区域A的边界的变化
+\begin{equation}
+  D=\frac{1}{2 \pi i} \oint_{\partial \tau_1} d \mathbf{l} \cdot \operatorname{Tr}\left[t^{A B \dagger} \nabla t^{A B}\right]
+\end{equation}  
+这个表达式是$ \operatorname{Det}\left[t^{A B}\right] $围绕$ \partial \tau_1 $的winding number，因此总是个整数。可以将这个表达式用A，B区域的abelian berry connection表示
+\begin{equation}
+  D=\frac{1}{2 \pi i} \oint_{\partial \tau_1} d \mathbf{l} \cdot \operatorname{Tr}\left[t^{A B \dagger} \nabla t^{A B}\right]=\frac{1}{2 \pi} \oint_{\partial \tau_1} d \mathbf{l}\left(\mathbf{A}^B(\mathbf{k})-\mathbf{A}^A(\mathbf{k})\right)
+\end{equation}
+对于A部分，由于连续，可以直接使用Stokes定理
+\begin{equation*}
+  \oint d \mathbf{l} \cdot \mathbf{A}^A=\int_{\tau_1} d \tau F^A
+\end{equation*}
+对于区域B，可以转换为其他边界的积分
+\begin{equation*}
+  \oint_{\partial \tau_1} d \mathbf{l} \cdot \mathbf{A}^B=-\oint_{\partial \tau_2} d \mathbf{l} \cdot \mathbf{A}^B+\oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B=-\int_{\tau_2} d \tau F^B+\oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B
+\end{equation*}
+因此得到
+\begin{equation*}
+  D=-\int_{\tau_{1 / 2}} d \tau F+\oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B
+\end{equation*}
+berry curvature是规范不变的，另一部分的积分在规范变换下总是mod 2的，为说明这一点，注意到可以将积分拆分为三部分，每部分内都的两项互为TR对
+\begin{equation}
+  \begin{aligned}
+    \oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B= & \int_0^{-\pi}\left(\mathbf{A}^B\left(\mathbf{k}, \frac{T}{2}\right)+\mathbf{A}^B\left(-\mathbf{k}, \frac{T}{2}\right)\right) \\
+    & +\int_{-\pi}^0\left(\mathbf{A}^B(\mathbf{k}, 0)+\mathbf{A}^B(-\mathbf{k}, 0)\right)+\int_0^{\frac{T}{2}}\left(\mathbf{A}^B\left(\pi, \frac{T}{2}\right)+\mathbf{A}^B\left(-\pi, \frac{T}{2}\right)\right)
+    \end{aligned}
+\end{equation}
+由于施加了TR连续规范条件，对于上面积分涉及的参数，总是有$ \mathbf{A}^B\left(-\mathbf{k}, \frac{T}{2}\right/0) =  \mathbf{A}^B\left(\mathbf{k}, \frac{T}{2}\right/0)$。在Kramers对的一支的规范变换$ u^{\mathrm{I}}(\mathbf{k}, t) \rightarrow e^{i \theta_k} u^{\mathrm{I}}(\mathbf{k}, t) $下，另一支的变换为$ u^{\mathrm{II}}(-\mathbf{k},-t) \rightarrow e^{i \theta_{\mathbf{k}}} u^{\mathrm{II}}(-\mathbf{k},-t) $，总的Berry connection是两者之和，环路积分在规范变化下为
+\begin{equation}
+  \oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B \rightarrow \oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \mathbf{A}^B+2 \oint_{\partial \tau_{1 / 2}} d \mathbf{l} \cdot \nabla \theta_{\mathbf{k}}
+\end{equation}
+\subsection{From Wilson loop}
+参见\href{https://wuli.iphy.ac.cn/cn/article/pdf/preview/32045.pdf}{$ Z_2 $拓扑不变量与拓扑绝缘体 }
+\subsection{等价性证明}
+参见\href{https://journals.aps.org/prb/pdf/10.1103/PhysRevB.74.195312}{Time reversal polarization and a Z2 adiabatic spin pump}的附录。
+\subsection{From dimensional reduction}
+TR insulator可以从4+1D的QHE通过dimensional reduction得到。\href{https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.83.1057}{section Topological field theory}
+\section{Wilson loop formalism}
+Wilson loop定义为occupied band non-abelian berry connection的回路积分：
+\begin{equation}
+  W_{\mathbf{k},\mathbf{x}}=\overline{\exp }i\left[\int_l \mathrm{~d} \mathbf{l} \cdot \mathbf{A}(\mathbf{k})\right]
+\end{equation}
+其中$ \mathbf{k} $是积分的起始点，$ \mathbf{x} $是积分的方向，注意积分是path order的。Wilson loop本身是规范协变的，作为一个幺正算符$ \mathcal{W}_{-x, k}=\mathcal{W}_{x, k}^{\dagger} $，wilson loop的本征值是mod$ 2\pi $下规范不变的。值得注意的是，wilson loop的本征值与被积分方向的k base point无关，但是本征态有关，因此在计算nested wilson loop时，投影到wannier band上，这些波函数是被积分方向的k base point dependent的，因此最后的nested wilson loop的本征值依赖于被积分方向的k base point。\\
+如果哈密顿量具有某些对称性，相应的wilson loop也会有对称性。\\
+考虑空间对称性，
+\begin{equation*}
+  g_{\mathbf{k}} h_{\mathbf{k}} g_{\mathbf{k}}^{\dagger}=h_{D_g \mathbf{k}}
+\end{equation*} 
+$ g_{\mathbf{k}} $可以写为$ g_{\mathbf{k}}=e^{-i\left(D_g \mathbf{k}\right) \cdot \delta} U_g $，其中$ U_g $是作用在orbital上的矩阵，当空间对称性是non-symmorphic$ \delta\neq\mathbf{0} $。由于哈密顿量的对称性
+\begin{equation*}
+  \begin{aligned}
+    h_{D_g \mathbf{k}} g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle & =g_{\mathbf{k}} h_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle \\
+    & =\epsilon_{n, \mathbf{k}} g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle
+    \end{aligned}
+\end{equation*}
+因此$ g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle $是$ h_{D_g \mathbf{k}} $的本征态，对应的本征值是$ \epsilon_{n, \mathbf{k}} $，因此可以在$ h_{\mathbf{k}} $的本征空间中展开(默认Einstein求和约定)
+\begin{equation}
+  \begin{aligned}
+    g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle & =\left|u_{D_g \mathbf{k}}^m\right\rangle\left\langle u_{D_g \mathbf{k}}^m\right| g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle \\
+    & =\left|u_{D_g \mathbf{k}}^m\right\rangle B_{g, \mathbf{k}}^{m n},
+    \end{aligned}
+\end{equation}
+这定义了sewing matrix$ B_{g, \mathbf{k}}^{m n}=\left\langle u_{D_g \mathbf{k}}^m\right| g_{\mathbf{k}}\left|u_{\mathbf{k}}^n\right\rangle $，$ g_{\mathbf{k}}|u_{\mathbf{k}}^n\rangle,u_{D_g \mathbf{k}}^m\rangle $都是$ h_{D_g \mathbf{k}} $的本征态，因此只有能量相同时sewing matrix非零。\\
+进一步有，$ \left|u_{\mathbf{k}}^n\right\rangle=g_{\mathbf{k}}^{\dagger}\left|u_{D_g \mathbf{k}}^m\right\rangle B_{g, \mathbf{k}}^{m n} $，因此Wilson line之间被Sewing matrix联系起来
+\begin{equation}
+  \begin{aligned}
+\mathcal{W}_{\mathbf{k}_{\mathbf{2}} \leftarrow \mathbf{k}_{\mathbf{1}}}^{m n} & =\left\langle u_{\mathbf{k}_{\mathbf{2}}}^m \mid u_{\mathbf{k}_1}^n\right\rangle \\
+& =B_{g, \mathbf{k}_{\mathbf{2}}}^{\dagger m r}\left\langle u_{D_g \mathbf{k}_{\mathbf{2}}}^r\right| g_{\mathbf{k}} g_{\mathbf{k}}^{\dagger}\left|u_{D_g \mathbf{k}_{\mathbf{1}}}^s\right\rangle B_{g, \mathbf{k}_{\mathbf{1}}}^{s n} \\
+& =B_{g, \mathbf{k}_{\mathbf{2}}}^{\dagger m r} \mathcal{W}_{D_g \mathbf{k}_{\mathbf{2}} \leftarrow D_g \mathbf{k}_{\mathbf{1}}}^{r s} B_{g, \mathbf{k}_{\mathbf{1}}}^{s n} .
+  \end{aligned}
+\end{equation}
+这给出了对称性对于Wilson loop的约束
+\begin{equation}
+  B_{g, \mathbf{k}} \mathcal{W}_{\mathcal{C}, \mathbf{k}} B_{g, \mathbf{k}}^{\dagger}=\mathcal{W}_{D_g \mathcal{C}, D_g \mathbf{k}}
+\end{equation}
+由于sewing matrix是一个幺正矩阵，因此wilson loop的本征值被联系起来。\\
+对于time reversal，同样的有幺正的sewing matrix
+\begin{equation}
+  V_{\mathbf{k}}^{m n}=\left\langle u_{-\mathbf{k}}^m\right| T\left|u_{\mathbf{k}}^n\right\rangle=\left\langle u_{-\mathbf{k}}^m\right| Q\left|u_{\mathbf{k}}^{n *}\right\rangle
+\end{equation}  
+当$ \hat{T}^2=-1 $，
+\begin{equation*}
+  \begin{aligned}
+    & T^2=Q K Q K=Q Q^*=-1 \\
+    & Q Q^{\dagger}=1 \rightarrow Q^* Q^T=1,
+    \end{aligned}
+\end{equation*}
+因此$ Q^* Q^T=-Q^* Q\to Q^T=-Q $，于是有
+\begin{equation}
+  \begin{aligned}
+    V_{\mathbf{k}}^{m n} & =\left\langle u_{-\mathbf{k}}^m\right| Q\left|u_{\mathbf{k}}^{n *}\right\rangle \\
+    V_{\mathbf{k}}^{\dagger m n} & =\left[V_{\mathbf{k}}^{T *}\right]^{m n}=\left\langle u_{\mathbf{k}}^{m *}\right| Q^{T *}\left|u_{-\mathbf{k}}^n\right\rangle \\
+    {\left[V_{\mathbf{k}}^T\right]^{m n} } & =\left\langle u_{\mathbf{k}}^m\right| Q^T\left|u_{-\mathbf{k}}^{n *}\right\rangle \\
+    {\left[V_{\mathbf{k}}^T\right]^{m n} } & =-\left\langle u_{\mathbf{k}}^m\right| Q\left|u_{-\mathbf{k}}^{n *}\right\rangle \\
+    V_{\mathbf{k}}^T & =-V_{-\mathbf{k}} .
+    \end{aligned}
+\end{equation}
+类似地，对于$ \hat{T}^2=1\to Q^T=Q\to V_{\mathbf{k}}^T  =V_{-\mathbf{k}} $。\\
+对于TRIM点，$ V_{\mathbf{k}_*}^T=-V_{\mathbf{k}_*} $，因此$ V_{\mathbf{k}_*} $不可能是一维，由于$ V_{\mathbf{k}}^{m n} \neq 0 \text { only if } \epsilon_m(-\mathbf{k})=\epsilon_n(\mathbf{k}) $，因此能级至少二重简并。Wilson loop对应的变化为
+\begin{equation}
+  \mathcal{W}_{-x,-\mathbf{k}}=\mathcal{W}_{x,-\mathbf{k}}^{\dagger}=V_{\mathbf{k}} \mathcal{W}_{x, \mathbf{k}}^* V_{\mathbf{k}}^{\dagger}
+\end{equation}
+kramers theorem对于wilson loop的本征值依旧可以用同样的argue成立。见D.96-D.103,但能谱的Kramers简并并不一定导致Wilson loop spectrum的简并，例如一个反幺正对称性$ (k_x,k_y)\to(-kx,ky) $，那么spcetrum有关系$ \{\nu(kx)\} = - \{\nu(-kx)\} $，由此可以得到没有简并但依然满足条件的$ \alpha $          
+\section{lattice中的规范变换与晶格对称性}
+本节只讨论U(1)对称性。显式出现在tight binding模型中的是gauge connection，它是非唯一的，只有gauge flux是规范不变量。一个保持flux configuration不变的晶格对称性，可以附加一个规范变换，对于U(1)，就是每个格点上乘上一个相位。
+\begin{equation*}
+  \mathrm{R}=\mathrm{G}_R R
+\end{equation*}
+现在考虑物理上的算符$ \mathrm{R} $对于TB模型$ H=\sum_{i j} t_{i j}|i\rangle\langle j| $ 的作用。哈密顿量在$ \mathrm{R} $下的变换为
+\begin{equation}
+  \begin{aligned}
+    H^{\prime} & =\sum_{i j} t_{i j}\left|\mathrm{G}_R R(i)\right\rangle\left\langle\mathrm{G}_R R(j)\right| \\
+    & =\sum_{i j} t_{i j} \mathrm{G}_R(R(i)) \mathrm{G}_R^*(R(j))|R(i)\rangle\langle R(j)| \\
+    & =\sum_{i j} \mathrm{G}_R(i) \mathrm{G}_R^*(j) t_{R^{-1}(i) R^{-1}(j)}|i\rangle\langle j|,
+    \end{aligned}
+\end{equation} 
+在$ \mathrm{R} $下的不变意味着
+\begin{equation}
+  t_{i j}=\mathrm{G}_R(i) \mathrm{G}_R^*(j) t_{R^{-1}(i) R^{-1}(j)}
+\end{equation}
+
 \chapter{数学物理方法}
 \chapter{单体问题}
 \section{Maximally Localized Wannier Function and Quantum Geometry}
@@ -608,12 +1234,13 @@ $ \left|n^\alpha\right\rangle $是N个与动量无关的独立正交矢量，可
 \section{复变函数}
 \chapter{凝聚态场论、量子多体}
 \section{库伦势的长程问题}
-库伦势的长程性使得很多吃力变得困难，但注意到纯电子气系统是不物理的，因为它不稳定，我们需要有一个电荷量相同的正电体系。可以证明，若取一个均匀不变的正电背景，电子相互作用的哈密顿量在动量空间中的形式，$ V_{q=0}=0 $，这使得电子相互作用变为短程，这种模型称为Jellium模型。有两种方式可以说明这一点：
+库伦势的长程性使得很多处理变得困难，但注意到纯电子气系统是不物理的，因为它不稳定，我们需要有一个电荷量相同的正电体系。可以证明，若取一个均匀不变的正电背景，电子相互作用的哈密顿量在动量空间中的形式，$ V_{q=0}=0 $，这使得电子相互作用变为短程，这种模型称为Jellium模型。有两种方式可以说明这一点：
 \subsection*{微扰论}
 考虑均匀正电背景以后，系统的相互作用哈密顿量写为：
 \begin{equation}
 	H_I=\frac{1}{2} \int_{\vec{x}, \vec{y}} V(x-y):\left(\hat{\rho}(x)-\rho_{+}\right)\left(\hat{\rho}(y)-\rho_{+}\right):=\frac{1}{2} \int_{\vec{x}, \vec{y}} V(x-y): \delta \rho(x) \delta \rho(y):
 \end{equation} 
+
 这相当于对化学势做出了偏移：
 \begin{equation}
 	\Delta \mu=\int V\left(x-x^{\prime}\right) \rho_{+}\left(x^{\prime}\right)=V_{\mathbf{q}=0} \rho_{+}
@@ -851,6 +1478,7 @@ $\epsilon\sim\epsilon+d\epsilon  $处的概率为：$ \frac{d\epsilon}{(\epsilon
 \end{equation}
 其中$  x=\hbar / 2 \pi k \tau$是Dingle温度。
 \section{量子可积与Bethe拟设}
+
 \section{RPA}
 \href{https://www.zhihu.com/question/384993011/answer/3030775169}{凝聚态物理】无规相近似（RPA）与Ring Approx. 有什么联系？ - 高耗氧动物的回答 - 知乎}
 \section{随机势场下的电子气}
@@ -992,13 +1620,13 @@ $\epsilon\sim\epsilon+d\epsilon  $处的概率为：$ \frac{d\epsilon}{(\epsilon
 完全玻恩近似是指考虑含有一个杂质散射的所有图，这在$ n_{imp} $阶是完全的，此时自能的图表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{FBASE.png}
+  \includegraphics*[scale=0.5]{FBASE.png}
   \caption{完全玻恩近似的自能图表示}
 \end{figure} 
 引入转移矩阵，图表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{tmatrix.png}
+  \includegraphics*[scale=0.5]{tmatrix.png}
   \caption{t矩阵的图表示}
 \end{figure}
 可以看出自能就是t矩阵的对角元。仍只考虑费米面附近的电子，此时t矩阵的实部近似为常数，可以被重定义化学式抵消，而虚部可以利用光学定理\footnote{由图表示可得到矩阵方程：$ t=u+u \mathcal{G}^0 t $。由于u是厄米矩阵，同时求厄米共轭再代回有：$ t=u+\left(t^{\dagger} \mathcal{G}^0 t-t^{\dagger}\left(\mathcal{G}^0\right)^{\dagger} u \mathcal{G}^0 t\right) $，只有中间
@@ -2106,6 +2734,7 @@ $ \chi $是系统内禀的属性，被称为响应函数，它由系统的激发
 通过利用theta函数的性质，可以立刻得出频域上的推迟格林函数与前式的关系：
 \begin{equation}
   \chi(z)=\int \frac{d \omega^{\prime}}{\pi} \frac{1}{\omega^{\prime}-z} \chi^{\prime \prime}\left(\omega^{\prime}\right)
+  \label{chirelation}
 \end{equation}
 比对\eqref{rgfesp}，立刻得知，此处定义的量正是谱函数：$ \chi^{\prime \prime}=A(\omega) $，而比对\eqref{srocf}与\eqref{srochi}立刻得到：
 \begin{equation}
@@ -2242,6 +2871,41 @@ f是任意的，这就有$ 0=K_{\mu \nu} \overleftarrow{\partial} $。再由电�
   K_{\mu \nu}\left(x, x^{\prime}\right)=\left.\mathcal{Z}^{-1} \frac{\delta^2}{\delta A_\mu(x) \delta A_\nu\left(x^{\prime}\right)} \mathcal{Z}[A]\right|_{A=0}
 \end{equation}
 由于求导的可交换性，有$ K_{\mu \nu}\left(x, x^{\prime}\right)=K_{\nu \mu}\left(x^{\prime}, x\right) $。
+\subsection{f-sum rule}
+由\eqref{chirelation}，对于被积函数做洛朗展开有
+\begin{equation}
+  \chi_{A_i A_j}(z)=-\frac{1}{z} \int_{-\infty}^{\infty} \frac{d \omega}{\pi} \chi_{A_i A_j}^{\prime \prime}(\omega)-\frac{1}{z^2} \int_{-\infty}^{\infty} \frac{d \omega}{\pi} \omega \chi_{A_i A_j}^{\prime \prime}(\omega)+\mathcal{O}\left(\frac{1}{z^3}\right)
+\end{equation}
+关于频域的积分在时域上可以表示为
+\begin{equation*}
+  \int_{-\infty}^{\infty} \frac{d \omega}{\pi} \omega^n \chi_{A_i A_j}^{\prime \prime}(\omega)=2\left[\left(i \partial_t\right)^n \chi_{A_i A_j}^{\prime \prime}(t)\right]_{t=0}=\left[\left(i \partial_t\right)^n\left\langle\left[\hat{A}_i(t), \hat{A}_j\right]\right\rangle\right]
+\end{equation*}
+这些对易子的期望值有时可以直接算出来，这给出$ \chi_{A_i A_j}(z) $在高频下的表现。\\
+对于密度-密度关联，由定义$ \chi_{n n}^{\prime \prime}(\mathbf{q}, \omega) $是频率的奇函数，因此有
+\begin{equation}
+  \chi_{n n}(\mathbf{q}, z)=-\frac{1}{z^2} \int_{-\infty}^{\infty} \frac{d \omega}{\pi} \omega \chi_{n n}^{\prime \prime}(\mathbf{q}, \omega)+\mathcal{O}\left(\frac{1}{z^4}\right)
+\end{equation}  
+第一项的系数可以直接算出：
+\begin{equation}
+  \int_{-\infty}^{\infty} \frac{d \omega}{\pi} \omega \chi_{n n}^{\prime \prime}(\mathbf{q}, \omega)=\left\langle\left[i \partial_t \hat{n}(\mathbf{q}, t), \hat{n}(-\mathbf{q}, 0)\right]\right\rangle_{t=0}=\mathbf{q} \cdot\langle[\hat{\mathbf{j}}(\mathbf{q}), \hat{n}(-\mathbf{q})]\rangle=\frac{n \mathbf{q}^2}{m}
+\end{equation}
+其中用到了动量空间的流守恒$ \partial_t \hat{n}(\mathbf{q}, t)+i \mathbf{q} \cdot \hat{\mathbf{j}}(\mathbf{q}, t)=0 $，对易关系$ [\hat{\mathbf{j}}(\mathbf{q}), \hat{n}(-\mathbf{q})]=\frac{\mathbf{q}}{m \mathcal{V}} \hat{N} $以及定义平均粒子密度$ n=\langle\hat{N}\rangle / \mathcal{V} $。由于用到了流守恒，这个sum rule可以说是来自于对称性。\\
+对于电导率，有另一个f-sum rule，考虑Kubo公式，对于transverse 分量
+\begin{equation*}
+  \sigma_{\|, \perp}(\mathbf{q}, \omega)=\frac{1}{i(\omega+i \eta)}\left[\chi_{\|, \perp}^R(\mathbf{q}, \omega)-\frac{n e^2}{m}\right]
+\end{equation*}
+利用Dirac identity$ \lim _{\delta \searrow 0} \frac{1}{x+i \delta}=-i \pi \delta(x)+\mathcal{P} \frac{1}{x} $，并且利用关系$ \chi_{\|}^{\prime \prime}(\mathbf{q}, \omega)=\Im\left[\chi_{\|}^R(\mathbf{q}, \omega)\right] $，可以得到：
+\begin{equation}
+  \begin{aligned}
+    \Re\left[\sigma_{\|}(\mathbf{q}, \omega)\right] & =\Re\left[\mathcal{P} \frac{\chi_{\|}^R(\mathbf{q}, \omega)}{i \omega}\right]-\pi \delta(\omega)\left\{\Re\left[\chi_{\|}^R(\mathbf{q}, \omega)\right]-\frac{n e^2}{m}\right\} \\
+    & =\mathcal{P} \frac{\chi_{\|}^{\prime \prime}(\mathbf{q}, \omega)}{\omega}-\pi \delta(\omega)\left\{\Re\left[\chi_{\|}^R(\mathbf{q}, \omega)\right]-\frac{n e^2}{m}\right\},
+    \end{aligned}
+\end{equation}  
+对于频率积分得到sum rule
+\begin{equation}
+  \int_{-\infty}^{\infty} \frac{d \omega}{2 \pi} \Re\left[\sigma_{\|}(\mathbf{q}, \omega)\right]=\frac{n e^2}{2 m}=\frac{\epsilon_0}{2} \omega_p^2
+\end{equation}
+这总是成立的。
 \section{密度关联函数、自旋关联函数的梯形图修正}
 \href{https://www.youtube.com/watch?v=jsThAjBPp8s&list=PLcD25rnTeV9geERxK7Tky8XsUghzeArEF&index=14&ab_channel=SubirSachdev}{PHYSICS 295B: Quantum Theory of Solids: Lec 14. Diagrams and spin/charge density waves}\\
 主要结论是，当相互作用对动量的依赖很弱时，梯形图的修正可以简化为几何级数，这时密度关联函数、自旋关联函数可以表示为
@@ -3158,8 +3822,209 @@ $ G_a $是生成元。现在将$ \omega_a $提升为$ \omega_a(x) $并 考虑一
     \end{aligned}
   }
 \end{center}
+对于这种推导，最普遍的情况为\href{https://edu.fjfi.cvut.cz/studijni-materialy/Ing/Statnice/KTP/Quantum_Field_Theory_III.pdf}{Ward-Takahashi iden}，对于含有外源的作用量$ S[\varphi, J]=S[\varphi]+\int \mathrm{d}^4 x \boldsymbol{J}(x) \cdot \varphi(x) . $ 考察场的一个无穷小变换(无论保持作用量与否)：$ \varphi(x) \rightarrow \varphi^{\prime} = \varphi(x)+\xi(x, \varphi) $，对于配分函数来说，这是个变量替换，因此配分函数不变 
+\begin{equation*}
+  \int \mathcal{D} \varphi \exp (i S[\varphi, J])=\int \mathcal{D} \varphi^{\prime} \exp \left(i S\left[\varphi^{\prime}, J\right]\right)
+\end{equation*}
+积分测度的变换为$ \mathcal{D} \varphi^{\prime}=\mathcal{D} \varphi \operatorname{det} \boldsymbol{M} $，其中
+\begin{equation*}
+  \boldsymbol{M}^{a b}(x, y)=\frac{\delta \varphi^{\prime a}(x)}{\delta \varphi^b(y)}=\delta^{a b} \delta^{(n)}(x-y)+\frac{\delta \xi^a(x, \varphi)}{\delta \varphi^b(y)}
+\end{equation*}
+利用恒等式$ \operatorname{det} \mathbb{A}=\exp (\operatorname{Tr} \log \mathbb{A}) $，并且只考虑无穷小变换，$ \mathbb{A}=\mathbb{1}+\varepsilon $，$ \log \mathbb{A} \approx \varepsilon $，那么测度的变换为
+\begin{equation*}
+  \mathcal{D} \varphi^{\prime}=\mathcal{D} \varphi \operatorname{det} \boldsymbol{M} \approx \mathcal{D} \varphi(1+\delta J)
+\end{equation*}
+其中
+\begin{equation*}
+  \delta J=\operatorname{Tr}\left(\frac{\delta \xi^a(x, \varphi)}{\delta \varphi^b(y)}\right)
+\end{equation*}
+同时，作用量的变化为$ S\left[\varphi^{\prime}\right]=S[\varphi+\xi] \approx S[\varphi]+\delta_{\xi} S $。对于配分函数的不变关系，展开至一次项有
+\begin{equation}
+  \begin{aligned}
+    \int \mathcal{D} & \varphi \exp (i S[\varphi, J]) \\
+    & \approx \int \mathcal{D} \varphi(1+\delta J) \exp \left(i S[\varphi]+i \delta_{\xi} S+i \int \mathrm{~d}^4 x \boldsymbol{J} \varphi+i \int \mathrm{~d}^4 x \boldsymbol{J} \xi\right) \\
+    & \approx \int \mathcal{D} \varphi \exp \left(i S[\varphi]+i \int \mathrm{~d}^4 x \boldsymbol{J} \varphi\right)\left(1+\delta J+i \delta_{\xi} S+i \int \mathrm{~d}^4 x \boldsymbol{J} \xi\right) \\
+    & =\int \mathcal{D} \varphi \exp (i S[\varphi, J])\left(1+\delta J+i \delta_{\xi} S+i \int \mathrm{~d}^4 x \boldsymbol{J} \xi\right)
+    \end{aligned}
+\end{equation}
+这给出最一般的等式
+\begin{equation}
+  \left\langle\delta J+i \delta_{\xi} S+i \int \mathrm{~d}^4 x J_a \xi^a\right\rangle^J=0
+  \label{general identity}
+\end{equation}
+\footnote{其中泛函期望值是在有外源意义下的期望值$ \langle\cdots\rangle^J=N \int \mathcal{D} \varphi \cdots \exp \left(i S[\varphi]+i \int \mathrm{~d}^4 x J \varphi\right) $}，当积分测度在给定的这个变换下不变，$ \delta J=0 $，就给出了Schwinger-Dyson方程。若进一步考虑一个Global的对称变换，仿照Noether定理将其提升为Local变换，$ \xi^a(x, \varphi)=\omega^{a b}(x) \varphi^b $，此时作用量的变分为
+\begin{equation}
+  \delta_{\xi} S=\int \mathrm{~d}^4 x \omega^{a b,\mu}(x) J_{a b, \mu}(x)
+\end{equation}
+其中$ J_{a b, \mu} $为对应的守恒流。此时给出了Ward-Takahashi恒等式。 将期望值出的关于J的指数做展开，并逐项比较系数，可以得到高阶的Ward恒等式。这种将对称变换提升为Local变换的方式，给出的Ward恒等式有时被叫做Local Ward恒等式。\\
+若考虑的变换是Global的对称变换，则作用量的变分为0，这给出
+\begin{equation}
+  0=\int \mathrm{d}^4 x \omega^{a b}\left\langle J^a \varphi^b-J^b \varphi^a\right\rangle^J
+\end{equation}
+通过为J求泛函导数会给出一系列恒等式。
+如果改写作用量的形式：
+\begin{equation*}
+  S=-\frac{1}{2} \sum_{j, j^{\prime}} \int_0^\beta d \tau d \tau^{\prime} \int d^d r d^d r^{\prime} \psi_j(x) G_{0, j j^{\prime}}^{-1}\left(x, x^{\prime}\right) \psi_{j^{\prime}}\left(x^{\prime}\right)+S_{\mathrm{int}}
+\end{equation*}
+并且假设$ S_{\mathrm{int}} $在Local对称变换下不变\footnote{这里的符号为$ \psi_j(x) \rightarrow \psi_j(x)+i \epsilon(x) F_j(x) $ }，也即对称性对应的流只与$ S_0 $有关，此时有
+\begin{equation*}
+  \delta S=\delta S_0=-i \sum_{j, j^{\prime}} \int_0^\beta d \tau d \tau^{\prime} \int d^d r d^d r^{\prime} \epsilon(x) F_j(x) G_{0, j j^{\prime}}^{-1}\left(x, x^{\prime}\right) \psi_{j^{\prime}}\left(x^{\prime}\right)
+\end{equation*}
+代入\eqref{general identity}，可以得到
+\begin{equation}
+  \int \mathcal{D}[\psi] e^{-S-S_J}\left[\int_0^\beta d \tau^{\prime} \int d^d r^{\prime} \sum_{j, j^{\prime}} F_j(x) G_{0, j j^{\prime}}^{-1}\left(x, x^{\prime}\right) \psi_{j^{\prime}}\left(x^{\prime}\right)+\sum_j J_j(x) F_j(x)\right]=0
+  \label{local ward identity in green function form}
+\end{equation}
+再对J求泛函导数，最终取零，有
+\begin{equation}
+  \begin{aligned}
+& \int_0^\beta d \tau^{\prime} \int d^d r^{\prime} \sum_{j, j^{\prime}}\left\langle\psi_{j_n}\left(x_n\right) \cdots \psi_{j_1}\left(x_1\right) F_j(x) \psi_{j^{\prime}}\left(x^{\prime}\right)\right\rangle G_{0, j j^{\prime}}^{-1}\left(x, x^{\prime}\right) \\
+& \quad=-\sum_{k=1}^n\left\langle\psi_{j_n}\left(x_n\right) \cdots \psi_{j_{k+1}}\left(x_{k+1}\right) F_{j_k}\left(x_k\right) \psi_{j_{k-1}}\left(x_{k-1}\right) \cdots \psi_{j_1}\left(x_1\right)\right\rangle \delta\left(x-x_k\right)
+\end{aligned}
+\end{equation}   
+\section{1PI formalism}
+\subsection{1PI formalism,有效作用量,ward identity}
+\subsubsection{有效作用量}
+对于配分函数做Legendre变换，定义了有效作用量：
+\begin{equation}
+  \Gamma\left[\phi^*, \phi\right]=-\ln Z\left[J^*, J\right]+\int_0^\beta d \tau \sum_\alpha\left[J_\alpha^*(\tau) \phi_\alpha(\tau)+\text { c.c. }\right]
+\end{equation}         
+有效作用量对于场的泛函导数给出外源场
+\begin{equation}
+  \begin{aligned}
+\frac{\delta \Gamma\left[\phi^*, \phi\right]}{\delta \phi_\alpha(\tau)}= & -\int_0^\beta d \tau^{\prime} \sum_{\alpha^{\prime}}\left(\frac{\delta J_{\alpha^{\prime}}\left(\tau^{\prime}\right)}{\delta \phi_\alpha(\tau)} \frac{\delta W\left[J^*, J\right]}{\delta J_{\alpha^{\prime}}\left(\tau^{\prime}\right)}+\frac{\delta J_{\alpha^{\prime}}^*\left(\tau^{\prime}\right)}{\delta \phi_\alpha(\tau)} \frac{\delta W\left[J^*, J\right]}{\delta J_{\alpha^{\prime}}^*\left(\tau^{\prime}\right)}\right) \\
+& +\int_0^\beta d \tau^{\prime} \sum_{\alpha^{\prime}}\left(\frac{\delta J_{\alpha^{\prime}}^*\left(\tau^{\prime}\right)}{\delta \phi_\alpha(\tau)} \phi_{\alpha^{\prime}}\left(\tau^{\prime}\right)+\zeta \frac{\delta J_{\alpha^{\prime}}\left(\tau^{\prime}\right)}{\delta \phi_\alpha(\tau)} \phi_{\alpha^{\prime}}^*\left(\tau^{\prime}\right)\right)+\zeta J_\alpha^*(\tau) \\
+= & \zeta J_\alpha^*(\tau)
+\end{aligned}
+\end{equation}
+场是自由能对于外源场的泛函导数，再对场本身求泛函导数，由链式法则可以得到
+\begin{equation}
+  \begin{aligned}
+\delta_{1,2} & =\frac{\delta \phi_1}{\delta \phi_2} \\
+& =\sum_3\left(\frac{\delta J_3}{\delta \phi_2} \frac{\delta^2 W\left[J^*, J\right]}{\delta J_3 \delta J_1^*}+\frac{\delta J_3^*}{\delta \phi_2} \frac{\delta^2 W\left[J^*, J\right]}{\delta J_3^* \delta J_1^*}\right) \\
+& =\sum_3\left(\frac{\delta^2 \Gamma\left[\phi^*, \phi\right]}{\delta \phi_2 \delta \phi_3^*} \frac{\delta^2 W\left[J^*, J\right]}{\delta J_3 \delta J_1^*}+\zeta \frac{\delta^2 \Gamma\left[\phi^*, \phi\right]}{\delta \phi_2 \delta \phi_3} \frac{\delta^2 W\left[J^*, J\right]}{\delta J_3^* \delta J_1^*}\right)
+\end{aligned}
+\end{equation}
+对于普通系统，$ \frac{\delta^2 W\left[J^*, J\right]}{\delta J_3^* \delta J_1^*}=0 $，因此有效作用量对场的二阶泛函导数给出格林函数的逆
+\begin{equation}
+  \Gamma^{(2)}=-G_c^{(2)-1}=-G^{(2)-1}
+\end{equation}
+继续对这个式子做场的泛函导数可以得到诸如此类的关系：
+\begin{equation}
+  \begin{aligned}
+& G_c^{(4)}\left(\alpha_1 \tau_1, \alpha_2 \tau_2 ; \alpha_2^{\prime} \tau_2^{\prime}, \alpha_1^{\prime} \tau_1^{\prime}\right)=-\int_0^\beta d u_1 d u_2 d u_2^{\prime} d u_1^{\prime} \sum_{\gamma_1, \gamma_2, \gamma_2^{\prime}, \gamma_1^{\prime}} G\left(\alpha_1 \tau_1, \gamma_1 u_1\right) \\
+& \quad \times G\left(\alpha_2 \tau_2, \gamma_2 u_2\right) \Gamma^{(4)}\left(\gamma_1 u_1, \gamma_2 u_2 ; \gamma_2^{\prime} u_2^{\prime}, \gamma_1^{\prime} u_1^{\prime}\right) G\left(\gamma_2^{\prime} u_2^{\prime}, \alpha_2^{\prime} \tau_2^{\prime}\right) G\left(\gamma_1^{\prime} u_1^{\prime}, \alpha_1^{\prime} \tau_1^{\prime}\right)
+\end{aligned}
+\end{equation}
+因此，有效作用量的n阶泛函导数的物理意义是1PI的n阶顶点。这就解释了为什么在Hedin equation中三阶顶点定义为$ \Lambda(1,2,3)=-\frac{\delta G^{-1}(1,2)}{\delta \phi(3)} $。\\
+\subsubsection{1PI Ward恒等式}
+下面考虑的场的变换都取为如下线性变换
+\begin{equation*}
+  F_j(x)=\int_0^\beta d \tau^{\prime} \int d^d r^{\prime} \sum_{j^{\prime}} t_{j j^{\prime}}\left(x, x^{\prime}\right) \psi_{j^{\prime}}\left(x^{\prime}\right)
+\end{equation*}
+考虑一个Global对称变换，\eqref{general identity}给出
+\begin{equation}
+  \begin{aligned}
+0 & =\int \mathcal{D}[\psi] e^{-S-S_J} \int_0^\beta d \tau \int d^d r \sum_j J_j(x) F_j(x) \\
+& =\int_0^\beta d \tau d \tau^{\prime} \int d^d r d^d r^{\prime} \sum_{j, j^{\prime}} J_j(x) t_{j j^{\prime}}\left(x, x^{\prime}\right)\left\langle\psi_{j^{\prime}}\left(x^{\prime}\right)\right\rangle \\
+& =\int_0^\beta d \tau d \tau^{\prime} \int d^d r d^d r^{\prime} \sum_{j, j^{\prime}} J_j(x) t_{j j^{\prime}}\left(x, x^{\prime}\right) \frac{\delta \ln Z[J]}{\delta J_{j^{\prime}}\left(x^{\prime}\right)}
+\end{aligned}
+\end{equation}
+用有效作用量可以改写为
+\begin{equation}
+  \int_0^\beta d \tau d \tau^{\prime} \int d^d r d^d r^{\prime} \sum_{j, j^{\prime}} t_{j j^{\prime}}\left(x, x^{\prime}\right) \phi_{j^{\prime}}\left(x^{\prime}\right) \frac{\delta \Gamma[\phi]}{\delta \phi_j(x)}=0
+\end{equation}
+该等式对于任意的场$ \phi $都成立，因此得出，有效作用量在Global对称变换下是不变的。\footnote{注意与一般推导Noether定理相似，这里的off-shell意义下的泛函导数为零}。
+当考虑一个Local对称变换时，\eqref{local ward identity in green function form}给出
+\begin{equation}
+  \begin{aligned}
+0 & =\sum_{j_1, 1^{\prime \prime}} t\left(1,1^{\prime \prime}\right)\left\langle\sum_{1^{\prime}} \psi\left(1^{\prime \prime}\right) G_0^{-1}\left(1,1^{\prime}\right) \psi\left(1^{\prime}\right)+J(1) \psi\left(1^{\prime \prime}\right)\right\rangle \\
+& =\sum_{j_1, 1^{\prime \prime}} t\left(1,1^{\prime \prime}\right)\left\{\sum_{1^{\prime}} G_0^{-1}\left(1,1^{\prime}\right)\left(\frac{\delta^2 \ln Z[J]}{\delta J\left(1^{\prime \prime}\right) \delta J\left(1^{\prime}\right)}+\frac{\delta \ln Z[J]}{\delta J\left(1^{\prime \prime}\right)} \frac{\delta \ln Z[J]}{\delta J\left(1^{\prime}\right)}\right)+J(1) \frac{\delta \ln Z[J]}{\delta J\left(1^{\prime \prime}\right)}\right\} .
+\end{aligned}
+\end{equation}
+对场取两次泛函导数，再取J=0，得到
+\begin{equation}
+  \begin{aligned}
+\sum_{j_1, 1^{\prime}, 1^{\prime \prime}, 2^{\prime}, 3^{\prime}} & t\left(1,1^{\prime \prime}\right) G_0^{-1}\left(1,1^{\prime}\right) G\left(1^{\prime}, 2^{\prime}\right) \Gamma^{(4)}\left(3,2,2^{\prime}, 3^{\prime}\right) G\left(3^{\prime}, 1^{\prime \prime}\right) \\
+& =\sum_{j_1}[t(1,2) \Sigma(1,3)+t(1,3) \Sigma(2,1)]
+\end{aligned}
+\end{equation}
 
-\section{外场与有效作用量}
+\section{Baym–Kadanoff Formalism, conserving approximations}
+为了保证微扰论在截取某些费曼图时保持了对称性，我们需要从Lutting-Ward泛函出发做近似，这节将引入Lutting-Ward泛函以及Ward恒等式在这个范式下的表示。\\
+\subsection{Luttinger-Ward泛函,2PI formalism}
+考虑一个与系统在particle-hole channel下耦合的外源场的配分函数：
+\begin{equation*}
+  Z[J]=\int \mathcal{D}\left[\psi^*, \psi\right] \exp \left\{-S\left[\psi^*, \psi\right]+\int_0^\beta d \tau d \tau^{\prime} \sum_{\alpha, \alpha^{\prime}} J_{\alpha \alpha^{\prime}}\left(\tau, \tau^{\prime}\right) \psi_\alpha^*(\tau) \psi_{\alpha^{\prime}}\left(\tau^{\prime}\right)\right\}
+\end{equation*}
+同归对于外源做泛函导数，得到单粒子格林函数
+\begin{equation*}
+  G\left[\alpha \tau, \alpha^{\prime} \tau^{\prime} ; J\right]=-\left\langle\psi_\alpha(\tau) \psi_{\alpha^{\prime}}^*\left(\tau^{\prime}\right)\right\rangle=-\zeta \frac{\delta \ln Z[J]}{\delta J_{\alpha^{\prime} \alpha}\left(\tau^{\prime}, \tau\right)}
+\end{equation*}
+对配分函数做Legendre变换\footnote{做Legendre变换总是隐含着G[J]是可逆的假设}，得到作为完整格林函数的泛函的2PI有效作用量
+\begin{equation*}
+  \Gamma[G]=-\ln Z[J]-\zeta \int_0^\beta d \tau d \tau^{\prime} \sum_{\alpha, \alpha^{\prime}} J_{\alpha \alpha^{\prime}}\left(\tau, \tau^{\prime}\right) G\left(\alpha^{\prime} \tau^{\prime}, \alpha \tau\right)
+\end{equation*}
+它对格林函数的泛函导数给出外源场
+\begin{equation*}
+  \frac{\delta \Gamma[G]}{\delta G\left(\alpha \tau, \alpha^{\prime} \tau^{\prime}\right)}=-\zeta J_{\alpha^{\prime} \alpha}\left(\tau^{\prime}, \tau\right)
+\end{equation*}
+物理上的格林函数对应于外场为零，也就是有效作用量的驻点。对于无相互作用的体系，有效作用量可以通过高斯积分得到。首先注意到高斯积分给出配分函数：
+\begin{equation*}
+  Z[J]=\operatorname{det}\left(-G_0^{-1}-J\right)^{-\zeta}=e^{-\zeta \operatorname{Tr} \ln \left(-G_0^{-1}-J\right)}
+\end{equation*}
+利用格林函数与外场的关系$ G[J]=\left(G_0^{-1}+J\right)^{-1} $。很容易得到此时的2PI有效相互作用
+\begin{equation*}
+  \Gamma[G]=-\zeta \operatorname{Tr} \ln (-G)+\zeta \operatorname{Tr}\left(G_0^{-1} G-1\right)
+\end{equation*}
+当有相互作用时，将有效作用量写为如下形式，以定义一个新的量，Luttinger-Ward泛函
+\begin{equation}
+  \Gamma[G]=-\zeta \operatorname{Tr} \ln (-G)+\zeta \operatorname{Tr}\left(G_0^{-1} G-1\right)+\Phi[G]
+\end{equation} 
+对其做格林函数的泛函导数，得到关系
+\begin{equation*}
+  -\zeta G^{-1}\left(\alpha^{\prime} \tau^{\prime}, \alpha \tau\right)+\zeta G_0^{-1}\left(\alpha^{\prime} \tau^{\prime}, \alpha \tau\right)+\frac{\delta \Phi[G]}{\delta G\left(\alpha \tau, \alpha^{\prime} \tau^{\prime}\right)}=-\zeta J_{\alpha^{\prime} \alpha}\left(\tau^{\prime}, \tau\right)
+\end{equation*}
+取J=0，立刻得到
+\begin{equation}
+  \Sigma\left(\alpha \tau, \alpha^{\prime} \tau^{\prime}\right)=-\left.\zeta \frac{\delta \Phi[G]}{\delta G\left(\alpha^{\prime} \tau^{\prime}, \alpha \tau\right)}\right|_{G=\bar{G}},
+\end{equation}
+因此Luttinger-Ward泛函的泛函导数取格林函数为物理的全格林函数，给出自能。这也给出了Luttinger-Ward泛函的图像表示：对于Skeleton图、格林函数为全格林函数表示的1PI自能，将进出的格林函数线连起来的所有图给出Luttinger-Ward泛函的图像表示，也就是所有2PI Skeleton图。\\
+Luttinger-Ward泛函的n阶导数给出Particle-Hole channel下2PI的顶点：
+\begin{equation*}
+  \Phi^{(n)}\left(\alpha_1 \tau_1, \alpha_1^{\prime} \tau_1^{\prime} ; \cdots ; \alpha_n \tau_n, \alpha_n^{\prime} \tau_n^{\prime}\right)=\left.\frac{(-\zeta)^n \delta^n \Phi[G]}{\delta G\left(\alpha_1 \tau_1, \alpha_1^{\prime} \tau_1^{\prime}\right) \cdots \delta G\left(\alpha_n \tau_n, \alpha_n^{\prime} \tau_n^{\prime}\right)}\right|_{G=\bar{G}}
+\end{equation*}
+\subsection{ward indentity in 2PI formalism}
+在一个Local、线性的无穷小变换下，格林函数的变换为：
+\begin{equation*}
+  G(1,2) \rightarrow G(1,2)+i \sum_3\left[\epsilon\left(x_1\right) t(1,3) G(3,2)+\epsilon\left(x_2\right) t(2,3) G(1,3)\right]
+\end{equation*}
+对于Global对称变换，2PI有效作用量满足
+\begin{equation*}
+  \sum_{1,2,3} \frac{\delta \Gamma[G]}{\delta G(1,2)} t(1,3) G(3,2)=0 .
+\end{equation*}
+即在Global对称变换下2PI有效作用量的泛函导数为零。当提升为local变换时，考虑\eqref{local ward identity in green function form}，有
+\begin{equation}
+  \sum_{j_1, 2,3}\left[G_0^{-1}(1,2)-\frac{\delta \Gamma[G]}{\delta G(1,2)}\right] t(1,3) G(3,2)=0
+\end{equation}
+将这个式子代入2PI有效作用量变分的定义，有
+\begin{equation}
+  \begin{aligned}
+\delta \Gamma[G] & =\frac{i}{2} \sum_{1,2,3} \frac{\delta \Gamma[G]}{\delta G(1,2)}\left[\epsilon\left(x_1\right) t(1,3) G(3,2)+\epsilon\left(x_2\right) t(2,3) G(1,3)\right] \\
+& =\frac{i}{2} \sum_{1,2,3} G_0^{-1}(1,2)\left[\epsilon\left(x_1\right) t(1,3) G(3,2)+\epsilon\left(x_2\right) t(2,3) G(1,3)\right]
+\end{aligned}
+\end{equation}
+可以看出在Local变换下，2PI有效作用量变分完全来自于其中的一项$ \frac{\zeta}{2} \operatorname{Tr}\left(G_0^{-1} G-1\right) $，剩下的两项$ -\frac{\zeta}{2} \operatorname{Tr} \ln (-G)+\Phi[G] $在这个变换下是不变的，由于$ \Phi[G] $在相互作用为零时为零，因此$ -\frac{\zeta}{2} \operatorname{Tr} \ln (-G) $本身单独不变，因此Luttinger-Ward泛函在Local对称变换下也不变。此时local ward identity变为
+\begin{equation}
+  \sum_{j_1, 2,3} \frac{\delta \Phi[G]}{\delta G(1,2)} t(1,3) G(3,2)=0
+\end{equation}
+$$ \underbrace{\chi = \frac{\chi_0}{1 - I\chi_0}}{\text{The "RPA for spin" model}} \quad \neq \quad \underbrace{\chi = \chi_0 + \chi_0 \left( 2i \frac{\delta^2 \Phi{rings}}{\delta G \delta G} \right) \chi}_{\text{The truly Φ-derivable result from rings}}$$
+Baym–Kadanoff Formalism的重点在于，只要你找到一个关于G的泛函，并且这个泛函在对称变换下不变，那么生成的自能等都满足Ward恒等式，因此是守恒的，由此，任意对于Luttinger-Ward泛函的的图形近似，也即任意2PI Skeleton真空图\footnote{为什么这些图是在对称变换下不变的？参考Nonequilibrium Many-Body Theory of Quantum Systems A Modern Introduction，chapter11.3}的线性组合作为G的泛函，都满足Ward恒等式。\\
+如果一个自能是某个对应某个对称泛函$ \Phi[G] $\footnote{不一定是Luttinger-Ward泛函，只是2PI Skeleton真空图的线性组合}，那么这个自能被称为$ \Psi $-derivable。注意，一个$ \Phi[G] $会给出很多项的自能，它们的系数满足一定的关系，因此改变这些系数的自能是不守恒的，可以说$ \Psi $-derivability只允许特定线性组合的自能。       
+Nicolas Dupuis - Field Theory of Condensed Matter and Ultracold Gases - Volume 1-World Scientific Publishing Europe Ltd (2023)\\
+Linear response functions respecting Ward-Takahashi identity and fluctuation-dissipation
+theorem within the GW approximation Appendix A
+\section{外场与有效作用量,qft version}
 \subsection{来自热力学的类比}
 考虑一个磁性系统，配分函数以及Helmholtz自由能为：
 \begin{equation}
