@@ -1,6 +1,6 @@
 \documentclass[10pt,openany]{book}
 \usepackage{ctex} 
-\usepackage{geometry,graphicx,xcolor,color,hyperref}
+\usepackage{geometry,graphicx,xcolor,color,hyperref,physics,tensor}
 \usepackage{tcolorbox}
 
 \geometry{
@@ -1507,13 +1507,13 @@ $\epsilon\sim\epsilon+d\epsilon  $处的概率为：$ \frac{d\epsilon}{(\epsilon
 \end{equation} 
 \begin{figure}[htp]
   \centering
-  \includegraphics[scale=0.7]{biaoji.png}
+  \includegraphics[scale=0.7]{Figures/biaoji.png}
   \caption{自能定义}
 \end{figure}
 戴森方程的图表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{DaysonEq.png}
+  \includegraphics*[scale=0.7]{Figures/DaysonEq.png}
   \caption{戴森方程}
 \end{figure}
 \subsection*{杂质导致的随机势}
@@ -1577,7 +1577,7 @@ $\epsilon\sim\epsilon+d\epsilon  $处的概率为：$ \frac{d\epsilon}{(\epsilon
 自能定义为传播子中的所有单粒子不可约图的求和，并去掉两端的格林函数。
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{selfenergy.png}
+  \includegraphics*[scale=0.7]{Figures/selfenergy.png}
   \caption{<caption>}
   \label{<label>}
 \end{figure}
@@ -1620,13 +1620,13 @@ $\epsilon\sim\epsilon+d\epsilon  $处的概率为：$ \frac{d\epsilon}{(\epsilon
 完全玻恩近似是指考虑含有一个杂质散射的所有图，这在$ n_{imp} $阶是完全的，此时自能的图表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.5]{FBASE.png}
+  \includegraphics*[scale=0.5]{Figures/FBASE.png}
   \caption{完全玻恩近似的自能图表示}
 \end{figure} 
 引入转移矩阵，图表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.5]{tmatrix.png}
+  \includegraphics*[scale=0.5]{Figures/tmatrix.png}
   \caption{t矩阵的图表示}
 \end{figure}
 可以看出自能就是t矩阵的对角元。仍只考虑费米面附近的电子，此时t矩阵的实部近似为常数，可以被重定义化学式抵消，而虚部可以利用光学定理\footnote{由图表示可得到矩阵方程：$ t=u+u \mathcal{G}^0 t $。由于u是厄米矩阵，同时求厄米共轭再代回有：$ t=u+\left(t^{\dagger} \mathcal{G}^0 t-t^{\dagger}\left(\mathcal{G}^0\right)^{\dagger} u \mathcal{G}^0 t\right) $，只有中间
@@ -2055,7 +2055,7 @@ Anderson模型描述了金属中导带电子和杂质中的轨道电子的相互
 现在来计算格林函数，其中最重要的步骤就是计算自能，为简便计算，假设杂化系数与动量无关，此时自能可以表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{KondoSE.png}
+  \includegraphics*[scale=0.7]{Figures/KondoSE.png}
   \caption{Kondo自能}
 \end{figure}
 将对动量的求和换为乘上态密度并对能量积分：
@@ -2076,7 +2076,7 @@ Anderson模型描述了金属中导带电子和杂质中的轨道电子的相互
 再考虑导带电子的格林函数，它的完全格林函数表示为：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.6]{ExactGFofCE.png}
+  \includegraphics*[scale=0.6]{Figures/ExactGFofCE.png}
   \caption{导带电子的完全格林函数}
 \end{figure}
 引入转移矩阵：$ t(\omega)=V^2 G_f(\omega) $，它和散射S矩阵的关系为：$ S=1-2 \pi i \rho t(\omega+i \eta) $，而在分波法中S矩阵完全由相移给出：$ S(\omega)=e^{2 i \delta(\omega)} $，综上有：
@@ -2439,7 +2439,7 @@ Kondo格点模型被提出用来解释实验中观察到的满足Landu—Fermi�
 这样将原本的自旋-费米子相互作用改为了通过交换带点玻色子的相互作用。
 \begin{figure}[htbp]
 	\centering
-	\includegraphics*[scale=0.7]{H-ST.png}
+	\includegraphics*[scale=0.7]{Figures/H-ST.png}
 	\caption{H-S变换的图表示}
 \end{figure}
 通过路径积分的办法，使得我们可以使用平均场分析$ N\to\infty $的极限下的Kondo格点模型。上面引入的
@@ -2763,7 +2763,7 @@ $ \chi $是系统内禀的属性，被称为响应函数，它由系统的激发
 考虑非弹性散射过程的散射截面，实验流程如图：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=1]{EXPS.png}
+  \includegraphics*[scale=1]{Figures/EXPS.png}
 \end{figure}
 现在系统的总Hilbet空间为样品的Fock空间与入射粒子Hilbert空间的张量积：$ \mathcal{H}=\mathcal{F} \otimes \mathcal{H}_1 $，假设样品与
 入射粒子的相互作用在一次量子化的坐标表象中具有形式$ \hat{H}_{\mathrm{int}}=\sum_i V\left(\hat{\mathbf{r}}_i-\hat{\mathbf{r}}\right) $，其中$ \hat{\mathbf{r}}_i $为样品中粒子的位矢，
@@ -2802,7 +2802,7 @@ $ \hat{\mathbf{r}} $为入射粒子的位矢。为方便计算，取delta势：$
 \subsubsection{隧穿谱}
 \begin{figure}[htbp]
 	\centering
-	\includegraphics*[scale=0.7]{Tunneling.png}
+	\includegraphics*[scale=0.7]{Figures/Tunneling.png}
 	\caption{隧穿示意图}
 \end{figure}
 假设探针与样品间的作用具有如下形式：
@@ -3007,7 +3007,7 @@ Hubbard–Stratonovich变换是用白噪声涨落的虚拟玻色场解耦合具�
 上面的算符选择有一定的任意性：$ \hat{\rho}_{\alpha \beta} $，从四个算符中选取两个出来总共有三种情况，对应于direct channel，exchange channel和Copper channel：
 \begin{figure}[htbp]
   \centering
-  \includegraphics*[scale=0.7]{channels.png}
+  \includegraphics*[scale=0.7]{Figures/channels.png}
   \caption{三种通道，直接、Copper、间接}
 \end{figure} 
 具体选择哪个通道依赖于物理过程，核心思想是使得积分空间大。将高斯型的费米场积掉，有：
@@ -3482,7 +3482,7 @@ $ J^\mu(x) $是这个对称变换对应的Noether流。对于经典场，当满�
 
 \begin{figure}[htp]
   \centering
-  \includegraphics[scale=0.7]{spectral density.png}
+  \includegraphics[scale=0.7]{Figures/spectral density.png}
   \caption{谱密度图示}
   \label{sd}
 \end{figure}
@@ -4095,7 +4095,7 @@ Gibbs自由能 通过Legendre变换得到
 热力学和QFT的类比总结如图\ref*{Analog}：\\
 \begin{figure}[htp]
   \centering
-  \includegraphics[scale=0.8]{analog.png}
+  \includegraphics[scale=0.8]{Figures/analog.png}
   \caption{热力学与QFT类比}
   \label{Analog}
 \end{figure}
@@ -4165,7 +4165,7 @@ $ \Gamma $是一个广延量，它正比于我们所选取的时空体积：
  \end{equation*}
  \begin{figure}[htp]
   \centering
-  \includegraphics[scale=1]{3DR.png}
+  \includegraphics[scale=1]{Figures/3DR.png}
   \caption{三点关系的图像表示}
   \label{3DR}
 \end{figure}

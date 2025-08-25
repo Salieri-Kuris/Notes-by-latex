@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  7 AUG 2025 20:15
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.12.2)  25 AUG 2025 20:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -361,14 +361,77 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip57
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/physics/physics.sty
+Package: physics 
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2021/10/15 v2.17l AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen188
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen189
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2021/08/26 v2.02 operator names
+)
+\inf@bad=\count305
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count306
+\leftroot@=\count307
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count308
+\DOTSCASE@=\count309
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen190
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count310
+\c@MaxMatrixCols=\count311
+\dotsspace@=\muskip18
+\c@parentequation=\count312
+\dspbrk@lvl=\count313
+\tag@help=\toks19
+\row@=\count314
+\column@=\count315
+\maxfields@=\count316
+\andhelp@=\toks20
+\eqnshift@=\dimen191
+\alignsep@=\dimen192
+\tagshift@=\dimen193
+\tagwidth@=\dimen194
+\totwidth@=\dimen195
+\lineht@=\dimen196
+\@envbody=\toks21
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2938.
+LaTeX Info: Redefining \] on input line 2939.
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/tensor/tensor.sty
+Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
+\tnsr@Sps=\toks23
+\tnsr@Sbs=\toks24
+\tnsr@Spe=\toks25
+\tnsr@Sbe=\toks26
+\ncld@Mno=\toks27
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
  (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks18
-\pgfutil@tempdima=\dimen188
-\pgfutil@tempdimb=\dimen189
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen197
+\pgfutil@tempdimb=\dimen198
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box54
+\pgfutil@abb=\box56
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
@@ -376,31 +439,31 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks21
+\pgfkeys@tmptoks=\toks31
 ))
-\pgf@x=\dimen190
-\pgf@y=\dimen191
-\pgf@xa=\dimen192
-\pgf@ya=\dimen193
-\pgf@xb=\dimen194
-\pgf@yb=\dimen195
-\pgf@xc=\dimen196
-\pgf@yc=\dimen197
-\pgf@xd=\dimen198
-\pgf@yd=\dimen199
+\pgf@x=\dimen199
+\pgf@y=\dimen256
+\pgf@xa=\dimen257
+\pgf@ya=\dimen258
+\pgf@xb=\dimen259
+\pgf@yb=\dimen260
+\pgf@xc=\dimen261
+\pgf@yc=\dimen262
+\pgf@xd=\dimen263
+\pgf@yd=\dimen264
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count305
-\c@pgf@countb=\count306
-\c@pgf@countc=\count307
-\c@pgf@countd=\count308
-\t@pgf@toka=\toks22
-\t@pgf@tokb=\toks23
-\t@pgf@tokc=\toks24
-\pgf@sys@id@count=\count309
+\c@pgf@counta=\count317
+\c@pgf@countb=\count318
+\c@pgf@countc=\count319
+\c@pgf@countd=\count320
+\t@pgf@toka=\toks32
+\t@pgf@tokb=\toks33
+\t@pgf@tokc=\toks34
+\pgf@sys@id@count=\count321
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -412,62 +475,62 @@ File: pgfsys-dvipdfmx.def 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 )
-\pgfsys@objnum=\count310
+\pgfsys@objnum=\count322
 ))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count311
-\pgfsyssoftpath@bigbuffer@items=\count312
+\pgfsyssoftpath@smallbuffer@items=\count323
+\pgfsyssoftpath@bigbuffer@items=\count324
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen256
-\pgfmath@count=\count313
-\pgfmath@box=\box55
-\pgfmath@toks=\toks25
-\pgfmath@stack@operand=\toks26
-\pgfmath@stack@operation=\toks27
+\pgfmath@dimen=\dimen265
+\pgfmath@count=\count325
+\pgfmath@box=\box57
+\pgfmath@toks=\toks35
+\pgfmath@stack@operand=\toks36
+\pgfmath@stack@operation=\toks37
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count314
+\c@pgfmathroundto@lastzeros=\count326
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen257
-\pgf@picmaxx=\dimen258
-\pgf@picminy=\dimen259
-\pgf@picmaxy=\dimen260
-\pgf@pathminx=\dimen261
-\pgf@pathmaxx=\dimen262
-\pgf@pathminy=\dimen263
-\pgf@pathmaxy=\dimen264
-\pgf@xx=\dimen265
-\pgf@xy=\dimen266
-\pgf@yx=\dimen267
-\pgf@yy=\dimen268
-\pgf@zx=\dimen269
-\pgf@zy=\dimen270
+\pgf@picminx=\dimen266
+\pgf@picmaxx=\dimen267
+\pgf@picminy=\dimen268
+\pgf@picmaxy=\dimen269
+\pgf@pathminx=\dimen270
+\pgf@pathmaxx=\dimen271
+\pgf@pathminy=\dimen272
+\pgf@pathmaxy=\dimen273
+\pgf@xx=\dimen274
+\pgf@xy=\dimen275
+\pgf@yx=\dimen276
+\pgf@yy=\dimen277
+\pgf@zx=\dimen278
+\pgf@zy=\dimen279
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen271
-\pgf@path@lasty=\dimen272
+\pgf@path@lastx=\dimen280
+\pgf@path@lasty=\dimen281
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen273
-\pgf@shorten@start@additional=\dimen274
+\pgf@shorten@end@additional=\dimen282
+\pgf@shorten@start@additional=\dimen283
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box56
-\pgf@hbox=\box57
-\pgf@layerbox@main=\box58
-\pgf@picture@serial@count=\count315
+\pgfpic=\box58
+\pgf@hbox=\box59
+\pgf@layerbox@main=\box60
+\pgf@picture@serial@count=\count327
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen275
+\pgflinewidth=\dimen284
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen276
-\pgf@pt@y=\dimen277
-\pgf@pt@temp=\dimen278
+\pgf@pt@x=\dimen285
+\pgf@pt@y=\dimen286
+\pgf@pt@temp=\dimen287
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -476,17 +539,17 @@ File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen279
+\pgfarrowsep=\dimen288
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen280
-\pgf@sys@shading@range@num=\count316
-\pgf@shadingcount=\count317
+\pgf@max=\dimen289
+\pgf@sys@shading@range@num=\count328
+\pgf@shadingcount=\count329
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box59
+\pgfexternal@startupbox=\box61
 )) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -497,106 +560,49 @@ File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box60
+\pgfnodeparttextbox=\box62
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen281
-\pgf@nodesepend=\dimen282
+\pgf@nodesepstart=\dimen290
+\pgf@nodesepend=\dimen291
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 )) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks28
-\verbatim@line=\toks29
+\every@verbatim=\toks38
+\verbatim@line=\toks39
 \verbatim@in@stream=\read3
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/local/texlive/2022/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)
-\@envbody=\toks30
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count318
+\etb@tempcnta=\count330
 )
-\tcb@titlebox=\box61
-\tcb@upperbox=\box62
-\tcb@lowerbox=\box63
-\tcb@phantombox=\box64
-\c@tcbbreakpart=\count319
-\c@tcblayer=\count320
-\c@tcolorbox@number=\count321
-\tcb@temp=\box65
-\tcb@temp=\box66
+\tcb@titlebox=\box63
+\tcb@upperbox=\box64
+\tcb@lowerbox=\box65
+\tcb@phantombox=\box66
+\c@tcbbreakpart=\count331
+\c@tcblayer=\count332
+\c@tcolorbox@number=\count333
 \tcb@temp=\box67
 \tcb@temp=\box68
+\tcb@temp=\box69
+\tcb@temp=\box70
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks31
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2021/10/15 v2.17l AMS math features
-\@mathmargin=\skip58
-
-For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2021/08/26 v2.01 AMS text
- (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks32
-\ex@=\dimen283
-)) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen284
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 2021/08/26 v2.02 operator names
-)
-\inf@bad=\count322
-LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count323
-\leftroot@=\count324
-LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count325
-\DOTSCASE@=\count326
-LaTeX Info: Redefining \ldots on input line 496.
-LaTeX Info: Redefining \dots on input line 499.
-LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box69
-\strutbox@=\box70
-\big@size=\dimen285
-LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count327
-\c@MaxMatrixCols=\count328
-\dotsspace@=\muskip18
-\c@parentequation=\count329
-\dspbrk@lvl=\count330
-\tag@help=\toks33
-\row@=\count331
-\column@=\count332
-\maxfields@=\count333
-\andhelp@=\toks34
-\eqnshift@=\dimen286
-\alignsep@=\dimen287
-\tagshift@=\dimen288
-\tagwidth@=\dimen289
-\totwidth@=\dimen290
-\lineht@=\dimen291
-\@envbody=\toks35
-\multlinegap=\skip59
-\multlinetaggap=\skip60
-\mathdisplay@stack=\toks36
-LaTeX Info: Redefining \[ on input line 2938.
-LaTeX Info: Redefining \] on input line 2939.
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+)) (/usr/local/texlive/2022/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/mathpazo.sty
@@ -616,8 +622,8 @@ Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
  (/usr/local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2022/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks37
-\XKV@tempa@toks=\toks38
+\XKV@toks=\toks40
+\XKV@tempa@toks=\toks41
 )
 \XKV@depth=\count334
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -657,15 +663,15 @@ LaTeX Info: Redefining \liningnums on input line 583.
 Package hyperref Info: Option `colorlinks' set `true' on input line 26.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
+\thm@style=\toks42
+\thm@bodyfont=\toks43
+\thm@headfont=\toks44
+\thm@notefont=\toks45
+\thm@headpunct=\toks46
 \thm@preskip=\skip61
 \thm@postskip=\skip62
 \thm@headsep=\skip63
-\dth@everypar=\toks44
+\dth@everypar=\toks47
 )
 \c@theorem=\count338
  (/usr/local/texlive/2022/texmf-dist/tex/latex/titlesec/titlesec.sty
@@ -675,7 +681,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \aftertitleunit=\skip65
 \ttl@plus=\dimen292
 \ttl@minus=\dimen293
-\ttl@toksa=\toks45
+\ttl@toksa=\toks48
 \titlewidth=\dimen294
 \titlewidthlast=\dimen295
 \titlewidthfirst=\dimen296
@@ -1030,7 +1036,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 894.
 [18]
 Overfull \hbox (11.49066pt too wide) in paragraph at lines 923--926
-\TU/STSong(0)/m/n/10 可 以 看 出 $\OMS/zplm/m/n/10 j\OML/zplm/m/it/10 P\OT1/zplm/m/n/10 (\OMS/zplm/m/n/10 ^^@\OT1/zplm/b/n/10 k\OT1/zplm/m/n/10 )\OMS/zplm/m/n/10 j \OT1/zplm/m/n/10 = \OT1/ppl/m/n/10 0 \OMS/zplm/m/n/10 ! j\OML/zplm/m/it/10 P\OT1/zplm/m/n/10 (\OT1/zplm/b/n/10 k\OT1/zplm/m/n/10 )\OMS/zplm/m/n/10 j \OT1/zplm/m/n/10 = \OT1/ppl/m/n/10 0$\TU/STSong(0)/m/n/10 ，|  而 且 两 者 通 过 复 共 轭 联 系，|  因 此 零 点 对 应 的 螺 旋 度 $\OML/zplm/m/it/10 v \OT1/zplm/m/n/10 = [] [][] \OML/zplm/m/it/10 d\OT1/zplm/b/n/10 k\OML/zplm/m/it/10 i\OMS/zplm/m/n/10 r []\OT1/zplm/m/n/10 (\OML/zplm/m/it/10 P\OT1/zplm/m/n/10 (\OT1/zplm/b/n/10 k\OT1/zplm/m/n/10 ))$
+\TU/STSong(0)/m/n/10 可 以 看 出 $\OMS/zplm/m/n/10 j\OML/zplm/m/it/10 P\OT1/zplm/m/n/10 (\OMS/zplm/m/n/10 ^^@\OT1/zplm/b/n/10 k\OT1/zplm/m/n/10 )\OMS/zplm/m/n/10 j \OT1/zplm/m/n/10 = \OT1/ppl/m/n/10 0 \OMS/zplm/m/n/10 ! j\OML/zplm/m/it/10 P\OT1/zplm/m/n/10 (\OT1/zplm/b/n/10 k\OT1/zplm/m/n/10 )\OMS/zplm/m/n/10 j \OT1/zplm/m/n/10 = \OT1/ppl/m/n/10 0$\TU/STSong(0)/m/n/10 ，|  而 且 两 者 通 过 复 共 轭 联 系，|  因 此 零 点 对 应 的 螺 旋 度 $\OML/zplm/m/it/10 v \OT1/zplm/m/n/10 = [] [][] \OML/zplm/m/it/10 d\OT1/zplm/b/n/10 k\OML/zplm/m/it/10 i\OMS/zplm/m/n/10 r [][][]$
  []
 
 
@@ -1091,27 +1097,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1465--1468
  []
 
 [33]
-File: biaoji.png Graphic file (type bmp)
-<biaoji.png>
-File: DaysonEq.png Graphic file (type bmp)
-<DaysonEq.png>
+File: Figures/biaoji.png Graphic file (type bmp)
+<Figures/biaoji.png>
+File: Figures/DaysonEq.png Graphic file (type bmp)
+<Figures/DaysonEq.png>
  [34] [35]
 Underfull \hbox (badness 10000) in paragraph at lines 1561--1563
 
  []
 
-File: selfenergy.png Graphic file (type bmp)
-<selfenergy.png>
+File: Figures/selfenergy.png Graphic file (type bmp)
+<Figures/selfenergy.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 1587--1589
 
  []
 
 [36]
-File: FBASE.png Graphic file (type bmp)
-<FBASE.png>
-File: tmatrix.png Graphic file (type bmp)
-<tmatrix.png>
+File: Figures/FBASE.png Graphic file (type bmp)
+<Figures/FBASE.png>
+File: Figures/tmatrix.png Graphic file (type bmp)
+<Figures/tmatrix.png>
  [37] [38]
 File: Figures/RMT.png Graphic file (type bmp)
 <Figures/RMT.png>
@@ -1149,15 +1155,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 2043--2046
 
  []
 
-File: KondoSE.png Graphic file (type bmp)
-<KondoSE.png>
+File: Figures/KondoSE.png Graphic file (type bmp)
+<Figures/KondoSE.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 2072--2075
 
  []
 
-File: ExactGFofCE.png Graphic file (type bmp)
-<ExactGFofCE.png>
+File: Figures/ExactGFofCE.png Graphic file (type bmp)
+<Figures/ExactGFofCE.png>
 [48] [49]
 Underfull \hbox (badness 10000) in paragraph at lines 2125--2127
 
@@ -1187,8 +1193,8 @@ Missing character: There is no ｜ ("FF5C) in font pplr7t!
 Missing character: There is no ｜ ("FF5C) in font pplr7t!
 Missing character: There is no ｜ ("FF5C) in font pplr7t!
 [55]
-File: H-ST.png Graphic file (type bmp)
-<H-ST.png>
+File: Figures/H-ST.png Graphic file (type bmp)
+<Figures/H-ST.png>
  [56] [57]
 Underfull \hbox (badness 10000) in paragraph at lines 2503--2507
 
@@ -1225,11 +1231,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 2675--2677
  []
 
 [61]
-File: EXPS.png Graphic file (type bmp)
-<EXPS.png>
+File: Figures/EXPS.png Graphic file (type bmp)
+<Figures/EXPS.png>
  [62]
-File: Tunneling.png Graphic file (type bmp)
-<Tunneling.png>
+File: Figures/Tunneling.png Graphic file (type bmp)
+<Figures/Tunneling.png>
  [63]
 Missing character: There is no ， ("FF0C) in font pplr7t!
 [64]
@@ -1255,8 +1261,8 @@ Overfull \hbox (71.18785pt too wide) in paragraph at lines 2990--2992
 \TU/STSong(0)/m/n/10 可 以 看 到 指 数 中 的 最 后 一 项 刚 好 和 费 米 子 相 互 作 用 项 抵 消，|  将 它 乘 在 原 本 的 配 分 函 数 上，|  得 到 $\OMS/zplm/m/n/10 Z \OT1/zplm/m/n/10 = [] \OML/zplm/m/it/10 D^^^ [] D [] e[]$\TU/STSong(0)/m/n/10 ，|
  []
 
-File: channels.png Graphic file (type bmp)
-<channels.png>
+File: Figures/channels.png Graphic file (type bmp)
+<Figures/channels.png>
 
 Overfull \hbox (9.56786pt too wide) in paragraph at lines 3010--3011
  [][] 
@@ -1331,8 +1337,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3466--3469
 
  []
 
-File: spectral density.png Graphic file (type bmp)
-<spectral density.png>
+File: Figures/spectral density.png Graphic file (type bmp)
+<Figures/spectral density.png>
 
 Underfull \hbox (badness 10000) in paragraph at lines 3492--3494
 
@@ -1360,7 +1366,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3954--3955
 
 [90] [91]
 Overfull \hbox (16.72981pt too wide) in paragraph at lines 4016--4018
-\TU/STSong(0)/m/n/10 可 以 看 出 在 \T1/zplTLF/m/n/10 Lo-cal \TU/STSong(0)/m/n/10 变 换 下，| \T1/zplTLF/m/n/10 2PI \TU/STSong(0)/m/n/10 有 效 作 用 量 变 分 完 全 来 自 于 其 中 的 一 项 $[] [] []$，|  剩 下 的 两 项 $\OMS/zplm/m/n/10 ^^@[] [] []\OT1/zplm/m/n/10 (\OMS/zplm/m/n/10 ^^@\OML/zplm/m/it/10 G\OT1/zplm/m/n/10 ) +
+\TU/STSong(0)/m/n/10 可 以 看 出 在 \T1/zplTLF/m/n/10 Lo-cal \TU/STSong(0)/m/n/10 变 换 下，| \T1/zplTLF/m/n/10 2PI \TU/STSong(0)/m/n/10 有 效 作 用 量 变 分 完 全 来 自 于 其 中 的 一 项 $[] [] []$，|  剩 下 的 两 项 $\OMS/zplm/m/n/10 ^^@[] [] [][][] \OT1/zplm/m/n/10 +
  []
 
 Missing character: There is no Φ ("3A6) in font zpl-Regular-tlf-t1!
@@ -1374,11 +1380,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 4073--4083
 
  []
 
-File: analog.png Graphic file (type bmp)
-<analog.png>
+File: Figures/analog.png Graphic file (type bmp)
+<Figures/analog.png>
 [93] [94]
-File: 3DR.png Graphic file (type bmp)
-<3DR.png>
+File: Figures/3DR.png Graphic file (type bmp)
+<Figures/3DR.png>
  [95] [96] [97]
 Underfull \hbox (badness 10000) in paragraph at lines 4324--4327
 
@@ -1417,10 +1423,10 @@ Package rerunfilecheck Info: File `note-re.out' has not changed.
 (rerunfilecheck)             Checksum: 57D824514511F914993FF0B3ED1D8460;10823.
  ) 
 Here is how much of TeX's memory you used:
- 27999 strings out of 476179
- 604220 string characters out of 5809544
- 921209 words of memory out of 5000000
- 48200 multiletter control sequences out of 15000+600000
+ 28640 strings out of 476179
+ 611677 string characters out of 5809544
+ 933618 words of memory out of 5000000
+ 48833 multiletter control sequences out of 15000+600000
  543761 words of font info for 169 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  89i,20n,97p,679b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
